@@ -1,0 +1,15 @@
+title: $:/plugins/briefcase/core/ui/lists/tickler-list
+
+<div class="tw-menu-list-item">
+  Ticklers
+  <hr/>
+  <$list filter="[field:gtd_type[tickler]]">
+    <div class="tw-menu-list-subitem">
+      <span class="list-link">
+        <$link to={{!!title}}>
+          <$view field="title"/>
+        </$link>
+      </span>
+    </div>
+  </$list>
+</div>

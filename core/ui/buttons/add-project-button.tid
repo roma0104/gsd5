@@ -1,0 +1,21 @@
+title: $:/plugins/briefcase/core/ui/buttons/add-project-button
+tags: $:/tags/PageControls
+caption: {{$:/plugins/briefcase/core/images/project}} new project
+description: Add new project
+
+<$set name="gtd_type" value="project">
+<$set name="gtd_status" value="active">
+<$set name="gtd_complete" value="false">
+<$set name="gtd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton" title="Add new project" aria-label="new project" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/plugins/briefcase/core/images/project}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<$text text="new project"/>
+</$list></$action>
+</$set>
+</$set>
+</$set>
+</$set>
+

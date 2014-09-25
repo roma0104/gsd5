@@ -1,0 +1,72 @@
+title: $:/plugins/briefcase/core/ui/stylesheet/briefcase-stylesheet
+tags: $:/tags/stylesheet
+type: text/css
+
+/* Fix trashcan on alert title when body is empty. */
+.tc-alert-subtitle {
+  padding-right: 20px;
+}
+
+.tc-complete-box {
+  position: relative;
+  vertical-align: middle;
+}
+
+.body-status input[type="radio"] {
+  display: none;
+}
+
+.body-status span {
+  display:inline-block;
+  padding:0.1em 0.8em;
+  font-weight: bold;
+  color: silver;
+  border: #EFD982 1px solid;
+}
+
+.list-status input[type="radio"] {
+  display: none;
+}
+
+.list-status span {
+  font-size: small;
+  margin-top: 0.3em;
+  padding: 0em 0.3em;
+  display:inline-block;
+  color: silver;
+  border: #EFD982 1px solid;
+}
+
+.list-link {
+  margin-left: 0.5em;
+}
+
+.next input[type="radio"]:checked + span {
+  background-color: #BCE8C3;
+  color: darkgreen;
+  border: darkgreen 1px solid;
+}
+
+.waiting input[type="radio"]:checked + span {
+  background-color: #FFDEAD;
+  color: darkgoldenrod;
+  border: darkgoldenrod 1px solid;
+}
+
+.future input[type="radio"]:checked + span {
+  background-color: #A8DCF6;
+  color: #1C88BD;
+  border: #1C88BD 1px solid;
+}
+
+.content-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content-left {
+  //background-color: lightgreen;
+  width: 50%;
+  float: left;
+}

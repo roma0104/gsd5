@@ -1,0 +1,49 @@
+title: $:/plugins/briefcase/core/ui/addins/ViewBody
+
+<$list filter=[is[current]field:gtd_type[action]]>
+<div class="tc-message-box">
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewStatus"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewPrereq"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewContact"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewRealm"/>
+
+</div>
+</$list>
+
+<$list filter=[is[current]field:gtd_type[project]]>
+<div class="tc-message-box">
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewStatus"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewPrereq"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewContact"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewRealm"/>
+
+</div>
+</$list>
+
+<$list filter=[is[current]field:gtd_type[reference]]>
+<div class="tc-message-box">
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewPrereq"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewRealm"/>
+
+</div>
+</$list>
+
+<$list filter=[is[current]field:gtd_type[tickler]]>
+<div class="tc-message-box">
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewTickler"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewPrereq"/>
+
+</div>
+</$list>

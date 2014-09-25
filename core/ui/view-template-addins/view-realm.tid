@@ -1,0 +1,9 @@
+title: $:/plugins/briefcase/core/ui/addins/ViewRealm
+
+Realm:<br/>
+<$select field="gtd_realm" default="">
+<option value="">--</option>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/realm]!title[$:/plugins/briefcase/core/ui/skeletons/RealmSkeleton]]">
+<option value=<<currentTiddler>>><<currentTiddler>></option>
+</$list>
+</$select>

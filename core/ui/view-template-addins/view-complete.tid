@@ -1,0 +1,5 @@
+title: $:/plugins/briefcase/core/ui/addins/ViewComplete
+
+<$list filter=[is[current]field:gtd_type[action]][is[current]field:gtd_type[project]]>
+<$complete></$complete>
+</$list>

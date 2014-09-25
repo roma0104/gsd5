@@ -1,0 +1,3 @@
+title: Tickler Dashboard
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/tickler-list"/>

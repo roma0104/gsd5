@@ -1,0 +1,9 @@
+title: Dashboard
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/next-action-list"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/waiting-action-list"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/future-action-list"/>
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/active-project-list"/>

@@ -1,0 +1,43 @@
+title: Cleanup
+
+<div class="tc-message-box">
+The following actions and projects are older than 14 days and can be possibly deleted.
+</div>
+
+<div class="tw-menu-list-item">
+	Completed Actions
+	<hr/>
+	<$list filter=[field:gtd_type[action]field:gtd_complete[true]!date:gtd_comp_date[14]]>
+		<div class="tw-menu-list-subitem">
+		<$complete tiddler=<<currentTiddler>>/>
+		<span class="list-link">
+			<$link to={{!!title}}>
+				<$view field="title"/>
+			</$link>
+		</span>
+		&nbsp;
+		<$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
+			{{$:/plugins/briefcase/core/images/rubbishbin}}
+		</$button>
+		</div>
+	</$list>
+</div>
+
+<div class="tw-menu-list-item">
+	Completed Projects
+	<hr/>
+	<$list filter=[field:gtd_type[project]field:gtd_complete[true]!date:gtd_comp_date[14]]>
+		<div class="tw-menu-list-subitem">
+			<$complete tiddler=<<currentTiddler>>/>
+			<span class="list-link">
+				<$link to={{!!title}}>
+					<$view field="title"/>
+				</$link>
+			</span>
+			&nbsp;
+			<$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
+				{{$:/plugins/briefcase/core/images/rubbishbin}}
+			</$button>
+		</div>
+	</$list>
+</div>

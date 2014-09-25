@@ -1,0 +1,28 @@
+title: $:/plugins/briefcase/core/stylesheet/datepicker-stylesheet
+tags: $:/tags/stylesheet
+
+.tw-calendar {
+  position: relative;
+}
+
+.tw-calendar-popup {
+  font-family: monospace;
+  border-collapse: collapse;
+  display: none;
+  position: absolute;
+  margin: 0;
+  background-color: <<colour background>>;
+  cursor: default;
+}
+
+.tw-calendar-date:hover {
+  background-color: <<colour primary>>;
+}
+
+.tw-calendar-left:hover {
+  background-color: <<colour primary>>;
+}
+
+.tw-calendar-right:hover {
+  background-color: <<colour primary>>;
+}

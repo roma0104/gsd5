@@ -1,0 +1,12 @@
+title: Completed Actions
+
+<div class="tw-menu-list-item">
+Completed Actions
+<hr/>
+<$list filter=[field:gtd_type[action]field:gtd_complete[true]sort[gtd_comp_date]]>
+<div class="tw-menu-list-subitem">
+<$complete tiddler=<<currentTiddler>>/>
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+</div>
+</$list>
+</div>

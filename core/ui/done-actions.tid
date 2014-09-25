@@ -1,0 +1,3 @@
+title: Done Actions
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/completed-action-list"/>

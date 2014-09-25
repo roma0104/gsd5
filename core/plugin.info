@@ -1,0 +1,7 @@
+{
+	"title": "$:/plugins/briefcase/core",
+	"description": "TiddlyWiki5 Getting Things Done plugin",
+	"author": "Roma Hicks",
+	"core-version": ">=5.0.14",
+	"list": "readme"
+}

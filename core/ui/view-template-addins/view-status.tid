@@ -1,0 +1,12 @@
+title: $:/plugins/briefcase/core/ui/addins/ViewStatus
+
+<$list filter=[is[current]field:gtd_type[action]!field:gtd_complete[true]]>
+<$radio class="body-status next" field="gtd_status" value="next">next</$radio>
+<$radio class="body-status waiting" field="gtd_status" value="waiting">waiting</$radio>
+<$radio class="body-status future" field="gtd_status" value="future">future</$radio>
+</$list>
+
+<$list filter=[is[current]field:gtd_type[project]!field:gtd_complete[true]]>
+<$radio class="body-status next" field="gtd_status" value="active">active</$radio>
+<$radio class="body-status future" field="gtd_status" value="future">future</$radio>
+</$list>

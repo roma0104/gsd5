@@ -1,0 +1,20 @@
+title: $:/plugins/briefcase/core/ui/lists/completed-project-list
+
+<div class="tw-menu-list-item">
+  Completed Projects
+  <hr/>
+  <$list filter="[field:gtd_type[project]field:gtd_complete[true]field:gtd_realm{$:/currentRealm!!text}]">
+    <div class="tw-menu-list-subitem">
+      <$complete tiddler=<<currentTiddler>>/>
+      <span class="list-link">
+        <$link to={{!!title}}>
+          <$view field="title"/>
+        </$link>
+      </span>
+      &nbsp;
+      <$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
+        {{$:/plugins/briefcase/core/images/rubbishbin}}
+      </$button>
+    </div>
+  </$list>
+</div>

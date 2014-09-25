@@ -1,0 +1,39 @@
+title: $:/plugins/briefcase/core/ui/sidebar/collect-sidebar
+tags: $:/tags/SideBar
+caption: Collect
+
+<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/realm-list"/>
+
+<$set name="gtd_type" value="action">
+<$set name="gtd_status" value="next">
+<$set name="gtd_complete" value="false">
+<$set name="gtd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton">{{$:/plugins/briefcase/core/images/task}} New Action</$action>
+</$set>
+</$set>
+</$set>
+</$set>
+
+<$set name="gtd_type" value="project">
+<$set name="gtd_status" value="active">
+<$set name="gtd_complete" value="false">
+<$set name="gtd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton">{{$:/plugins/briefcase/core/images/project}} New Project</$action>
+</$set>
+</$set>
+</$set>
+</$set>
+
+<$set name="gtd_type" value="contact">
+<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ContactSkeleton">{{$:/plugins/briefcase/core/images/contact}} New Contact</$action>
+</$set>
+
+<$set name="gtd_type" value="reference">
+<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ReferenceSkeleton">{{$:/plugins/briefcase/core/images/reference}} New Reference</$action>
+</$set>
+
+<$set name="gtd_type" value="tickler">
+<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ReferenceSkeleton">{{$:/plugins/briefcase/core/images/clock}} New Tickler</$action>
+</$set>
+
+<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/RealmSkeleton">{{$:/plugins/briefcase/core/images/globe}} New Realm</$action>

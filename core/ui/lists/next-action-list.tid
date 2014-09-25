@@ -1,0 +1,20 @@
+title: $:/plugins/briefcase/core/ui/lists/next-action-list
+
+<div class="tw-menu-list-item">
+  Next Actions
+  <hr/>
+  <$list filter="[field:gtd_type[action]field:gtd_status[next]field:gtd_complete[false]field:gtd_realm{$:/currentRealm!!text}]">
+    <div class="tw-menu-list-subitem">
+      <$complete tiddler=<<currentTiddler>>/>
+      <$transclude tiddler="$:/plugins/briefcase/core/ui/lists/ListViewStatus"/>
+      <span class="list-link">
+        <$link to={{!!title}}>
+          <$view field="title"/>
+        </$link>
+      </span>
+      <$list filter=[is[current]!field:text[]]>
+        &nbsp;<$transclude tiddler="$:/plugins/briefcase/core/images/excerpt"/>
+      </$list>
+    </div>
+  </$list>
+</div>

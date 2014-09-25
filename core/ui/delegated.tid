@@ -1,0 +1,14 @@
+title: Delegated Actions
+
+Delegated Actions by Contact
+<hr/>
+<$list filter="[field:gtd_type[action]field:gtd_status[waiting]field:gtd_complete[false]has[gtd_contact]each[gtd_contact]sort[gtd_contact]]">
+<div class="tc-menu-list-item">
+<$view field="gtd_contact"/>&nbsp;<$link to={{!!gtd_contact}}>>></$link>
+<$list filter="[field:gtd_type[action]field:gtd_status[waiting]field:gtd_complete[false]gtd_contact{!!gtd_contact}sort[title]]">
+<div class="tc-menu-list-subitem">
+<$link to={{!!title}}><$view field="title"/></$link>
+</div>
+</$list>
+</div>
+</$list>

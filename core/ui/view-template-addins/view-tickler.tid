@@ -1,0 +1,4 @@
+title: $:/plugins/briefcase/core/ui/addins/ViewTickler
+
+Tickler Date:
+<$date field="gtd_tickdate"/>

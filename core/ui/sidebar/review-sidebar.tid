@@ -1,8 +1,8 @@
-title: $:/plugins/briefcase/core/ui/sidebar/review-sidebar
+title: $:/plugins/gsd5/core/ui/sidebar/review-sidebar
 tags: $:/tags/SideBar
 caption: Review
 
-<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/realm-list"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/realm-list"/>
 
 <$link to="Dashboard">Dashboard</$link><br/>
 <$link to="Action Dashboard">Action Dashboard</$link><br/>

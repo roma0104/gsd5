@@ -1,15 +1,15 @@
-title: $:/plugins/briefcase/core/ui/lists/future-action-list
+title: $:/plugins/gsd5/core/ui/lists/future-action-list
 
 <div class="tw-menu-list-item">
 Future Actions
 <hr/>
-<$list filter="[field:gtd_type[action]field:gtd_status[future]field:gtd_complete[false]field:gtd_realm{$:/currentRealm!!text}]">
+<$list filter="[field:gsd_type[action]field:gsd_status[future]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
 <div class="tw-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
 <$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/briefcase/core/images/excerpt"/>
+&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
 </$list>
 </div>
 </$list>

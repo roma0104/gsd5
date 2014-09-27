@@ -1,12 +1,12 @@
-title: $:/plugins/briefcase/core/ui/addins/ViewContact
+title: $:/plugins/gsd5/core/ui/addins/ViewContact
 
 Contact:<br/>
-<$select field="gtd_contact" default="none">
+<$select field="gsd_contact" default="none">
 <option value="none">--</option>
-<$list filter=[field:gtd_type[contact]]>
+<$list filter=[field:gsd_type[contact]]>
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>
 </$select>
-<span class="goto-link"><$list filter=[is[current]!field:gtd_contact[]]>
-&nbsp;<$link to={{!!gtd_contact}}>>></$link>
+<span class="goto-link"><$list filter=[is[current]!field:gsd_contact[]]>
+&nbsp;<$link to={{!!gsd_contact}}>>></$link>
 </$list></span>

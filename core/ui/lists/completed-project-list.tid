@@ -1,9 +1,9 @@
-title: $:/plugins/briefcase/core/ui/lists/completed-project-list
+title: $:/plugins/gsd5/core/ui/lists/completed-project-list
 
 <div class="tw-menu-list-item">
   Completed Projects
   <hr/>
-  <$list filter="[field:gtd_type[project]field:gtd_complete[true]field:gtd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
     <div class="tw-menu-list-subitem">
       <$complete tiddler=<<currentTiddler>>/>
       <span class="list-link">
@@ -13,7 +13,7 @@ title: $:/plugins/briefcase/core/ui/lists/completed-project-list
       </span>
       &nbsp;
       <$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
-        {{$:/plugins/briefcase/core/images/rubbishbin}}
+        {{$:/plugins/gsd5/core/images/rubbishbin}}
       </$button>
     </div>
   </$list>

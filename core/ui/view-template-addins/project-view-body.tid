@@ -1,16 +1,16 @@
-title: $:/plugins/briefcase/core/ui/addins/ProjectViewBody
+title: $:/plugins/gsd5/core/ui/addins/ProjectViewBody
 tags: $:/tags/ViewTemplate
 
-<$list filter=[is[current]field:gtd_type[project]]>
+<$list filter=[is[current]field:gsd_type[project]]>
 
 <div class="tc-menu-list-item">
 Next Actions
-<$set name="gtd_type" value="action">
-<$set name="gtd_status" value="next">
-<$set name="gtd_complete" value="false">
-<$set name="gtd_project" value={{!!title}}>
-<$set name="gtd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="next">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
 </$set>
@@ -19,13 +19,13 @@ Next Actions
 </$set>
 </$set>
 <hr/>
-<$list filter=[field:gtd_type[action]field:gtd_status[next]field:gtd_complete[false]field:gtd_project{!!title}]>
+<$list filter=[field:gsd_type[action]field:gsd_status[next]field:gsd_complete[false]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
 <$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/briefcase/core/images/excerpt"/>
+&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
 </$list>
 </div>
 </$list>
@@ -33,12 +33,12 @@ Next Actions
 
 <div class="tc-menu-list-item">
 Waiting Actions
-<$set name="gtd_type" value="action">
-<$set name="gtd_status" value="waiting">
-<$set name="gtd_complete" value="false">
-<$set name="gtd_project" value={{!!title}}>
-<$set name="gtd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="waiting">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
 </$set>
@@ -47,13 +47,13 @@ Waiting Actions
 </$set>
 </$set>
 <hr/>
-<$list filter=[field:gtd_type[action]field:gtd_status[waiting]field:gtd_complete[false]field:gtd_project{!!title}]>
+<$list filter=[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
 <$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/briefcase/core/images/excerpt"/>
+&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
 </$list>
 </div>
 </$list>
@@ -61,12 +61,12 @@ Waiting Actions
 
 <div class="tc-menu-list-item">
 Future Actions
-<$set name="gtd_type" value="action">
-<$set name="gtd_status" value="future">
-<$set name="gtd_complete" value="false">
-<$set name="gtd_project" value={{!!title}}>
-<$set name="gtd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="future">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
 </$set>
@@ -75,13 +75,13 @@ Future Actions
 </$set>
 </$set>
 <hr/>
-<$list filter=[field:gtd_type[action]field:gtd_status[future]field:gtd_complete[false]field:gtd_project{!!title}]>
+<$list filter=[field:gsd_type[action]field:gsd_status[future]field:gsd_complete[false]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
 <$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/briefcase/core/images/excerpt"/>
+&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
 </$list>
 </div>
 </$list>
@@ -89,12 +89,12 @@ Future Actions
 
 <div class="tc-menu-list-item">
 Subprojects
-<$set name="gtd_type" value="project">
-<$set name="gtd_status" value="active">
-<$set name="gtd_complete" value="false">
-<$set name="gtd_project" value={{!!title}}>
-<$set name="gtd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
+<$set name="gsd_type" value="project">
+<$set name="gsd_status" value="active">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
 </$set>
@@ -103,13 +103,13 @@ Subprojects
 </$set>
 </$set>
 <hr/>
-<$list filter=[field:gtd_type[project]field:gtd_project{!!title}]>
+<$list filter=[field:gsd_type[project]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/briefcase/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
 <$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/briefcase/core/images/excerpt"/>
+&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
 </$list>
 </div>
 </$list>
@@ -117,15 +117,15 @@ Subprojects
 
 <div class="tc-menu-list-item">
 References
-<$set name="gtd_type" value="reference">
-<$set name="gtd_project" value={{!!title}}>
-<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
+<$set name="gsd_type" value="reference">
+<$set name="gsd_project" value={{!!title}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
 </$set>
 </$set>
 <hr/>
-<$list filter=[field:gtd_type[reference]field:gtd_project{!!title}]>
+<$list filter=[field:gsd_type[reference]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
 </div>
@@ -134,15 +134,15 @@ References
 
 <div class="tc-menu-list-item">
 Ticklers
-<$set name="gtd_type" value="tickler">
-<$set name="gtd_project" value={{!!title}}>
-<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
+<$set name="gsd_type" value="tickler">
+<$set name="gsd_project" value={{!!title}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
 </$set>
 </$set>
 <hr/>
-<$list filter=[field:gtd_type[tickler]field:gtd_project{!!title}]>
+<$list filter=[field:gsd_type[tickler]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
 </div>

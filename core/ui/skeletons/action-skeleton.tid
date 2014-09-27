@@ -1,6 +1,6 @@
-title: $:/plugins/briefcase/core/ui/skeletons/ActionSkeleton
-gtd_type: $(gtd_type)$
-gtd_status: $(gtd_status)$
-gtd_complete: $(gtd_complete)$
-gtd_realm: $(gtd_realm)$
-gtd_project: $(gtd_project)$
+title: $:/plugins/gsd5/core/ui/skeletons/ActionSkeleton
+gsd_type: $(gsd_type)$
+gsd_status: $(gsd_status)$
+gsd_complete: $(gsd_complete)$
+gsd_realm: $(gsd_realm)$
+gsd_project: $(gsd_project)$

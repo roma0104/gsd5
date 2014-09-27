@@ -1,2 +1,2 @@
-title: $:/plugins/briefcase/core/ui/skeletons/ContactSkeleton
-gtd_type: $(gtd_type)$
+title: $:/plugins/gsd5/core/ui/skeletons/ContactSkeleton
+gsd_type: $(gsd_type)$

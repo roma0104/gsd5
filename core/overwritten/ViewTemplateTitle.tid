@@ -23,7 +23,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 </span>
 </$list>
 <$list filter="[all[current]!prefix[$:/]]">
-<$transclude tiddler="$:/plugins/briefcase/core/ui/addins/ViewComplete"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewComplete"/>
 <span class="tc-title">
 <$view field="title"/>
 </span>

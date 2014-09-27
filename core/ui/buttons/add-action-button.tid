@@ -1,15 +1,15 @@
-title: $:/plugins/briefcase/core/ui/buttons/add-action-button
+title: $:/plugins/gsd5/core/ui/buttons/add-action-button
 tags: $:/tags/PageControls
 caption: {{$:/core/images/refresh-button}} new action
 description: Add new action
 
-<$set name="gtd_type" value="action">
-<$set name="gtd_status" value="next">
-<$set name="gtd_complete" value="false">
-<$set name="gtd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/briefcase/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="next">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
-{{$:/plugins/briefcase/core/images/task}}
+{{$:/plugins/gsd5/core/images/task}}
 </$list>
 <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
 <$text text="new action"/>

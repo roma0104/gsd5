@@ -1,30 +1,30 @@
-title: $:/plugins/briefcase/core/ui/addins/ViewPrereq
+title: $:/plugins/gsd5/core/ui/addins/ViewPrereq
 
-<$list filter=[is[current]field:gtd_type[project]]>
+<$list filter=[is[current]field:gsd_type[project]]>
 Subproject of: <br/>
-<$select field="gtd_project" default="">
+<$select field="gsd_project" default="">
   <option value="">--</option>
-  <$list filter="[field:gtd_type[project]!is[current]field:gtd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]!is[current]field:gsd_realm{$:/currentRealm!!text}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
   </$select>
-  <span class="goto-link"><$list filter=[is[current]!field:gtd_project[]]>
-  &nbsp;<$link to={{!!gtd_project}}>>></$link>
+  <span class="goto-link"><$list filter=[is[current]!field:gsd_project[]]>
+  &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list></span>
 </$list>
 
-<$list filter=[is[current]field:gtd_type[action]]>
+<$list filter=[is[current]field:gsd_type[action]]>
 
 Project of: <br/>
-<$select field="gtd_project" default="">
+<$select field="gsd_project" default="">
   <option value="">--</option>
-  <$list filter="[field:gtd_type[project]field:gtd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]field:gsd_realm{$:/currentRealm!!text}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
 </$select>
 <span class="goto-link">
-  <$list filter=[is[current]!field:gtd_project[]]>
-    &nbsp;<$link to={{!!gtd_project}}>>></$link>
+  <$list filter=[is[current]!field:gsd_project[]]>
+    &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list>
 </span>
 
@@ -32,39 +32,39 @@ Project of: <br/>
 Depends on: <br/>
 <$prereq default="">
   <option value="">--</option>
-  <$list filter="[field:gtd_type[action]!is[current]field:gtd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[action]!is[current]field:gsd_realm{$:/currentRealm!!text}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
 </$prereq>
 <span class="goto-link">
-  <$list filter=[is[current]!field:gtd_prereq[]]>
-    &nbsp;<$link to={{!!gtd_prereq}}>>></$link>
+  <$list filter=[is[current]!field:gsd_prereq[]]>
+    &nbsp;<$link to={{!!gsd_prereq}}>>></$link>
   </$list>
 </span>
 </$list>
 
-<$list filter=[is[current]field:gtd_type[reference]]>
+<$list filter=[is[current]field:gsd_type[reference]]>
 Project of: <br/>
-<$select field="gtd_project" default="">
+<$select field="gsd_project" default="">
   <option value="">--</option>
-  <$list filter="[field:gtd_type[project]field:gtd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]field:gsd_realm{$:/currentRealm!!text}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
   </$select>
-  <span class="goto-link"><$list filter=[is[current]!field:gtd_project[]]>
-  &nbsp;<$link to={{!!gtd_project}}>>></$link>
+  <span class="goto-link"><$list filter=[is[current]!field:gsd_project[]]>
+  &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list></span>
 </$list>
 
-<$list filter=[is[current]field:gtd_type[tickler]]>
+<$list filter=[is[current]field:gsd_type[tickler]]>
 Project of: <br/>
-<$select field="gtd_project" default="">
+<$select field="gsd_project" default="">
   <option value="">--</option>
-  <$list filter="[field:gtd_type[project]field:gtd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]field:gsd_realm{$:/currentRealm!!text}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
   </$select>
-  <span class="goto-link"><$list filter=[is[current]!field:gtd_project[]]>
-  &nbsp;<$link to={{!!gtd_project}}>>></$link>
+  <span class="goto-link"><$list filter=[is[current]!field:gsd_project[]]>
+  &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list></span>
 </$list>

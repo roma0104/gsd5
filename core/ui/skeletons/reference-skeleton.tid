@@ -1,3 +1,3 @@
-title: $:/plugins/briefcase/core/ui/skeletons/ReferenceSkeleton
-gtd_type: $(gtd_type)$
-gtd_project: $(gtd_project)$
+title: $:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton
+gsd_type: $(gsd_type)$
+gsd_project: $(gsd_project)$

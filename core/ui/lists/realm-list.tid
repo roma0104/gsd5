@@ -1,4 +1,4 @@
-title: $:/plugins/briefcase/core/ui/lists/realm-list
+title: $:/plugins/gsd5/core/ui/lists/realm-list
 
 <div class="tw-menu-list-item">
   Realm
@@ -10,7 +10,7 @@ title: $:/plugins/briefcase/core/ui/lists/realm-list
     </div>
   </$linkcatcher>
   <$linkcatcher to="$:/currentRealm">
-    <$list filter="[all[shadows+tiddlers]tag[$:/tags/realm]!title[$:/plugins/briefcase/core/ui/skeletons/RealmSkeleton]]">
+    <$list filter="[all[shadows+tiddlers]tag[$:/tags/realm]!title[$:/plugins/gsd5/core/ui/skeletons/RealmSkeleton]]">
       <div class="tw-menu-list-subitem">
         <$reveal state="$:/currentRealm" type="match" text={{!!title}}>&bull;</$reveal>
         <$reveal state="$:/currentRealm" type="nomatch" text={{!!title}}>&nbsp;&nbsp;</$reveal>

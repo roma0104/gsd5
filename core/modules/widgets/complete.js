@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/briefcase/core/modules/widgets/complete.js
+title: $:/plugins/gsd5/core/modules/widgets/complete.js
 type: application/javascript
 module-type: widget
 

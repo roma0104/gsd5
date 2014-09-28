@@ -7,7 +7,6 @@ caption: Review
 <$link to="Dashboard">Dashboard</$link><br/>
 <$link to="Action Dashboard">Action Dashboard</$link><br/>
 <$link to="Project Dashboard">Project Dashboard</$link><br/>
-<$link to="Tickler Dashboard">Tickler Dashboard</$link><br/>
 <$link to="Done Actions">Done Actions</$link><br/>
 <$link to="Done Projects">Done Projects</$link><br/>
 <$link to="Delegated Actions">Delegated Actions</$link><br/>

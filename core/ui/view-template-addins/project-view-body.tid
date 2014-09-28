@@ -132,21 +132,4 @@ References
 </$list>
 </div>
 
-<div class="tc-menu-list-item">
-Ticklers
-<$set name="gsd_type" value="tickler">
-<$set name="gsd_project" value={{!!title}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
-+
-</$action>
-</$set>
-</$set>
-<hr/>
-<$list filter=[field:gsd_type[tickler]field:gsd_project{!!title}]>
-<div class="tc-menu-list-subitem">
-<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
-</div>
-</$list>
-</div>
-
 </$list>

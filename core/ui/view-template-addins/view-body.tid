@@ -37,13 +37,3 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 
 </div>
 </$list>
-
-<$list filter=[is[current]field:gsd_type[tickler]]>
-<div class="tc-message-box">
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewTickler"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewPrereq"/>
-
-</div>
-</$list>

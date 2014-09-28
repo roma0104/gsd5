@@ -1,4 +1,0 @@
-title: $:/plugins/gsd5/core/ui/addins/ViewTickler
-
-Tickler Date:
-<$date field="gsd_tickdate"/>

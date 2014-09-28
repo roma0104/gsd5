@@ -1,11 +1,6 @@
 title: $:/plugins/gsd5/core/ui/stylesheet/gsd5-stylesheet
 tags: $:/tags/Stylesheet
 
-/* Fix trashcan on alert title when body is empty. */
-.tc-alert-subtitle {
-  padding-right: 20px;
-}
-
 .tc-complete-box {
   position: relative;
   vertical-align: middle;

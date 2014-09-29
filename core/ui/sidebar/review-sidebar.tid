@@ -11,3 +11,7 @@ caption: Review
 <$link to="Done Projects">Done Projects</$link><br/>
 <$link to="Delegated Actions">Delegated Actions</$link><br/>
 <$link to="Cleanup">Cleanup</$link>
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5Review]!has[draft.of]]">
+  <$link to={{!!title}}>{{!!title}}</$link><br/>
+</$list>

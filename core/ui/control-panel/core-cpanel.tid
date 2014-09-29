@@ -1,0 +1,9 @@
+title: $:/plugins/gsd5/core/ui/control-panel/core
+tags: $:/tags/GSD5Plugin
+caption: Core
+
+! Core
+
+''Dashboard''
+
+<$checkbox tiddler="$:/gsd5/dashboard/GroupActions" field="text" checked="true" unchecked="false"> Group actions in dashboard by project</$checkbox>

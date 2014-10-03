@@ -1,4 +1,6 @@
 title: $:/plugins/gsd5/core/ui/lists/waiting-action-list
+tags: $:/tags/GSD5Lists
+caption: Waiting Actions
 
 <div class="tw-menu-list-item">
 Waiting Actions

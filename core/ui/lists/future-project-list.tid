@@ -1,4 +1,6 @@
 title: $:/plugins/gsd5/core/ui/lists/future-project-list
+tags: $:/tags/GSD5Lists
+caption: Future Projects
 
 <div class="tw-menu-list-item">
   Future Projects

@@ -1,4 +1,6 @@
 title: $:/plugins/gsd5/core/ui/lists/completed-action-list
+tags: $:/tags/GSD5Lists
+caption: Completed Actions
 
 <div class="tw-menu-list-item">
   Completed Actions

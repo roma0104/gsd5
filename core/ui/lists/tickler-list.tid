@@ -1,4 +1,6 @@
 title: $:/plugins/gsd5/core/ui/lists/tickler-list
+tags: $:/tags/GSD5Lists
+caption: Ticklers
 
 <div class="tw-menu-list-item">
   Ticklers

@@ -2,8 +2,29 @@ title: $:/plugins/gsd5/core/ui/control-panel/core
 tags: $:/tags/GSD5Plugin
 caption: Core
 
+\define config-lists()
+$:/gsd5/dashboard/show/$(listItem)$
+\end
+\define list-caption()
+{{$(listItem)$!!caption}}
+\end
+
 ! Core
 
-''Dashboard''
+<div style="border-top:1px solid #eee;">
+
+''Dashboard Lists''
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5Lists]!has[draft.of]]" variable="listItem">
+<$checkbox tiddler=<<config-lists>> field="text" checked="true" unchecked="false"> <<list-caption>> </$checkbox><br/>
+</$list>
+
+</div>
+
+<div style="border-top:1px solid #eee;">
+
+''Dashboard Options''
 
 <$checkbox tiddler="$:/gsd5/dashboard/GroupActions" field="text" checked="true" unchecked="false"> Group actions in dashboard by project</$checkbox>
+
+</div>

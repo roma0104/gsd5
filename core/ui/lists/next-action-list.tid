@@ -1,4 +1,6 @@
 title: $:/plugins/gsd5/core/ui/lists/next-action-list
+tags: $:/tags/GSD5Lists
+caption: Next Actions
 
 <div class="tw-menu-list-item">
   Next Actions

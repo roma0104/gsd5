@@ -1,4 +1,6 @@
 title: $:/plugins/gsd5/core/ui/lists/completed-project-list
+tags: $:/tags/GSD5Lists
+caption: Completed Projects
 
 <div class="tw-menu-list-item">
   Completed Projects

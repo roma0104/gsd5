@@ -32,8 +32,4 @@ caption: Collect
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton">{{$:/plugins/gsd5/core/images/reference}} New Reference</$action>
 </$set>
 
-<$set name="gsd_type" value="tickler">
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton">{{$:/plugins/gsd5/core/images/clock}} New Tickler</$action>
-</$set>
-
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/RealmSkeleton">{{$:/plugins/gsd5/core/images/globe}} New Realm</$action>

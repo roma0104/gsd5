@@ -1,5 +1,13 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewBody
 
+<$list filter=[all[shadows+tiddlers]is[current]field:title[Dashboard]]>
+<div class="tc-message-box">
+
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/realm-list"/>
+
+</div>
+</$list>
+
 <$list filter=[is[current]field:gsd_type[action]]>
 <div class="tc-message-box">
 
@@ -34,16 +42,6 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 <$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewPrereq"/>
 
 <$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewRealm"/>
-
-</div>
-</$list>
-
-<$list filter=[is[current]field:gsd_type[tickler]]>
-<div class="tc-message-box">
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewTickler"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewPrereq"/>
 
 </div>
 </$list>

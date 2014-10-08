@@ -7,8 +7,11 @@ caption: Review
 <$link to="Dashboard">Dashboard</$link><br/>
 <$link to="Action Dashboard">Action Dashboard</$link><br/>
 <$link to="Project Dashboard">Project Dashboard</$link><br/>
-<$link to="Tickler Dashboard">Tickler Dashboard</$link><br/>
 <$link to="Done Actions">Done Actions</$link><br/>
 <$link to="Done Projects">Done Projects</$link><br/>
 <$link to="Delegated Actions">Delegated Actions</$link><br/>
 <$link to="Cleanup">Cleanup</$link>
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5Review]!has[draft.of]]">
+  <$link to={{!!title}}>{{!!title}}</$link><br/>
+</$list>

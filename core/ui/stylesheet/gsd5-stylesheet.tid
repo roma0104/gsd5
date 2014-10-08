@@ -64,3 +64,11 @@ tags: $:/tags/Stylesheet
   width: 50%;
   float: left;
 }
+
+.gsd5-project-list {
+  padding-top: 5px;
+}
+
+.gsd5-project-list:first-of-type {
+  padding-top: 0;
+}

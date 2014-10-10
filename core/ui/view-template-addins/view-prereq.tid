@@ -1,6 +1,8 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewPrereq
+tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin
 
 <$list filter=[is[current]field:gsd_type[project]]>
+<p>
 Subproject of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
@@ -11,10 +13,11 @@ Subproject of: <br/>
   <span class="goto-link"><$list filter=[is[current]!field:gsd_project[]]>
   &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list></span>
+</p>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[action]]>
-
+<p>
 Project of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
@@ -27,8 +30,8 @@ Project of: <br/>
     &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list>
 </span>
-
-
+</p>
+<p>
 Depends on: <br/>
 <$prereq default="">
   <option value="">--</option>
@@ -41,9 +44,11 @@ Depends on: <br/>
     &nbsp;<$link to={{!!gsd_prereq}}>>></$link>
   </$list>
 </span>
+</p>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[reference]]>
+<p>
 Project of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
@@ -54,9 +59,11 @@ Project of: <br/>
   <span class="goto-link"><$list filter=[is[current]!field:gsd_project[]]>
   &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list></span>
+</p>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[tickler]]>
+<p>
 Project of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
@@ -67,4 +74,5 @@ Project of: <br/>
   <span class="goto-link"><$list filter=[is[current]!field:gsd_project[]]>
   &nbsp;<$link to={{!!gsd_project}}>>></$link>
   </$list></span>
+</p>
 </$list>

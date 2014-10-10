@@ -2,46 +2,30 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 
 <$list filter=[all[shadows+tiddlers]is[current]field:title[Dashboard]]>
 <div class="tc-message-box">
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/realm-list"/>
-
+<p>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</p>
 </div>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[action]]>
 <div class="tc-message-box">
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewStatus"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewPrereq"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewContact"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewRealm"/>
-
+<p>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</p>
 </div>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[project]]>
 <div class="tc-message-box">
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewStatus"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewPrereq"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewContact"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewRealm"/>
-
-</div>
+<p>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
 </$list>
-
-<$list filter=[is[current]field:gsd_type[reference]]>
-<div class="tc-message-box">
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewPrereq"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/addins/ViewRealm"/>
-
+</p>
 </div>
 </$list>

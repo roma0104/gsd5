@@ -1,5 +1,7 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewRealm
+tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin
 
+<p>
 Realm:<br/>
 <$select field="gsd_realm" default="">
 <option value="">--</option>
@@ -7,3 +9,4 @@ Realm:<br/>
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>
 </$select>
+</p>

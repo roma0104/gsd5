@@ -1,6 +1,7 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewBody
 
-<$list filter=[all[shadows+tiddlers]is[current]field:title[Dashboard]]>
+<$list filter="[all[shadows+tiddlers]is[current]field:title[Dashboard]]">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardPlugin]!has[draft.of]limit[1]]">
 <div class="tc-message-box">
 <p>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardPlugin]!has[draft.of]]" variable="listItem">
@@ -9,8 +10,10 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 </p>
 </div>
 </$list>
+</$list>
 
 <$list filter=[is[current]field:gsd_type[action]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]limit[1]]">
 <div class="tc-message-box">
 <p>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]]" variable="listItem">
@@ -19,8 +22,10 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 </p>
 </div>
 </$list>
+</$list>
 
 <$list filter=[is[current]field:gsd_type[project]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]limit[1]]">
 <div class="tc-message-box">
 <p>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]]" variable="listItem">
@@ -28,4 +33,5 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 </$list>
 </p>
 </div>
+</$list>
 </$list>

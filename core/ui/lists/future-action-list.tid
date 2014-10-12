@@ -6,7 +6,7 @@ caption: Future Actions
 
 Future Actions
 <hr/>
-<$reveal state="$:/gsd5/dashboard/GroupActions" type="match" text="true">
+<$reveal state="$:/config/GSD5GroupActions" type="match" text="true">
 <$list filter="[field:gsd_type[project]!field:gsd_status[done]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
   <div class="gsd5-project-list tc-menu-list-item">
     <$list filter="[field:gsd_project{!!title}field:gsd_type[action]field:gsd_status[future]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}limit[1]]">
@@ -48,7 +48,7 @@ Future Actions
   </$list>
 </div>
 </$reveal>
-<$reveal state="$:/gsd5/dashboard/GroupActions" type="match" text="false" default="false">
+<$reveal state="$:/config/GSD5GroupActions" type="match" text="false" default="false">
   <$list filter="[field:gsd_type[action]field:gsd_status[future]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
     <div class="tc-menu-list-item">
     <$complete tiddler=<<currentTiddler>>/>

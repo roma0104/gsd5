@@ -3,7 +3,7 @@ tags: $:/tags/GSD5Plugin
 caption: Core
 
 \define config-lists()
-$:/gsd5/dashboard/show/$(listItem)$
+$:/config/GSD5Dashboard/visibility/$(listItem)$
 \end
 \define list-caption()
 {{$(listItem)$!!caption}}
@@ -16,7 +16,7 @@ $:/gsd5/dashboard/show/$(listItem)$
 ''Dashboard Lists''
 
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5Lists]!has[draft.of]]" variable="listItem">
-<$checkbox tiddler=<<config-lists>> field="text" checked="true" unchecked="false"> <<list-caption>> </$checkbox><br/>
+<$checkbox tiddler=<<config-lists>> field="text" checked="show" unchecked="hide"> <<list-caption>> </$checkbox><br/>
 </$list>
 
 </div>
@@ -25,6 +25,6 @@ $:/gsd5/dashboard/show/$(listItem)$
 
 ''Dashboard Options''
 
-<$checkbox tiddler="$:/gsd5/dashboard/GroupActions" field="text" checked="true" unchecked="false"> Group actions in dashboard by project</$checkbox>
+<$checkbox tiddler="$:/config/GSD5GroupActions" field="text" checked="true" unchecked="false"> Group actions in dashboard by project</$checkbox>
 
 </div>

@@ -1,14 +1,3 @@
 title: Delegated Actions
 
-Delegated Actions by Contact
-<hr/>
-<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]has[gsd_contact]each[gsd_contact]sort[gsd_contact]]">
-<div class="tc-menu-list-item">
-<$view field="gsd_contact"/>&nbsp;<$link to={{!!gsd_contact}}>>></$link>
-<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]gsd_contact{!!gsd_contact}sort[title]]">
-<div class="tc-menu-list-subitem">
-<$link to={{!!title}}><$view field="title"/></$link>
-</div>
-</$list>
-</div>
-</$list>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/waiting-action-list-by-contact"/>

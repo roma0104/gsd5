@@ -6,7 +6,7 @@ caption: Completed Actions
 
 Completed Actions
 <hr/>
-<$reveal state="$:/gsd5/dashboard/GroupActions" type="match" text="true">
+<$reveal state="$:/config/GSD5GroupActions" type="match" text="true" >
 <$list filter="[field:gsd_type[project]!field:gsd_status[done]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
   <div class="gsd5-project-list tc-menu-list-item">
     <$list filter="[field:gsd_project{!!title}field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}limit[1]]">
@@ -32,7 +32,7 @@ Completed Actions
     <$text text="No Project"/>
     <$list filter="[field:gsd_project[]field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
       <div class="tc-menu-list-subitem">
-        <$complete tiddler=<<currentTiddler>>/>\
+        <$complete tiddler=<<currentTiddler>>/>
         <span class="list-link">
           <$link to={{!!title}}>
             <$view field="title"/>
@@ -46,7 +46,7 @@ Completed Actions
   </$list>
 </div>
 </$reveal>
-<$reveal state="$:/gsd5/dashboard/GroupActions" type="match" text="false" default="false">
+<$reveal state="$:/config/GSD5GroupActions" type="match" text="false" default="false">
   <$list filter="[field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
     <div class="tc-menu-list-item">
     <$complete tiddler=<<currentTiddler>>/>\

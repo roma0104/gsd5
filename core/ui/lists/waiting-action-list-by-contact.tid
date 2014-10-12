@@ -1,0 +1,34 @@
+title: $:/plugins/gsd5/core/ui/lists/waiting-action-list-by-contact
+tags: $:/tags/GSD5Lists
+caption: Waiting Actions by Contact
+
+<div class="tc-menu-list-item">
+
+Delegated Actions by Contact
+<hr/>
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]has[gsd_contact]each[gsd_contact]sort[gsd_contact]]">
+<div class="tc-menu-list-item">
+<$view field="gsd_contact"/>&nbsp;<$link to={{!!gsd_contact}}>>></$link>
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]gsd_contact{!!gsd_contact}sort[title]]">
+<div class="tc-menu-list-subitem">
+<$complete tiddler=<<currentTiddler>>/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$link to={{!!title}}><$view field="title"/></$link>
+</div>
+</$list>
+</div>
+</$list>
+<div class="tc-menu-list-item">
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_contact[]limit[1]]">
+<$text text="No Contact"/>
+</$list>
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_contact[]sort[title]]">
+<div class="tc-menu-list-subitem">
+<$complete tiddler=<<currentTiddler>>/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$link to={{!!title}}><$view field="title"/></$link>
+</div>
+</$list>
+</div>
+
+</div>

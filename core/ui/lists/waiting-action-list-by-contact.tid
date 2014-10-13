@@ -8,7 +8,7 @@ Delegated Actions by Contact
 <hr/>
 <$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]has[gsd_contact]each[gsd_contact]sort[gsd_contact]]">
 <div class="tc-menu-list-item">
-<$view field="gsd_contact"/>&nbsp;<$link to={{!!gsd_contact}}>>></$link>
+<$view field="gsd_project"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_project}}>>></$link></span>
 <$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]gsd_contact{!!gsd_contact}sort[title]]">
 <div class="tc-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>

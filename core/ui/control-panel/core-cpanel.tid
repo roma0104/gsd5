@@ -3,7 +3,7 @@ tags: $:/tags/GSD5Plugin
 caption: Core
 
 \define config-lists()
-$:/config/GSD5Dashboard/visibility/$(listItem)$
+$:/config/GSD5Lists/visibility/$(listItem)$
 \end
 \define list-caption()
 {{$(listItem)$!!caption}}
@@ -26,6 +26,6 @@ $:/config/GSD5Dashboard/visibility/$(listItem)$
 ''Dashboard Options''
 
 <$checkbox tiddler="$:/config/GSD5GroupActions" field="text" checked="true" unchecked="false"> Group actions in Dashboard by project</$checkbox><br/>
-<$checkbox tiddler="$:/plugins/gsd5/core/ui/lists/realm-list" tag="$:/tags/GSD5DashboardPlugin"> Show Realm selector in the Dashboard </$checkbox>
+<$checkbox tiddler="$:/config/GSD5DashboardPlugin/visibility/$:/plugins/gsd5/core/ui/lists/realm-list" field="text" checked="show" unchecked="hide"> Show Realm selector in the Dashboard </$checkbox>
 
 </div>

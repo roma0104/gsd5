@@ -1,4 +1,4 @@
-title: $:/config/GSD5Dashboard/visibility/$:/
+title: $:/config/GSD5Lists/visibility/$:/
 
 plugins/gsd5/core/ui/lists/next-action-list: show
 plugins/gsd5/core/ui/lists/waiting-action-list: show

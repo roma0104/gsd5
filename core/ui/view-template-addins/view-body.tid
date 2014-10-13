@@ -1,11 +1,17 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewBody
 
+\define dashboard-visibility()
+$:/config/GSD5DashboardPlugin/visibility/$(listItem)$
+\end
+
 <$list filter="[all[shadows+tiddlers]is[current]field:title[Dashboard]]">
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardPlugin]!has[draft.of]limit[1]]">
+<$list filter="[all[shadows+tiddlers]prefix[$:/config/GSD5DashboardPlugin/visibility/]!has[draft.of]field:text[show]limit[1]]" variable="pass">
 <div class="tc-message-box">
 <p>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardPlugin]!has[draft.of]]" variable="listItem">
+<$reveal state=<<dashboard-visibility>> type="match" text="show" default="hide">
 <$transclude tiddler=<<listItem>>/>
+</$reveal>
 </$list>
 </p>
 </div>
@@ -13,7 +19,7 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 </$list>
 
 <$list filter=[is[current]field:gsd_type[action]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]limit[1]]">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]limit[1]]" variable="pass">
 <div class="tc-message-box">
 <p>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]]" variable="listItem">
@@ -25,7 +31,7 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 </$list>
 
 <$list filter=[is[current]field:gsd_type[project]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]limit[1]]">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]limit[1]]" variable="pass">
 <div class="tc-message-box">
 <p>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]]" variable="listItem">

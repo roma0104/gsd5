@@ -41,3 +41,15 @@ $:/config/GSD5DashboardPlugin/visibility/$(listItem)$
 </div>
 </$list>
 </$list>
+
+<$list filter=[is[current]field:gsd_type[reference]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferencePlugin]!has[draft.of]limit[1]]" variable="pass">
+<div class="tc-message-box">
+<p>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferencePlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</p>
+</div>
+</$list>
+</$list>

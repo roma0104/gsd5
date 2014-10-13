@@ -1,5 +1,5 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewPrereq
-tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin
+tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin $:/tags/GSD5ReferencePlugin
 
 <$list filter=[is[current]field:gsd_type[project]]>
 <p>
@@ -48,21 +48,6 @@ Depends on: <br/>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[reference]]>
-<p>
-Project of: <br/>
-<$select field="gsd_project" default="">
-  <option value="">--</option>
-  <$list filter="[field:gsd_type[project]field:gsd_realm{$:/currentRealm!!text}]">
-  <option value=<<currentTiddler>>><<currentTiddler>></option>
-  </$list>
-  </$select>
-  <span class="goto-link"><$list filter=[is[current]!field:gsd_project[]]>
-  &nbsp;<$link to={{!!gsd_project}}>>></$link>
-  </$list></span>
-</p>
-</$list>
-
-<$list filter=[is[current]field:gsd_type[tickler]]>
 <p>
 Project of: <br/>
 <$select field="gsd_project" default="">

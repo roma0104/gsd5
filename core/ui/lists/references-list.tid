@@ -1,0 +1,11 @@
+title: $:/plugins/gsd5/core/ui/lists/references-list
+caption: References
+
+<div class="tc-menu-list-item">
+
+References
+<hr/>
+<$list filter="[field:gsd_type[reference]sort[]]">
+<$link to=<<currentTiddler>>><<currentTiddler>></$link>
+</$list>
+</div>

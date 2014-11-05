@@ -3,20 +3,9 @@ tags: $:/tags/GSD5Lists
 caption: Active Projects
 
 <div class="tw-menu-list-item">
+
   Active Projects
   <hr/>
-  <$list filter="[field:gsd_type[project]field:gsd_status[active]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
-    <div class="tw-menu-list-subitem">
-      <$complete tiddler=<<currentTiddler>>/>
-      <$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
-      <span class="list-link">
-        <$link to={{!!title}}>
-          <$view field="title"/>
-        </$link>
-      </span>
-      <$list filter=[is[current]!field:text[]]>
-        &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-      </$list>
-    </div>
-  </$list>
+  <<project-list "active">>
+
 </div>

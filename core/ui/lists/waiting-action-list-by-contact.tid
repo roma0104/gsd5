@@ -10,7 +10,7 @@ Delegated Actions by Contact
 <$reveal state="$:/currentRealm" type="match" text="none" default="none">
 <$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]has[gsd_contact]each[gsd_contact]sort[gsd_contact]]">
 <div class="tc-menu-list-item">
-<$view field="gsd_project"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_project}}>>></$link></span>
+<$view field="gsd_contact"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_contact}}>>></$link></span>
 <$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]gsd_contact{!!gsd_contact}sort[title]]">
 <div class="tc-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
@@ -32,13 +32,12 @@ Delegated Actions by Contact
 </div>
 </$list>
 </div>
-</$list>
 </$reveal>
 <!-- Show only waiting actions by contact by realm -->
 <$reveal state="$:/currentRealm" type="nomatch" text="none" default="none">
 <$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]has[gsd_contact]each[gsd_contact]sort[gsd_contact]field:gsd_realm{$:/currentRealm}]">
 <div class="tc-menu-list-item">
-<$view field="gsd_project"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_project}}>>></$link></span>
+<$view field="gsd_contact"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_contact}}>>></$link></span>
 <$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]gsd_contact{!!gsd_contact}sort[title]field:gsd_realm{$:/currentRealm}]">
 <div class="tc-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
@@ -60,7 +59,6 @@ Delegated Actions by Contact
 </div>
 </$list>
 </div>
-</$list>
 </$reveal>
 
 </div>

@@ -5,7 +5,14 @@ caption: References
 
 References
 <hr/>
+<$reveal state="$:/currentRealm" type="match" text="none" default="none">
 <$list filter="[field:gsd_type[reference]sort[]]">
 <$link to=<<currentTiddler>>><<currentTiddler>></$link>
 </$list>
+<$/reveal>
+<$reveal state="$:/currentRealm" type="match" text="none" default="none">
+<$list filter="[field:gsd_type[reference]sort[]field:gsd_realm{$:/currentRealm}]">
+<$link to=<<currentTiddler>>><<currentTiddler>></$link>
+</$list>
+<$/reveal>
 </div>

@@ -6,55 +6,113 @@ caption: Completed Actions
 
 Completed Actions
 <hr/>
-<$reveal state="$:/config/GSD5GroupActions" type="match" text="true" >
-<$list filter="[field:gsd_type[project]!field:gsd_status[done]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
-  <div class="gsd5-project-list tc-menu-list-item">
-    <$list filter="[field:gsd_project{!!title}field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}limit[1]]">
-         <$view field="gsd_project"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_project}}>>></$link></span>
-    </$list>
-    <$list filter="[field:gsd_project{!!title}field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
-      <div class="tc-menu-list-subitem">
-        <$complete tiddler=<<currentTiddler>>/>
-        <span class="list-link">
-          <$link to={{!!title}}>
-            <$view field="title"/>
-          </$link>
-        </span>
-        <$list filter=[is[current]!field:text[]]>
-          &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-        </$list>
-      </div>
-    </$list>
-  </div>
-</$list>
-<div class="gsd5-project-list tc-menu-list-item">
-  <$list filter="[field:gsd_project[]field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}limit[1]]">
-    <$text text="No Project"/>
-    <$list filter="[field:gsd_project[]field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
-      <div class="tc-menu-list-subitem">
-        <$complete tiddler=<<currentTiddler>>/>
-        <span class="list-link">
-          <$link to={{!!title}}>
-            <$view field="title"/>
-          </$link>
-        </span>
-        <$list filter=[is[current]!field:text[]]>
-          &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-        </$list>
-      </div>
-    </$list>
-  </$list>
-</div>
-</$reveal>
-<$reveal state="$:/config/GSD5GroupActions" type="match" text="false" default="false">
-  <$list filter="[field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
-    <div class="tc-menu-list-item">
-    <$complete tiddler=<<currentTiddler>>/>\
-    <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
-    <$list filter=[is[current]!field:text[]]>
-      &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-    </$list>
+<!-- No Realm is Selected -->
+<$reveal state="$:/currentRealm" type="match" text="none" default="none">
+  <$reveal state="$:/config/GSD5GroupActions" type="match" text="true" >
+  <$list filter="[field:gsd_type[project]field:gsd_complete[false]]">
+    <div class="gsd5-project-list tc-menu-list-item">
+      <$list filter="[field:gsd_project{!!title}field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}limit[1]]">
+           <$view field="gsd_project"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_project}}>>></$link></span>
+      </$list>
+      <$list filter="[field:gsd_project{!!title}field:gsd_complete[true]]">
+        <div class="tc-menu-list-subitem">
+          <$complete tiddler=<<currentTiddler>>/>
+          <span class="list-link">
+            <$link to={{!!title}}>
+              <$view field="title"/>
+            </$link>
+          </span>
+          <$list filter=[is[current]!field:text[]]>
+            &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+          </$list>
+        </div>
+      </$list>
     </div>
   </$list>
+  <div class="gsd5-project-list tc-menu-list-item">
+    <$list filter="[field:gsd_project[]field:gsd_type[action]field:gsd_complete[true]limit[1]]">
+      <$text text="No Project"/>
+      <$list filter="[field:gsd_project[]field:gsd_type[action]field:gsd_complete[true]]">
+        <div class="tc-menu-list-subitem">
+          <$complete tiddler=<<currentTiddler>>/>
+          <span class="list-link">
+            <$link to={{!!title}}>
+              <$view field="title"/>
+            </$link>
+          </span>
+          <$list filter=[is[current]!field:text[]]>
+            &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+          </$list>
+        </div>
+      </$list>
+    </$list>
+  </div>
+  </$reveal>
+  <$reveal state="$:/config/GSD5GroupActions" type="match" text="false" default="false">
+    <$list filter="[field:gsd_type[action]field:gsd_complete[true]]">
+      <div class="tc-menu-list-item">
+      <$complete tiddler=<<currentTiddler>>/>
+      <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+      <$list filter=[is[current]!field:text[]]>
+        &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+      </$list>
+      </div>
+    </$list>
+  </$reveal>
 </$reveal>
+<!-- Realm is selected -->
+<$reveal state="$:/currentRealm" type="nomatch" text="none" default="none">
+  <$reveal state="$:/config/GSD5GroupActions" type="match" text="true" >
+  <$list filter="[field:gsd_type[project]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
+    <div class="gsd5-project-list tc-menu-list-item">
+      <$list filter="[field:gsd_project{!!title}field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}limit[1]]">
+           <$view field="gsd_project"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!gsd_project}}>>></$link></span>
+      </$list>
+      <$list filter="[field:gsd_project{!!title}field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
+        <div class="tc-menu-list-subitem">
+          <$complete tiddler=<<currentTiddler>>/>
+          <span class="list-link">
+            <$link to={{!!title}}>
+              <$view field="title"/>
+            </$link>
+          </span>
+          <$list filter=[is[current]!field:text[]]>
+            &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+          </$list>
+        </div>
+      </$list>
+    </div>
+  </$list>
+  <div class="gsd5-project-list tc-menu-list-item">
+    <$list filter="[field:gsd_project[]field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}limit[1]]">
+      <$text text="No Project"/>
+      <$list filter="[field:gsd_project[]field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
+        <div class="tc-menu-list-subitem">
+          <$complete tiddler=<<currentTiddler>>/>
+          <span class="list-link">
+            <$link to={{!!title}}>
+              <$view field="title"/>
+            </$link>
+          </span>
+          <$list filter=[is[current]!field:text[]]>
+            &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+          </$list>
+        </div>
+      </$list>
+    </$list>
+  </div>
+  </$reveal>
+  <$reveal state="$:/config/GSD5GroupActions" type="match" text="false" default="false">
+    <$list filter="[field:gsd_type[action]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
+      <div class="tc-menu-list-item">
+      <$complete tiddler=<<currentTiddler>>/>\
+      <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+      <$list filter=[is[current]!field:text[]]>
+        &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+      </$list>
+      </div>
+    </$list>
+  </$reveal>
+</$reveal>
+
 </div>

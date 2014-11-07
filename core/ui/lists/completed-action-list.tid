@@ -7,7 +7,7 @@ caption: Completed Actions
 Completed Actions
 <hr/>
 <!-- No Realm is Selected -->
-<$reveal state="$:/currentRealm" type="match" text="none" default="none">
+<$reveal state="$:/currentRealm" type="match" text="all" default="all">
   <$reveal state="$:/config/GSD5GroupActions" type="match" text="true" >
   <$list filter="[field:gsd_type[project]field:gsd_complete[false]]">
     <div class="gsd5-project-list tc-menu-list-item">
@@ -61,7 +61,7 @@ Completed Actions
   </$reveal>
 </$reveal>
 <!-- Realm is selected -->
-<$reveal state="$:/currentRealm" type="nomatch" text="none" default="none">
+<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
   <$reveal state="$:/config/GSD5GroupActions" type="match" text="true" >
   <$list filter="[field:gsd_type[project]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
     <div class="gsd5-project-list tc-menu-list-item">

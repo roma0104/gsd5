@@ -3,7 +3,7 @@ tags: $:/tags/Macro
 
 \define action-list(status)
 	<!-- No/All realms -->
-	<$reveal state="$:/currentRealm" type="match" text="none" default="none">
+	<$reveal state="$:/currentRealm" type="match" text="all" default="all">
 		<!-- Group Actions by Project -->
 		<!-- NO REALM > PROJECT GROUPED -->
 		<$reveal state="$:/config/GSD5GroupActions" type="match" text="true" default="false">
@@ -68,7 +68,7 @@ tags: $:/tags/Macro
 		</$reveal>
 	</$reveal>
 	<!-- A realm is selected. -->
-	<$reveal state="$:/currentRealm" type="nomatch" text="none" default="none">
+	<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
 		<!-- Group Actions by Project -->
 		<!-- REALM > PROJECT GROUPED -->
 		<$reveal state="$:/config/GSD5GroupActions" type="match" text="true" default="false">

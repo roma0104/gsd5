@@ -2,7 +2,7 @@ title: $:/plugins/gsd5/core/macro/project-macro
 tags: $:/tags/Macro
 
 \define project-list(status)
-<$reveal state="$:/currentRealm" type="match" text="none" default="none">
+<$reveal state="$:/currentRealm" type="match" text="all" default="all">
   <$list filter="[field:gsd_type[project]field:gsd_status[$status$]field:gsd_complete[false]]">
     <div class="tw-menu-list-subitem">
       <$complete tiddler=<<currentTiddler>>/>
@@ -18,7 +18,7 @@ tags: $:/tags/Macro
     </div>
   </$list>
   </$reveal>
-  <$reveal state="$:/currentRealm" type="nomatch" text="none" default="none">
+  <$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
     <$list filter="[field:gsd_type[project]field:gsd_status[$status$]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
     <div class="tw-menu-list-subitem">
       <$complete tiddler=<<currentTiddler>>/>

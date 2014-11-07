@@ -29,7 +29,7 @@ caption: Collect
 </$set>
 
 <$set name="gsd_type" value="reference">
-<$set name="gsd_realm" value="none">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton">{{$:/plugins/gsd5/core/images/reference}} New Reference</$action>
 </$set>
 </$set>

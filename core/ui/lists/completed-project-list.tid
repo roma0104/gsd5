@@ -5,7 +5,7 @@ caption: Completed Projects
 <div class="tw-menu-list-item">
   Completed Projects
   <hr/>
-  <$reveal state="$:/currentRealm" type="match" text="none" default="none">
+  <$reveal state="$:/currentRealm" type="match" text="all" default="all">
     <$list filter="[field:gsd_type[project]field:gsd_complete[true]]">
       <div class="tw-menu-list-subitem">
         <$complete tiddler=<<currentTiddler>>/>
@@ -21,7 +21,7 @@ caption: Completed Projects
       </div>
     </$list>
   </$reveal>
-  <$reveal state="$:/currentRealm" type="nomatch" text="none" default="none">
+  <$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
     <$list filter="[field:gsd_type[project]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
       <div class="tw-menu-list-subitem">
         <$complete tiddler=<<currentTiddler>>/>

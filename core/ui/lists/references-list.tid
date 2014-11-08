@@ -7,12 +7,17 @@ References
 <hr/>
 <$reveal state="$:/currentRealm" type="match" text="all" default="all">
 <$list filter="[field:gsd_type[reference]sort[]]">
+<div class="tc-menu-list-subitem">
 <$link to=<<currentTiddler>>><<currentTiddler>></$link>
+</div>
 </$list>
-<$/reveal>
-<$reveal state="$:/currentRealm" type="match" text="all" default="all">
+</$reveal>
+<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
 <$list filter="[field:gsd_type[reference]sort[]field:gsd_realm{$:/currentRealm}]">
+<div class="tc-menu-list-subitem">
 <$link to=<<currentTiddler>>><<currentTiddler>></$link>
+</div>
 </$list>
-<$/reveal>
+</$reveal>
+
 </div>

@@ -1,0 +1,3 @@
+title: References
+
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/references-list"/>

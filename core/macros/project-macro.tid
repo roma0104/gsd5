@@ -1,0 +1,37 @@
+title: $:/plugins/gsd5/core/macro/project-macro
+tags: $:/tags/Macro
+
+\define project-list(status)
+<$reveal state="$:/currentRealm" type="match" text="all" default="all">
+  <$list filter="[field:gsd_type[project]field:gsd_status[$status$]field:gsd_complete[false]]">
+    <div class="tw-menu-list-subitem">
+      <$complete tiddler=<<currentTiddler>>/>
+      <$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+      <span class="list-link">
+        <$link to={{!!title}}>
+          <$view field="title"/>
+        </$link>
+      </span>
+      <$list filter=[is[current]!field:text[]]>
+        &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+      </$list>
+    </div>
+  </$list>
+  </$reveal>
+  <$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
+    <$list filter="[field:gsd_type[project]field:gsd_status[$status$]field:gsd_complete[false]field:gsd_realm{$:/currentRealm!!text}]">
+    <div class="tw-menu-list-subitem">
+      <$complete tiddler=<<currentTiddler>>/>
+      <$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+      <span class="list-link">
+        <$link to={{!!title}}>
+          <$view field="title"/>
+        </$link>
+      </span>
+      <$list filter=[is[current]!field:text[]]>
+        &nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+      </$list>
+    </div>
+  </$list>
+  </$reveal>
+\end

@@ -1,9 +1,12 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewRealm
+tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin $:/tags/GSD5ReferencePlugin
 
+<p>
 Realm:<br/>
 <$select field="gsd_realm" default="">
-<option value="">--</option>
+<option value="all">--</option>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/realm]!title[$:/plugins/gsd5/core/ui/skeletons/RealmSkeleton]]">
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>
 </$select>
+</p>

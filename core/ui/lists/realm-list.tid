@@ -1,12 +1,13 @@
 title: $:/plugins/gsd5/core/ui/lists/realm-list
+tags: $:/tags/GSD5DashboardPlugin
 
 <div class="tw-menu-list-item">
   Realm
-  <$linkcatcher set="$:/currentRealm" setTo="">
+  <$linkcatcher set="$:/currentRealm" setTo="all">
     <div class="tw-menu-list-subitem">
-      <$reveal state="$:/currentRealm" type="match" text="">&bull;</$reveal>
-      <$reveal state="$:/currentRealm" type="nomatch" text="">&nbsp;&nbsp;</$reveal>
-      <$link to="">&nbsp;none</$link>
+      <$reveal state="$:/currentRealm" type="match" text="all">&bull;</$reveal>
+      <$reveal state="$:/currentRealm" type="nomatch" text="all">&nbsp;&nbsp;</$reveal>
+      <$link to="">&nbsp;all</$link>
     </div>
   </$linkcatcher>
   <$linkcatcher to="$:/currentRealm">

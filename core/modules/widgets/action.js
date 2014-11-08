@@ -97,7 +97,7 @@ ActionWidget.prototype.handleClick = function(event) {
     case "no":
       break;
   }
-
+  $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
 };
 
 ActionWidget.prototype.execute = function() {

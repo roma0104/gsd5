@@ -61,6 +61,7 @@ CompleteWidget.prototype.handleChangeEvent = function() {
   var now = new Date();
   this.wiki.setText(this.completeTitle, "gsd_comp_date", null, $tw.utils.stringifyDate(now));
   this.changeDependants();
+  $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
 };
 
 CompleteWidget.prototype.changeDependants = function() {

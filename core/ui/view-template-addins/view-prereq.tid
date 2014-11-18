@@ -35,9 +35,22 @@ Project of: <br/>
 Depends on: <br/>
 <$prereq default="">
   <option value="">--</option>
-  <$list filter="[field:gsd_type[action]!is[current]field:gsd_realm{!!gsd_realm}]">
-  <option value=<<currentTiddler>>><<currentTiddler>></option>
+  <$list filter="[field:gsd_type[action]!is[current]field:gsd_realm{$:/currentRealm!!text}!has[gsd_project]limit[1]]">
+    <optgroup label="No Project">  
+      <$list filter="[field:gsd_type[action]!is[current]!has[gsd_project]]">
+       <option value=<<currentTiddler>>><<currentTiddler>></option>
+    </$list>
+    </optgroup>
   </$list>
+<$set name="currentTitle" value=<<currentTiddler>> >
+  <$list filter="[field:gsd_type[action]field:gsd_realm{$:/currentRealm!!text}has[gsd_project]each[gsd_project]]">
+    <optgroup label={{!!gsd_project}}>  
+     <$list filter="[field:gsd_type[action]!title<currentTitle>field:gsd_project{!!gsd_project}]">
+       <option value=<<currentTiddler>>><<currentTiddler>></option>
+     </$list>
+    </optgroup>
+  </$list>
+</$set>
 </$prereq>
 <span class="goto-link">
   <$list filter=[is[current]!field:gsd_prereq[]]>

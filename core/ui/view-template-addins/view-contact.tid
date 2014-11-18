@@ -5,7 +5,7 @@ tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin
 Contact:<br/>
 <$select field="gsd_contact" default="none">
 <option value="none">--</option>
-<$list filter=[field:gsd_type[contact]]>
+<$list filter=[field:gsd_type[contact]field:gsd_realm{!!gsd_realm}]>
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>
 </$select>

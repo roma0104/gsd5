@@ -9,7 +9,7 @@ Next Actions
 <$set name="gsd_status" value="next">
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
-<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
@@ -37,7 +37,7 @@ Waiting Actions
 <$set name="gsd_status" value="waiting">
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
-<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
@@ -65,7 +65,7 @@ Future Actions
 <$set name="gsd_status" value="future">
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
-<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
@@ -93,7 +93,7 @@ Subprojects
 <$set name="gsd_status" value="active">
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
-<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
@@ -119,9 +119,11 @@ Subprojects
 References
 <$set name="gsd_type" value="reference">
 <$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
 +
 </$action>
+</$set>
 </$set>
 </$set>
 <hr/>

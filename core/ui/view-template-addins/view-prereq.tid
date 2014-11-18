@@ -6,7 +6,7 @@ tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin $:/tags/GSD5ReferencePl
 Subproject of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
-  <$list filter="[field:gsd_type[project]!is[current]field:gsd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]!is[current]field:gsd_realm{!!gsd_realm}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
   </$select>
@@ -21,7 +21,7 @@ Subproject of: <br/>
 Project of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
-  <$list filter="[field:gsd_type[project]field:gsd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]field:gsd_realm{!!gsd_realm}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
 </$select>
@@ -35,7 +35,7 @@ Project of: <br/>
 Depends on: <br/>
 <$prereq default="">
   <option value="">--</option>
-  <$list filter="[field:gsd_type[action]!is[current]field:gsd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[action]!is[current]field:gsd_realm{!!gsd_realm}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
 </$prereq>
@@ -52,7 +52,7 @@ Depends on: <br/>
 Project of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
-  <$list filter="[field:gsd_type[project]field:gsd_realm{$:/currentRealm!!text}]">
+  <$list filter="[field:gsd_type[project]field:gsd_realm{!!gsd_realm}]">
   <option value=<<currentTiddler>>><<currentTiddler>></option>
   </$list>
   </$select>

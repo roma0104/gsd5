@@ -8,9 +8,6 @@ Contact:<br/>
 <$list filter=[field:gsd_type[contact]field:gsd_realm{!!gsd_realm}]>
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>
-<$list filter=[field:gsd_type[contact]field:gsd_realm[all]]>
-<option value=<<currentTiddler>>><<currentTiddler>></option>
-</$list>
 </$select>
 <span class="goto-link"><$list filter=[is[current]!field:gsd_contact[]]>
 &nbsp;<$link to={{!!gsd_contact}}>>></$link>

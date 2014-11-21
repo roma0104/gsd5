@@ -36,7 +36,6 @@ Depends on: <br/>
 <$prereq default="">
   <option value="">--</option>
   <$list filter="[field:gsd_type[action]field:gsd_realm{$:/currentRealm!!text}!has[gsd_project]limit[1]]" variable="dummy">
-    <option value=""><<currentTiddler>></option>
     <optgroup label="No Project">
       <$list filter="[field:gsd_type[action]field:gsd_realm{$:/currentRealm!!text}!has[gsd_project]!is[current]]">
        <option value=<<currentTiddler>>><<currentTiddler>></option>

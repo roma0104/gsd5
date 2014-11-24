@@ -5,12 +5,15 @@ tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin
 Contact:<br/>
 <$select field="gsd_contact" default="none">
 <option value="none">--</option>
+<$set name="parentTiddler" value=<<currentTiddler>> >
+<$list filter="[is[current]!field:gsd_realm[all]]" >
 <optgroup label={{!!gsd_realm}}>
 <$list filter=[field:gsd_type[contact]field:gsd_realm{!!gsd_realm}]>
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>
 </optgroup>
-<optgroup label="All">
+</$list>
+<optgroup label="All Realms">
 <$list filter=[field:gsd_type[contact]field:gsd_realm[all]]>
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>

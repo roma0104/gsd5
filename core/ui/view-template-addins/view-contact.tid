@@ -5,9 +5,16 @@ tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin
 Contact:<br/>
 <$select field="gsd_contact" default="none">
 <option value="none">--</option>
-<$list filter=[field:gsd_type[contact]]>
+<optgroup label={{!!gsd_realm}}>
+<$list filter=[field:gsd_type[contact]field:gsd_realm{!!gsd_realm}]>
 <option value=<<currentTiddler>>><<currentTiddler>></option>
 </$list>
+</optgroup>
+<optgroup label="All">
+<$list filter=[field:gsd_type[contact]field:gsd_realm[all]]>
+<option value=<<currentTiddler>>><<currentTiddler>></option>
+</$list>
+</optgroup>
 </$select>
 <span class="goto-link"><$list filter=[is[current]!field:gsd_contact[]]>
 &nbsp;<$link to={{!!gsd_contact}}>>></$link>

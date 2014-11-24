@@ -25,7 +25,9 @@ caption: Collect
 </$set>
 
 <$set name="gsd_type" value="contact">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ContactSkeleton">{{$:/plugins/gsd5/core/images/contact}} New Contact</$action>
+</$set>
 </$set>
 
 <$set name="gsd_type" value="reference">

@@ -1,0 +1,5 @@
+title: $:/plugins/gsd5/core/ui/buttons/convert-action-button
+description: Convert Action to Project
+tags: $:/tags/GSD5ActionPlugin
+
+<$convert tooltip="Covert Action to Project" aria-label="Convert Action to Project">{{$:/plugins/gsd5/core/images/convert}} Convert</$convert>

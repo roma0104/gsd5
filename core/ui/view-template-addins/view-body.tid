@@ -64,5 +64,6 @@ $:/config/GSD5DashboardPlugin/visibility/$(listItem)$
 </p>
 </div>
 </$list>
+{{||$:/plugins/gsd5/core/ui/lists/contacts-action-list}}
 </$list>
 

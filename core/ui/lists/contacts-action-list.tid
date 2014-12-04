@@ -1,0 +1,36 @@
+title: $:/plugins/gsd5/core/ui/lists/contacts-action-list
+
+<div class="tc-menu-list-item">
+
+<$set name="contactTiddler" value=<<currentTiddler>>>
+<!-- Show waiting actions by contact regardless of realm -->
+<$reveal state="$:/currentRealm" type="match" text="all" default="all">
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_contact<contactTiddler>limit[1]]">
+Contacts' Delegated Actions
+<hr/>
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_contact<contactTiddler>]">
+<div class="tc-menu-list-subitem">
+<$complete tiddler=<<currentTiddler>>/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$link to={{!!title}}><$view field="title"/></$link>
+</div>
+</$list>
+</$list>
+</$reveal>
+<!-- Show only waiting actions by contact by realm -->
+<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_contact<contactTiddler>field:gsd_realm{$:/currentRealm}limit[1]]">
+Contacts' Delegated Actions
+<hr/>
+<$list filter="[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_contact<contactTiddler>field:gsd_realm{$:/currentRealm}]">
+<div class="tc-menu-list-subitem">
+<$complete tiddler=<<currentTiddler>>/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$link to={{!!title}}><$view field="title"/></$link>
+</div>
+</$list>
+</$list>
+</$reveal>
+</$set>
+
+</div>

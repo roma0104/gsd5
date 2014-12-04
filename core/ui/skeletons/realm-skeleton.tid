@@ -1,2 +1,2 @@
 title: $:/plugins/gsd5/core/ui/skeletons/RealmSkeleton
-tags: $:/tags/realm
+gsd_type: $(gsd_type)$

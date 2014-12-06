@@ -3,7 +3,7 @@ title: $:/plugins/gsd5/core/modules/widgets/action.js
 type: application/javascript
 module-type: widget
 
-New Action Widget
+New GSD5 Tiddler Widget
 
 \*/
 (function() {
@@ -11,112 +11,106 @@ New Action Widget
 // jslint node: true, browser: true
 // global $tw: false
 "use_strict";
-
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
-
-var ActionWidget = function(parseTreeNode, options) {
-  this.initialise(parseTreeNode, options);
+var ActionWidget = function(parseTreeNode,options) {
+    this.initialise(parseTreeNode, options);
 };
-
 // Inherit from Widget
 ActionWidget.prototype = new Widget();
-
 // Render to DOM
-ActionWidget.prototype.render = function(parent, nextSibling) {
-  var self = this;
-  this.parentDomNode = parent;
-  this.computeAttributes();
-  this.execute();
-  // Create DOM element
-  var domNode = this.document.createElement("button");
-  domNode.className = this["class"];
-  if(this.title) {
-    domNode.setAttribute("title", this.title);
-  }
-  if(this["aria-label"]) {
-    domNode.setAttribute("aria-label", this["aria-label"]);
-  }
-  // Add event listener
-  domNode.addEventListener(
-    "click",
-    function(event) {
-      self.handleClick(event);
-    },
-    false
-  );
-  // Insert element
-  parent.insertBefore(domNode, nextSibling);
-  this.renderChildren(domNode, null);
-  this.domNodes.push(domNode);
+ActionWidget.prototype.render = function(parent,nextSibling) {
+    var self = this;
+    this.parentDomNode = parent;
+    this.computeAttributes();
+    this.execute();
+    // Create DOM element
+    var domNode = this.document.createElement("button");
+    domNode.className = this["class"];
+    if(this.title) {
+        domNode.setAttribute("title", this.title);
+    }
+    if(this["aria-label"]) {
+        domNode.setAttribute("aria-label", this["aria-label"]);
+    }
+    // Add event listener
+    domNode.addEventListener(
+        "click",
+        function(event) {
+        self.handleClick(event);
+        },
+        false
+    );
+    // Insert element
+    parent.insertBefore(domNode, nextSibling);
+    this.renderChildren(domNode, null);
+    this.domNodes.push(domNode);
 };
 
 ActionWidget.prototype.handleClick = function(event) {
-  var title = prompt("Enter title:");
-  if(!title) {
-    return;
-  }
-  /*
-  Special thanks to Stephan "Skeeve" Hradek for the NewTiddler plugin.
-  Much of the following code is pulled from his plugin.
-  http://tiddlystuff.tiddlyspot.com
-  */
-
-  var skeleton = this.wiki.getTiddlerAsJson(this.newtiddlerSkeleton);
-  var skeletonClone = JSON.parse(this.substituteVariableReferences(skeleton));
-  var basetitle = title;
-  var newTitle = basetitle;
-  for(var t=1; this.wiki.tiddlerExists(newTitle); t++) {
-    newTitle = basetitle + " " + t;
-  }
-  skeletonClone.title = newTitle;
-  var created = this.wiki.getCreationFields();
-  for(var creationField in created) {
-    skeletonClone[creationField] = created[creationField];
-  }
-  var modified = this.wiki.getModificationFields();
-  for(var modificationField in modified) {
-    skeletonClone[modificationField] = modified[modificationField];
-  }
-  this.wiki.addTiddler(skeletonClone);
-  switch(this.newtiddlerEdit) {
-    case "show":
-    case "yes":
-      var bounds = this.domNodes[0].getBoundingClientRect();
-      this.dispatchEvent({
-        type: "tm-navigate",
-        navigateTo: newTitle,
-        navigateFromTitle: this.getVariable("currentTiddler"),
-        navigateFromNode: this,
-        navigateFromClientRect: { top: bounds.top, left: bounds.left, width: bounds.width, right: bounds.right, bottom: bounds.bottom, height: bounds.height
-        }
-      });
-      if(this.newtiddlerEdit === "yes") {
-        this.dispatchEvent({type: "tm-edit-tiddler", tiddlerTitle: newTitle});
-      }
-      break;
-    case "no":
-      break;
-  }
-  $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
+    var title = prompt("Enter title:");
+    if(!title) {
+        return;
+    }
+    /*
+    Special thanks to Stephan "Skeeve" Hradek for the NewTiddler plugin.
+    Much of the following code is pulled from his plugin.
+    http://tiddlystuff.tiddlyspot.com
+    */
+    var skeleton = this.wiki.getTiddlerAsJson(this.newtiddlerSkeleton);
+    var skeletonClone = JSON.parse(this.substituteVariableReferences(skeleton));
+    var basetitle = title;
+    var newTitle = basetitle;
+    for(var t=1; this.wiki.tiddlerExists(newTitle); t++) {
+        newTitle = basetitle + " " + t;
+    }
+    skeletonClone.title = newTitle;
+    var created = this.wiki.getCreationFields();
+    for(var creationField in created) {
+        skeletonClone[creationField] = created[creationField];
+    }
+    var modified = this.wiki.getModificationFields();
+    for(var modificationField in modified) {
+        skeletonClone[modificationField] = modified[modificationField];
+    }
+    this.wiki.addTiddler(skeletonClone);
+    switch(this.newtiddlerEdit) {
+        case "show":
+        case "yes":
+            var bounds = this.domNodes[0].getBoundingClientRect();
+            this.dispatchEvent({
+                type: "tm-navigate",
+                navigateTo: newTitle,
+                navigateFromTitle: this.getVariable("currentTiddler"),
+                navigateFromNode: this,
+                navigateFromClientRect: { top: bounds.top, left: bounds.left, width: bounds.width, right: bounds.right, bottom: bounds.bottom, height: bounds.height}
+            });
+            if(this.newtiddlerEdit === "yes") {
+                this.dispatchEvent({type: "tm-edit-tiddler", tiddlerTitle: newTitle});
+            }
+            break;
+        case "no":
+            break;
+    }
+    $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
 };
 
 ActionWidget.prototype.execute = function() {
-  // Get attributes
-  this["class"] = this.getAttribute("class", "");
-  this["aria-label"] = this.getAttribute("aria-label");
-  this.title = this.getAttribute("title");
-  this.newtiddlerSkeleton = this.getAttribute("skeleton");
+    // Get attributes
+    this["class"] = this.getAttribute("class", "");
+    this["aria-label"] = this.getAttribute("aria-label");
+    this.title = this.getAttribute("title");
+    this.newtiddlerSkeleton = this.getAttribute("skeleton");
     this.newtiddlerEdit = this.getAttribute("edit", "show");
-  this.makeChildWidgets();
+    this.makeChildWidgets();
 };
 
 ActionWidget.prototype.refresh = function(changedTiddlers) {
-  var changedAttributes = this.computeAttributes();
-  if(changedAttributes["class"]) {
-    this.refreshSelf();
-    return true;
-  }
-  return this.refreshChildren(changedTiddlers);
+    var changedAttributes = this.computeAttributes();
+    if(changedAttributes["class"]) {
+        this.refreshSelf();
+        return true;
+    }
+    return this.refreshChildren(changedTiddlers);
 };
 
 exports.action = ActionWidget;

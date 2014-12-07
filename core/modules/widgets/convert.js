@@ -60,8 +60,8 @@ ConvertWidget.prototype.render = function(parent,nextSibling) {
 
 ConvertWidget.prototype.handleClickEvent = function() {
     var tiddler = this.wiki.getTiddler(this.to);
-    // Check if tiddler is an action.
-    if(tiddler.fields.gsd_type === "action") {
+    // Check if tiddler is an action.and not completed.
+    if(tiddler.fields.gsd_type === "action" && tiddler.fields.gsd_complete === "false") {
         // Change next actions to active projects, others to future.
         if(tiddler.fields.gsd_status === "next") {
             this.wiki.setText(this.to, "gsd_status", null, "active");

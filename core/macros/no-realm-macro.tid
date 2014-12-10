@@ -1,0 +1,10 @@
+title: $:/plugins/gsd5/core/macro/no-realm-macro
+tags: $:/tags/Macro
+
+\define no-realm(type)
+<div class="tc-menu-list-subitem">
+    <$list filter="[field:gsd_type[$type$]field:gsd_realm[all]!gsd_complete[true]]">
+        <$link to=<<currentTiddler>> ><<currentTiddler>></$link>
+    </$list>
+</div>
+\end

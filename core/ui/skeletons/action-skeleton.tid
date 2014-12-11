@@ -4,3 +4,4 @@ gsd_status: $(gsd_status)$
 gsd_complete: $(gsd_complete)$
 gsd_realm: $(gsd_realm)$
 gsd_project: $(gsd_project)$
+gsd_contact:

@@ -1,0 +1,13 @@
+title: No Next Action
+
+<div class="tc-message-box">
+The following Projects are without a next Action.  They should be examined for the next possible action to be taken.
+</div>
+
+Projects without Next Actions
+
+-----
+
+<$list filter="[field:gsd_type[action]] -[field:gsd_type[action]field:gsd_status[next]_fieldvalue[gsd_project]]">
+<$link to=<<currentTiddler>> ><<currentTiddler>></$link>
+</$list>

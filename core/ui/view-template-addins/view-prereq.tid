@@ -1,5 +1,5 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewPrereq
-tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin $:/tags/GSD5ReferencePlugin
+tags: $:/tags/GSD5ActionCore $:/tags/GSD5ProjectCore $:/tags/GSD5ReferenceCore
 
 <$list filter=[is[current]field:gsd_type[project]]>
 <p>

@@ -1,5 +1,5 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewStatus
-tags: $:/tags/GSD5ActionPlugin $:/tags/GSD5ProjectPlugin
+tags: $:/tags/GSD5ActionCore $:/tags/GSD5ProjectCore
 
 <$list filter=[is[current]field:gsd_type[action]!field:gsd_complete[true]]>
 <p>

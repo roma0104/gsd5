@@ -1,2 +1,2 @@
-title: $:/tags/GSD5ActionPlugin
+title: $:/tags/GSD5ActionCore
 list: [[$:/plugins/gsd5/core/ui/addins/ViewStatus]] [[$:/plugins/gsd5/core/ui/buttons/convert-action-button]] [[$:/plugins/gsd5/core/ui/addins/ViewPrereq]] [[$:/plugins/gsd5/core/ui/addins/ViewContact]] [[$:/plugins/gsd5/core/ui/addins/ViewRealm]]

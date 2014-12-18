@@ -72,3 +72,37 @@ tags: $:/tags/Stylesheet
 .gsd5-project-list:first-of-type {
   padding-top: 0;
 }
+
+.gsd-plugin-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .gsd-plugin-core {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    max-width: 50%;
+    min-width: 50%;
+    float: left;
+  }
+
+  .gsd-plugin-other {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    max-width: 50%;
+    min-width: 50%;
+    float: right;
+  }
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .gsd-plugin-core {
+    padding-top: 0.5em;
+  }
+
+  .gsd-plugin-other {
+    padding-bottom: 0.5em;
+  }
+}

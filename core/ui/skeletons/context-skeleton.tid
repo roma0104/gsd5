@@ -1,0 +1,3 @@
+title: $:/plugins/gsd5/core/ui/skeletons/ContextSkeleton
+gsd_type: $(gsd_type)$
+gsd_realm: $(gsd_realm)$

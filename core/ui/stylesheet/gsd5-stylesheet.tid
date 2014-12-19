@@ -106,3 +106,29 @@ tags: $:/tags/Stylesheet
     padding-bottom: 0.5em;
   }
 }
+
+.gsd-context-box {
+  border: #dce0ea 1px solid;
+  background-color: #eff4ff;
+  padding-left: 5px;
+}
+
+.gsd-context-toggle {
+  display: none;
+}
+
+.gsd-context-toggle + label:before {
+  content: "+";
+}
+
+.gsd-context-toggle:checked + label:before {
+  content: "&#8211;";
+}
+
+.gsd-context-toggle + label + div {
+  display: none;
+}
+
+.gsd-context-toggle:checked + label + div {
+  display: block;
+}

@@ -1,0 +1,23 @@
+title: $:/plugins/gsd5/core/ui/addins/ViewContext
+tags: $:/tags/GSD5ActionCore
+
+\define unique-id() 
+$(currentTiddler)$-toggle
+\end
+
+<p>
+    <div class="gsd-context-box">
+        <$set name="parentTiddler" value=<<currentTiddler>>>
+            <input type="checkbox" id=<<unique-id>> class="gsd-context-toggle gsd-checkbox-center"/><label title="Click to expand" for=<<unique-id>>> Contexts</label>
+            <div class="gsd-context-list">
+                <$list filter="[field:gsd_type[context]field:gsd_realm{$:/currentRealm!!text}] [field:gsd_type[context]field:gsd_realm[all]]">
+                    <div class="tc-menu-list-subitem">
+                    <$checkbox tiddler=<<parentTiddler>> tag=<<currentTiddler>>>
+                        <<currentTiddler>>
+                    </$checkbox>
+                    </div>
+                </$list>
+            </div>
+        </$set>
+    </div>
+</p>

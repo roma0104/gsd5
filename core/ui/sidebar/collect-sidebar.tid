@@ -36,6 +36,12 @@ caption: Collect
 </$set>
 </$set>
 
+<$set name="gsd_type" value="context">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ContextSkeleton">{{$:/plugins/gsd5/core/images/context}} New Context</$action>
+</$set>
+</$set>
+
 <$set name="gsd_type" value="realm">
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/RealmSkeleton">{{$:/plugins/gsd5/core/images/globe}} New Realm</$action>
 </$set>

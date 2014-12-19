@@ -42,6 +42,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 </$list>
 </$list>
 
+<!-- Project -->
 <$list filter=[is[current]field:gsd_type[project]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
@@ -59,6 +60,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 </$list>
 </$list>
 
+<!-- Reference -->
 <$list filter=[is[current]field:gsd_type[reference]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ReferencePlugin]!has[draft.of]limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
@@ -76,6 +78,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 </$list>
 </$list>
 
+<!-- Contact -->
 <$list filter=[is[current]field:gsd_type[contact]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContactPlugin]!has[draft.of]limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
@@ -94,3 +97,20 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 {{||$:/plugins/gsd5/core/ui/lists/contacts-action-list}}
 </$list>
 
+<!-- Context -->
+<$list filter=[is[current]field:gsd_type[context]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContextPlugin]!has[draft.of]limit[1]]" variable="pass">
+<div class="tc-message-box gsd-plugin-box">
+<div class="gsd-plugin-core">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+<div class="gsd-plugin-other">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+</div>
+</$list>
+</$list>

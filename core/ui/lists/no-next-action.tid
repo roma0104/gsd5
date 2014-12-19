@@ -8,6 +8,8 @@ Projects without Next Actions
 
 -----
 
-<$list filter="[field:gsd_type[action]] -[field:gsd_type[action]field:gsd_status[next]_fieldvalue[gsd_project]]">
+<$list filter="[field:gsd_type[project]] -[field:gsd_type[action]field:gsd_status[next]_fieldvalue[gsd_project]]">
+<div class="tc-menu-list-subitem">
 <$link to=<<currentTiddler>> ><<currentTiddler>></$link>
+</div>
 </$list>

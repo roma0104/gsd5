@@ -6,7 +6,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 
 <!-- Dashboard -->
 <$list filter="[all[shadows+tiddlers]is[current]field:title[Dashboard]]">
-<$list filter="[all[shadows+tiddlers]prefix[$:/config/GSD5DashboardCore/visibility/]!has[draft.of]field:text[show]limit[1]] [all[shadows+tiddlers]prefix[$:/config/GSD5DashboardPlugin/visibility/]!has[draft.of]field:text[show]limit[1]]" variable="pass">
+<$list filter="[all[shadows+tiddlers]prefix[$:/config/GSD5DashboardCore/visibility/]!has[draft.of]field:text[show]] [all[shadows+tiddlers]prefix[$:/config/GSD5DashboardPlugin/visibility/]!has[draft.of]field:text[show]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardCore]!has[draft.of]]" variable="listItem">
@@ -26,7 +26,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 
 <!-- Action -->
 <$list filter=[is[current]field:gsd_type[action]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]limit[1]]" variable="pass">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionCore]!has[draft.of]]" variable="listItem">
@@ -44,7 +44,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 
 <!-- Project -->
 <$list filter=[is[current]field:gsd_type[project]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]limit[1]]" variable="pass">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]]" variable="listItem">
@@ -62,7 +62,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 
 <!-- Reference -->
 <$list filter=[is[current]field:gsd_type[reference]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ReferencePlugin]!has[draft.of]limit[1]]" variable="pass">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ReferencePlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]]" variable="listItem">
@@ -80,7 +80,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 
 <!-- Contact -->
 <$list filter=[is[current]field:gsd_type[contact]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContactPlugin]!has[draft.of]limit[1]]" variable="pass">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContactPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]]" variable="listItem">
@@ -99,7 +99,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 
 <!-- Context -->
 <$list filter=[is[current]field:gsd_type[context]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]limit[1]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContextPlugin]!has[draft.of]limit[1]]" variable="pass">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContextPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]]" variable="listItem">

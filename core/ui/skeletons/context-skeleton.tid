@@ -2,4 +2,4 @@ title: $:/plugins/gsd5/core/ui/skeletons/ContextSkeleton
 gsd_type: $(gsd_type)$
 gsd_realm: $(gsd_realm)$
 
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/actions-by-context" mode="block"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/context-action-list" mode="block"/>

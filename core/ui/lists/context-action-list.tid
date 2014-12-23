@@ -1,0 +1,19 @@
+title: $:/plugins/gsd5/core/ui/lists/context-action-list
+
+Next Actions by Project
+
+-----
+
+<<context-list "next">>
+
+Waiting Actions by Project
+
+-----
+
+<<context-list "waiting">>
+
+Future Actions by Project
+
+-----
+
+<<context-list "future">>

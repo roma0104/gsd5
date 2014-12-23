@@ -1,19 +1,11 @@
 title: Contexts
 
-Next Actions by Project
+Contexts
 
------
+------
 
-<<context-list "next">>
-
-Waiting Actions by Project
-
------
-
-<<context-list "waiting">>
-
-Future Actions by Project
-
------
-
-<<context-list "future">>
+<$list filter="[field:gsd_type[context]field:gsd_realm{$:/currentRealm}] [field:gsd_type[context]field:gsd_realm[all]]">
+<div class="tc-menu-list-subitem">
+<$link to=<<currentTiddler>>><<currentTiddler>></$link>
+</div>
+</$list>

@@ -21,6 +21,6 @@ http://gsd5.tiddlyspot.com
 
 To try GSD5's latest commits without having to build it yourself.
 
-http://gsd-nightly.tiddlyspot.com
+http://gsd5-nightly.tiddlyspot.com
 
 *Nightly builds are performed 01:00 GMT*

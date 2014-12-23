@@ -1,0 +1,19 @@
+title: Contexts
+
+Next Actions by Project
+
+-----
+
+<<context-list "next">>
+
+Waiting Actions by Project
+
+-----
+
+<<context-list "waiting">>
+
+Future Actions by Project
+
+-----
+
+<<context-list "future">>

@@ -1,0 +1,11 @@
+title: $:/plugins/gsd5/core/ui/lists/context-list
+
+List of Contexts for Current Realm
+
+-----
+
+<$list filter="[all[shadows+tiddlers]field:gsd_type[context]field:gsd_realm[all]] [all[shadows+tiddlers]field:gsd_type[context]field:gsd_realm{$:/currentRealm}]">
+<div class="tc-menu-list-subitem">
+<$link to=<<currentTiddler>>><<currentTiddler>></$link>
+</div>
+</$list>

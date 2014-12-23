@@ -11,7 +11,16 @@ Projects without Next Actions
 -----
 
 <$list filter="[field:gsd_type[project]] -[field:gsd_type[action]field:gsd_status[next]_fieldvalue[gsd_project]]">
-<div class="tc-menu-list-subitem">
-<$link to=<<currentTiddler>> ><<currentTiddler>></$link>
+<div class="tw-menu-list-subitem">
+<$complete tiddler=<<currentTiddler>>/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<span class="list-link">
+<$link to={{!!title}}>
+<$view field="title"/>
+</$link>
+</span>
+<$list filter=[is[current]!field:text[]]>
+&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+</$list>
 </div>
 </$list>

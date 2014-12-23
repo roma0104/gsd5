@@ -3,8 +3,19 @@ tags: $:/tags/Macro
 
 \define no-realm(type)
 <div class="tc-menu-list-subitem">
-    <$list filter="[field:gsd_type[$type$]field:gsd_realm[all]!gsd_complete[true]]">
-        <$link to=<<currentTiddler>> ><<currentTiddler>></$link>
-    </$list>
+<$list filter="[field:gsd_type[$type$]field:gsd_realm[all]!gsd_complete[true]]">
+<div class="tw-menu-list-subitem">
+<$complete tiddler=<<currentTiddler>>/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<span class="list-link">
+<$link to={{!!title}}>
+<$view field="title"/>
+</$link>
+</span>
+<$list filter=[is[current]!field:text[]]>
+&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
+</$list>
+</div>
+</$list>
 </div>
 \end

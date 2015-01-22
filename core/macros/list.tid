@@ -1,0 +1,14 @@
+title: $:/plugins/gsd5/core/macro/gsd5-list
+tags: $:/tags/Macro
+
+\define gsd5-list(title,gsd_type,gsd_status,gsd_complete,realmAware,sort,order,groupHeader,groupBy,filters)
+<div class="tw-menu-list-item">
+$title$
+<hr/>
+$groupBy$
+$order$
+<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:$realmAware$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupHeader:$groupHeader$ filters:$filters$>>>
+	<<currentTiddler>>
+</$list>
+</div>
+\end

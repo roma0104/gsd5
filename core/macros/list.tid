@@ -1,14 +1,61 @@
 title: $:/plugins/gsd5/core/macro/gsd5-list
 tags: $:/tags/Macro
 
-\define gsd5-list(title,gsd_type,gsd_status,gsd_complete,realmAware,sort,order,groupHeader,groupBy,filters)
+\define gsd5-list(title,gsd_type,gsd_status,gsd_complete,realmAware,sort,order,groupBy,filter)
 <div class="tw-menu-list-item">
 $title$
 <hr/>
-$groupBy$
-$order$
-<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:$realmAware$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupHeader:$groupHeader$ filters:$filters$>>>
-	<<currentTiddler>>
-</$list>
+<!-- No/All Realm -->
+<$reveal state="$:/currentRealm" type="match" text="all" default="all">
+<!-- Group Header -->
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" filter:$filter$>>>
+		<div class="tc-menu-list-item">
+		<$view field="$groupBy$"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!$groupBy$}}>>></$link></span>
+		<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"false" filter:$filter$>>>
+			<div class="tc-menu-list-subitem">
+				<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
+				<$link to={{!!title}}><$view field="title"/></$link>
+			</div>
+		</$list>
+		</div>
+	</$list>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"true" groupHeader:"false" filter:$filter$>>>
+	<div class="tc-menu-list-item">
+		No Group
+	</div>
+	</$list>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"false" groupHeader:"false" filter:$filter$>>>
+		<div class="tc-menu-list-subitem">
+			<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
+			<$link to={{!!title}}><$view field="title"/></$link>
+		</div>
+	</$list>
+</$reveal>
+<!-- Realm -->
+<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
+<!-- Group Header -->
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"true" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" filter:$filter$>>>
+		<div class="tc-menu-list-item">
+		<$view field="$groupBy$"/>&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to={{!!$groupBy$}}>>></$link></span>
+		<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"true" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"false" filter:$filter$>>>
+			<div class="tc-menu-list-subitem">
+				<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
+				<$link to={{!!title}}><$view field="title"/></$link>
+			</div>
+		</$list>
+		</div>
+	</$list>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"true" groupHeader:"false" filter:$filter$>>>
+	<div class="tc-menu-list-item">
+		No Group
+	</div>
+	</$list>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"true" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"false" groupHeader:"false" filter:$filter$>>>
+		<div class="tc-menu-list-subitem">
+			<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
+			<$link to={{!!title}}><$view field="title"/></$link>
+		</div>
+	</$list>
+</$reveal>
 </div>
 \end

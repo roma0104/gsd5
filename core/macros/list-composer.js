@@ -43,9 +43,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		groupString = '',
 		filterString = '';
 
-	console.log(typeof(groupHeader));
-	console.log(arguments);
-
 	if(gsd_type==="action"||gsd_type==="project"){
 		completeString = 'field:gsd_complete[' + gsd_complete + ']';
 		statusString = 'field:gsd_status[' + gsd_status + ']';

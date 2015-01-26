@@ -62,6 +62,9 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 	if(gsd_type==="action"||gsd_type==="project"){
 		completeString = 'field:gsd_complete[' + gsd_complete + ']';
 		statusString = 'field:gsd_status[' + gsd_status + ']';
+		if(gsd_complete==="true") {
+			statusString = "";
+		}
 	}
 	if(realmAware==="true") {
 		realmString = 'field:gsd_realm{$:/currentRealm}';

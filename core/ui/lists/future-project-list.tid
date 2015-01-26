@@ -2,8 +2,4 @@ title: $:/plugins/gsd5/core/ui/lists/future-project-list
 tags: $:/tags/GSD5Lists
 caption: Future Projects
 
-<div class="tw-menu-list-item">
-  Future Projects
-  <hr/>
-  <<project-list "future">>
-</div>
+<<gsd5-list title:"Future Projects" gsd_type:"project" gsd_status:"future" gsd_complete:"false" realmAware:"true" sort:"title" order"ascending" groupBy:"none" filter:"none">>

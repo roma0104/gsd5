@@ -30,11 +30,7 @@ exports.params = [
 ];
 
 function processType(filter) {
-	if(filter.values.groupHeader==="true") {
-		filter.strings.type = "!field:" + filter.values.groupBy + "[]";
-	} else {
-		filter.strings.type = "field:gsd_type[" + filter.values.gsd_type + "]";
-	}
+	filter.strings.type = "field:gsd_type[" + filter.values.gsd_type + "]";
 	return filter;
 }
 
@@ -46,12 +42,8 @@ function processComplete(filter) {
 }
 
 function processStatus(filter) {
-	if(filter.values.groupHeader==="true") {
-		return filter;
-	} else {
-		if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {
-			filter.strings.status = "field:gsd_status[" + filter.values.gsd_status + "]";
-		}
+	if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {
+		filter.strings.status = "field:gsd_status[" + filter.values.gsd_status + "]";
 	}
 	return filter;
 }
@@ -99,15 +91,19 @@ function processCustomFilter(filter) {
 }
 
 function processInternalFilter(filter) {
-	if(filter.values.internalFilter!=="none"&&filter.values.groupBy!=="none") {
+	if(filter.values.groupTail==="true") {
 		filter.strings.internalFilter = filter.values.internalFilter;
+	} else {
+		if(filter.values.internalFilter!=="none"&&filter.values.groupBy!=="none") {
+			filter.strings.internalFilter = filter.values.internalFilter;
+		}
 	}
 	return filter;
 }
 
 function processFieldValue(filter) {
 	if(filter.values.groupHeader==="true") {
-		filter.strings.fieldValue = "each[" + filter.values.groupBy + "]_fieldvalue[" + filter.values.groupBy + "]";
+		filter.strings.fieldValue = "has[" + filter.values.groupBy + "]each[" + filter.values.groupBy + "]_fieldvalue[" + filter.values.groupBy + "]";
 	}
 	return filter;
 }

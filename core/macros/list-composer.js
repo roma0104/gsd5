@@ -42,6 +42,9 @@ function processComplete(filter) {
 }
 
 function processStatus(filter) {
+	if(filter.values.gsd_complete==="true") {
+		return filter;
+	}
 	if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {
 		filter.strings.status = "field:gsd_status[" + filter.values.gsd_status + "]";
 	}
@@ -152,9 +155,9 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 	 */
 
 	filter = processType(filter);
-	filter = processComplete(filter);
 	filter = processStatus(filter);
 	filter = processRealm(filter);
+	filter = processComplete(filter);
 	filter = processSort(filter);
 	filter = processGroup(filter);
 	filter = processCustomFilter(filter);
@@ -168,13 +171,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		}
 	}
 	
-	console.log(filter.values.groupHeader==="true"&&filter.values.groupBy==="none");
-	console.log(filter.values.groupHeader==="true");
-	console.log(filter.values.groupBy==="none");
-	console.log(filter.values.groupTailHeader==="true"&&filter.values.groupBy==="none");
-	console.log(filter.values.groupTailHeader==="true");
-	console.log(filter.values.groupBy==="none");
-	
 	if(filter.values.groupHeader==="true"&&filter.values.groupBy==="none"){
 		composedFilter = "";
 	} else if(filter.values.groupTailHeader==="true"&&filter.values.groupBy==="none") {
@@ -182,9 +178,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 	} else {
 		composedFilter = "[" + composedFilter + "]";
 	}
-
-	console.log(filter);
-	console.log(composedFilter);
 
 	return composedFilter;
 };

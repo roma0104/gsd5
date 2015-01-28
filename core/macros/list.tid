@@ -1,17 +1,17 @@
 title: $:/plugins/gsd5/core/macro/gsd5-list
 tags: $:/tags/Macro
 
-\define gsd5-list(title:"Next Action",gsd_type:"action",gsd_status:"next",gsd_complete:"false",realmAware:"false",sort:"title",order"ascending",groupBy:"none",filter:"none")
+\define gsd5-list(title:"Next Action",gsd_type:"action",gsd_status:"next",gsd_complete:"false",realmAware:"false",sort:"title",order"ascending",groupBy:"none",customFilter:"none")
 <div class="tw-menu-list-item">
 $title$
 <hr/>
 <!-- No/All Realm -->
 <$reveal state="$:/currentRealm" type="match" text="all" default="all">
 <!-- Group Header -->
-	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" internalFilter:"none" filter:$filter$>>>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" internalFilter:"none" customFilter:$customFilter$>>>
 		<div class="tc-menu-list-item  gsd5-project-list">
 		{{!!title}}&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to=<<currentTiddler>>>>></$link></span>
-		<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:"none" groupTail:"false" groupTailHeader:"false" groupHeader:"false" internalFilter:"field:$groupBy${!!title}" filter:$filter$>>>
+		<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"false" internalFilter:"field:$groupBy${!!title}" customFilter:$customFilter$>>>
 			<div class="tc-menu-list-subitem">
 				<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
 				<$link to={{!!title}}><$view field="title"/></$link>
@@ -19,25 +19,26 @@ $title$
 		</$list>
 		</div>
 	</$list>
-	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"true" groupHeader:"false" internalFilter:"none" filter:$filter$>>>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"true" groupHeader:"false" internalFilter:"none" customFilter:$customFilter$>>>
 	<div class="tc-menu-list-item  gsd5-project-list">
 		No Group
 	</div>
 	</$list>
-	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:"none" groupTail:"true" groupTailHeader:"false" groupHeader:"false" internalFilter:"$groupBy$[]" filter:$filter$>>>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:"none" groupTail:"true" groupTailHeader:"false" groupHeader:"false" internalFilter:"$groupBy$[]" customFilter:$customFilter$>>>
 		<div class="tc-menu-list-subitem">
 			<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
 			<$link to={{!!title}}><$view field="title"/></$link>
 		</div>
 	</$list>
 </$reveal>
-<!-- Realm -->
-<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
-<!-- Group Header -->
-	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" internalFilter:"none" filter:$filter$>>>
+<!--
+<!-- Realm
+<$reveal state="$:/currentRealm" type="match" text="all" default="all">
+<!-- Group Header
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" internalFilter:"none" customFilter:$customFilter$>>>
 		<div class="tc-menu-list-item  gsd5-project-list">
 		{{!!title}}&nbsp;<span style="font-size: 12px; line-height: 18px;"><$link to=<<currentTiddler>>>>></$link></span>
-		<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:"none" groupTail:"false" groupTailHeader:"false" groupHeader:"false" internalFilter:"field:$groupBy${!!title}" filter:$filter$>>>
+		<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:"none" groupTail:"false" groupTailHeader:"false" groupHeader:"false" internalFilter:"field:$groupBy${!!title}" customFilter:$customFilter$>>>
 			<div class="tc-menu-list-subitem">
 				<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
 				<$link to={{!!title}}><$view field="title"/></$link>
@@ -45,17 +46,18 @@ $title$
 		</$list>
 		</div>
 	</$list>
-	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"true" groupHeader:"false" internalFilter:"none" filter:$filter$>>>
-	<div class="tc-menu-list-item gsd5-project-list">
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"true" groupHeader:"false" internalFilter:"none" customFilter:$customFilter$>>>
+	<div class="tc-menu-list-item  gsd5-project-list">
 		No Group
 	</div>
 	</$list>
-	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:"none" groupTail:"true" groupTailHeader:"false" groupHeader:"false" internalFilter:"$groupBy$[]" filter:$filter$>>>
+	<$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ realmAware:"false" sort:$sort$ order:$order$ groupBy:"none" groupTail:"true" groupTailHeader:"false" groupHeader:"false" internalFilter:"$groupBy$[]" customFilter:$customFilter$>>>
 		<div class="tc-menu-list-subitem">
 			<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListView"/>
 			<$link to={{!!title}}><$view field="title"/></$link>
 		</div>
 	</$list>
-</$reveal>
+</$reveal> 
+-->
 </div>
 \end

@@ -1,19 +1,7 @@
 title: $:/plugins/gsd5/core/ui/lists/context-action-list
 
-Next Actions by Project
+<<gsd5-list title:"Next Action By Project" gsd_type:"action" gsd_status:"next" gsd_complete:"false" realmAware:"true" sort:"title" order"ascending" groupBy:"gsd_project" filter:"tag{!!title}">>
 
------
+<<gsd5-list title:"Wating Action By Project" gsd_type:"action" gsd_status:"waiting" gsd_complete:"false" realmAware:"true" sort:"title" order"ascending" groupBy:"gsd_project" filter:"tag{!!title}">>
 
-<<context-list "next">>
-
-Waiting Actions by Project
-
------
-
-<<context-list "waiting">>
-
-Future Actions by Project
-
------
-
-<<context-list "future">>
+<<gsd5-list title:"Future Action By Project" gsd_type:"action" gsd_status:"future" gsd_complete:"false" realmAware:"true" sort:"title" order"ascending" groupBy:"gsd_project" filter:"tag{!!title}">>

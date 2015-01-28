@@ -1,9 +1,5 @@
 title: $:/plugins/gsd5/core/ui/lists/contacts-action-list
 
-<div class="tc-menu-list-item">
+<<gsd5-list title:"Waiting Actions" gsd_type:"action" gsd_status:"waiting" gsd_complete:"false" realmAware:"true" sort:"title" order"ascending" groupBy:"gsd_project" filter:"field:gsd_contact{!!title}">>
 
-<<contact-action-list status:"waiting" title:"Waiting">>
-
-<<contact-action-list status:"future" title: "Future">>
-
-</div>
+<<gsd5-list title:"Future Actions" gsd_type:"action" gsd_status:"future" gsd_complete:"false" realmAware:"true" sort:"title" order"ascending" groupBy:"gsd_project" filter:"field:gsd_contact{!!title}">>

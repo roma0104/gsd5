@@ -1,0 +1,9 @@
+title: $:/plugins/gsd5/core/ui/lists/ListViewSuffix
+
+<$list filter="[is[current]field:gsd_type[action]field:gsd_complete[true]]">
+	<$transclude tiddler="$:/plugins/gsd5/core/ui/buttons/delete-tiddler-button"/>
+</$list>
+
+<$list filter="[is[current]field:gsd_type[project]field:gsd_complete[true]]">
+	<$transclude tiddler="$:/plugins/gsd5/core/ui/buttons/delete-tiddler-button"/>
+</$list>

@@ -114,3 +114,12 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 </div>
 </$list>
 </$list>
+
+<!-- Reference Dashboard -->
+<$list filter="[all[shadows+tiddlers]is[current]field:title[References]]">
+<div class="tc-message-box">
+
+<$checkbox tiddler="$:/config/GSD5ReferencesGroup" field="text" checked="gsd_project" unchecked="none">&nbsp;Group By Project</$checkbox>
+
+</div>
+</$list>

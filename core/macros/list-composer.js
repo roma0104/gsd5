@@ -70,7 +70,13 @@ function processSort(filter) {
 }
 
 function processGroup(filter) {
-	if(filter.values.groupTailHeader==="true") {
+	if(filter.values.groupHeader==="true") {
+		if(filter.values.groupBy==="none") {
+			return filter;
+		} else {
+			filter.strings.group = "has[" + filter.values.groupBy + "]each[" + filter.values.groupBy + "]";
+		}
+	} else if(filter.values.groupTailHeader==="true") {
 		if(filter.values.groupBy==="none") {
 			return filter;
 		} else {
@@ -106,7 +112,7 @@ function processInternalFilter(filter) {
 
 function processFieldValue(filter) {
 	if(filter.values.groupHeader==="true") {
-		filter.strings.fieldValue = "has[" + filter.values.groupBy + "]each[" + filter.values.groupBy + "]_fieldvalue[" + filter.values.groupBy + "]";
+		filter.strings.fieldValue = "_fieldvalue[" + filter.values.groupBy + "]";
 	}
 	return filter;
 }
@@ -170,7 +176,7 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 			composedFilter += filter.strings[x];
 		}
 	}
-	
+
 	if(filter.values.groupHeader==="true"&&filter.values.groupBy==="none"){
 		composedFilter = "";
 	} else if(filter.values.groupTailHeader==="true"&&filter.values.groupBy==="none") {

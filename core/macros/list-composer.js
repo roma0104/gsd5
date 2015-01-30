@@ -25,8 +25,9 @@ exports.params = [
 	{name: "groupTail"},
 	{name: "groupTailHeader"},
 	{name: "groupHeader"},
-	{name: "internalFilter"},
-	{name: "customFilter"}
+	{name: "customFilter"},
+	{name: "ownerField"},
+	{name: "owner"}
 ];
 
 function processType(filter) {
@@ -74,7 +75,11 @@ function processGroup(filter) {
 		if(filter.values.groupBy==="none") {
 			return filter;
 		} else {
-			filter.strings.group = "has[" + filter.values.groupBy + "]each[" + filter.values.groupBy + "]";
+			if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="gsd_comp_date") {
+				filter.strings.group = "has[" + filter.values.groupBy + "]eachday[" + filter.values.groupBy + "]";
+			} else {
+				filter.strings.group = "has[" + filter.values.groupBy + "]each[" + filter.values.groupBy + "]";
+			}
 		}
 	} else if(filter.values.groupTailHeader==="true") {
 		if(filter.values.groupBy==="none") {
@@ -99,12 +104,33 @@ function processCustomFilter(filter) {
 	return filter;
 }
 
-function processInternalFilter(filter) {
-	if(filter.values.groupTail==="true") {
-		filter.strings.internalFilter = filter.values.internalFilter;
+function processOwner(filter) {
+	if(filter.values.groupHeader==="true") {
+		if(filter.values.ownerField!=="none") {
+			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
+		} else {
+			return filter;
+		}
+	} else if(filter.values.groupTailHeader==="true") {
+		if(filter.values.ownerField!=="none") {
+			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
+		} else {
+			return filter;
+		}
+	} else if(filter.values.groupTail==="true") {
+		if(filter.values.ownerField!=="none") {
+			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
+		} else {
+			return filter;
+		}
 	} else {
-		if(filter.values.internalFilter!=="none"&&filter.values.groupBy!=="none") {
-			filter.strings.internalFilter = filter.values.internalFilter;
+		if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="gsd_comp_date") {
+			filter.strings.owner = "sameday:" + filter.values.groupBy + "{!!title}";
+		} else {
+			filter.strings.owner = "field:" + filter.values.groupBy + "{!!title}";
+		}
+		if(filter.values.ownerField!=="none") {
+			filter.strings.owner += "field:" + filter.values.ownerField + "<caller>";
 		}
 	}
 	return filter;
@@ -118,11 +144,12 @@ function processFieldValue(filter) {
 }
 
 // Run the macro
-exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,internalFilter,customFilter) {
+exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,owner) {
 	// Prepare the filterString object.
 	var filter = {},
 		composedFilter= "";
 
+	console.log(arguments);
 	// Process values to resolve any wikitext.
 	filter.values = {
 		gsd_type: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_type),
@@ -135,8 +162,8 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		groupTail: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupTail),
 		groupTailHeader: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupTailHeader),
 		groupHeader: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupHeader),
-		internalFilter: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",internalFilter),
-		customFilter: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",customFilter)
+		customFilter: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",customFilter),
+		ownerField: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",ownerField)
 	};
 
 	// String are used to created the final filter statement.
@@ -148,7 +175,7 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		sort: "",
 		group: "",
 		customFilter: "",
-		internalFilter: "",
+		owner: "",
 		fieldValue: ""
 	};
 
@@ -167,7 +194,7 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 	filter = processSort(filter);
 	filter = processGroup(filter);
 	filter = processCustomFilter(filter);
-	filter = processInternalFilter(filter);
+	filter = processOwner(filter);
 	filter = processFieldValue(filter);
 
 	// Finally, compose the final filter statement.

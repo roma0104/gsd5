@@ -106,22 +106,28 @@ function processCustomFilter(filter) {
 
 function processOwner(filter) {
 	if(filter.values.groupHeader==="true") {
-		if(filter.values.ownerField!=="none") {
-			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
-		} else {
+		if(filter.values.ownerField==="none") {
 			return filter;
+		} else if(filter.values.ownerField==="tag") {
+			filter.strings.owner = "tag<caller>";
+		} else {
+			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
 		}
 	} else if(filter.values.groupTailHeader==="true") {
-		if(filter.values.ownerField!=="none") {
-			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
-		} else {
+		if(filter.values.ownerField==="none") {
 			return filter;
+		} else if(filter.values.ownerField==="tag") {
+			filter.strings.owner = "tag<caller>";
+		} else {
+			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
 		}
 	} else if(filter.values.groupTail==="true") {
-		if(filter.values.ownerField!=="none") {
-			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
-		} else {
+		if(filter.values.ownerField==="none") {
 			return filter;
+		} else if(filter.values.ownerField==="tag") {
+			filter.strings.owner = "tag<caller>";
+		} else {
+			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
 		}
 	} else {
 		if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="gsd_comp_date") {
@@ -129,7 +135,11 @@ function processOwner(filter) {
 		} else {
 			filter.strings.owner = "field:" + filter.values.groupBy + "{!!title}";
 		}
-		if(filter.values.ownerField!=="none") {
+		if(filter.values.ownerField==="none") {
+			return filter;
+		} else if(filter.values.ownerField==="tag") {
+			filter.strings.owner += "tag<caller>";
+		} else {
 			filter.strings.owner += "field:" + filter.values.ownerField + "<caller>";
 		}
 	}

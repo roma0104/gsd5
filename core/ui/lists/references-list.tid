@@ -1,23 +1,4 @@
 title: $:/plugins/gsd5/core/ui/lists/references-list
 caption: References
 
-<div class="tc-menu-list-item">
-
-References
-<hr/>
-<$reveal state="$:/currentRealm" type="match" text="all" default="all">
-<$list filter="[field:gsd_type[reference]sort[]]">
-<div class="tc-menu-list-subitem">
-<$link to=<<currentTiddler>>><<currentTiddler>></$link>
-</div>
-</$list>
-</$reveal>
-<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
-<$list filter="[field:gsd_type[reference]sort[]field:gsd_realm{$:/currentRealm}]">
-<div class="tc-menu-list-subitem">
-<$link to=<<currentTiddler>>><<currentTiddler>></$link>
-</div>
-</$list>
-</$reveal>
-
-</div>
+<<gsd5-list title:"References" gsd_type:"reference" realmAware:"true" sort:"title" order:"ascending" groupBy:{{$:/config/GSD5ReferencesGroup}} filter:"none">>

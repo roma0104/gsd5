@@ -1,43 +1,11 @@
 title: Cleanup
 
 <div class="tc-message-box">
+
 The following actions and projects are older than 14 days and can be possibly deleted.
+
 </div>
 
-<div class="tw-menu-list-item">
-  Completed Actions
-  <hr/>
-  <$list filter=[field:gsd_type[action]field:gsd_complete[true]!date:gsd_comp_date[14]]>
-    <div class="tw-menu-list-subitem">
-    <$complete tiddler=<<currentTiddler>>/>
-    <span class="list-link">
-      <$link to={{!!title}}>
-        <$view field="title"/>
-      </$link>
-    </span>
-    &nbsp;
-    <$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
-      {{$:/plugins/gsd5/core/images/rubbishbin}}
-    </$button>
-    </div>
-  </$list>
-</div>
+<<gsd5-list title:"Completed Actions" gsd_type:"action" gsd_status:"none" gsd_complete:"true" realmAware:"true" sort:"title" order"ascending" groupBy:"none" customFilter:"!date:gsd_comp_date[14]">>
 
-<div class="tw-menu-list-item">
-  Completed Projects
-  <hr/>
-  <$list filter=[field:gsd_type[project]field:gsd_complete[true]!date:gsd_comp_date[14]]>
-    <div class="tw-menu-list-subitem">
-      <$complete tiddler=<<currentTiddler>>/>
-      <span class="list-link">
-        <$link to={{!!title}}>
-          <$view field="title"/>
-        </$link>
-      </span>
-      &nbsp;
-      <$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
-        {{$:/plugins/gsd5/core/images/rubbishbin}}
-      </$button>
-    </div>
-  </$list>
-</div>
+<<gsd5-list title:"Completed Projects" gsd_type:"project" gsd_status:"none" gsd_complete:"true" realmAware:"true" sort:"title" order"ascending" groupBy:"none" customFilter:"!date:gsd_comp_date[14]">>

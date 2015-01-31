@@ -162,7 +162,7 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		groupTail: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupTail),
 		groupTailHeader: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupTailHeader),
 		groupHeader: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupHeader),
-		customFilter: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",customFilter),
+		customFilter: customFilter,
 		ownerField: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",ownerField)
 	};
 

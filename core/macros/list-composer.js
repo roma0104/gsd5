@@ -43,7 +43,7 @@ function processComplete(filter) {
 }
 
 function processStatus(filter) {
-	if(filter.values.gsd_complete==="true") {
+	if(filter.values.gsd_complete==="true"||filter.values.gsd_status==="none") {
 		return filter;
 	}
 	if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {

@@ -1,20 +1,3 @@
 title: Contexts
 
-Contexts
-
-------
-
-<$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
-<$list filter="[field:gsd_type[context]field:gsd_realm{$:/currentRealm}] [field:gsd_type[context]field:gsd_realm[all]]">
-<div class="tc-menu-list-subitem">
-<$link to=<<currentTiddler>>><<currentTiddler>></$link>
-</div>
-</$list>
-</$reveal>
-<$reveal state="$:/currentRealm" type="match" text="all" default="all">
-<$list filter="[field:gsd_type[context]]">
-<div class="tc-menu-list-subitem">
-<$link to=<<currentTiddler>>><<currentTiddler>></$link>
-</div>
-</$list>
-</$reveal>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/context-list"/>

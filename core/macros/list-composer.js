@@ -159,7 +159,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 	var filter = {},
 		composedFilter= "";
 
-	console.log(arguments);
 	// Process values to resolve any wikitext.
 	filter.values = {
 		gsd_type: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_type),

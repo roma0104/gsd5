@@ -8,7 +8,7 @@ caption: Collect
 <$set name="gsd_status" value="next">
 <$set name="gsd_complete" value="false">
 <$set name="gsd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton">{{$:/plugins/gsd5/core/images/task}} New Action</$action>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" edit={{$:/plugins/gsd5/core/ui/config/new-tiddler-show}}>{{$:/plugins/gsd5/core/images/task}} New Action</$action>
 </$set>
 </$set>
 </$set>
@@ -18,7 +18,7 @@ caption: Collect
 <$set name="gsd_status" value="active">
 <$set name="gsd_complete" value="false">
 <$set name="gsd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton">{{$:/plugins/gsd5/core/images/project}} New Project</$action>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" edit={{$:/plugins/gsd5/core/ui/config/new-tiddler-show}}>{{$:/plugins/gsd5/core/images/project}} New Project</$action>
 </$set>
 </$set>
 </$set>
@@ -38,10 +38,10 @@ caption: Collect
 
 <$set name="gsd_type" value="context">
 <$set name="gsd_realm" value={{$:/currentRealm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ContextSkeleton">{{$:/plugins/gsd5/core/images/context}} New Context</$action>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ContextSkeleton" edit="no">{{$:/plugins/gsd5/core/images/context}} New Context</$action>
 </$set>
 </$set>
 
 <$set name="gsd_type" value="realm">
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/RealmSkeleton">{{$:/plugins/gsd5/core/images/globe}} New Realm</$action>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/RealmSkeleton" edit="no">{{$:/plugins/gsd5/core/images/globe}} New Realm</$action>
 </$set>

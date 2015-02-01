@@ -106,7 +106,7 @@ ActionWidget.prototype.execute = function() {
 
 ActionWidget.prototype.refresh = function(changedTiddlers) {
     var changedAttributes = this.computeAttributes();
-    if(changedAttributes["class"]) {
+    if(changedAttributes["class"] || changedAttributes.edit) {
         this.refreshSelf();
         return true;
     }

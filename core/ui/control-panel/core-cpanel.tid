@@ -13,19 +13,23 @@ $:/config/GSD5Lists/visibility/$(listItem)$
 
 <div style="border-top:1px solid #eee;">
 
-''Dashboard Lists''
+''General''
 
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5Lists]!has[draft.of]]" variable="listItem">
-<$checkbox tiddler=<<config-lists>> field="text" checked="show" unchecked="hide"> <<list-caption>> </$checkbox><br/>
-</$list>
+<$checkbox tiddler="$:/plugins/gsd5/core/ui/config/new-tiddler-show" field="text" checked="show" unchecked="no"> Show new Actions/Projects upon creation</$checkbox>
 
 </div>
 
 <div style="border-top:1px solid #eee;">
 
-''Dashboard Options''
+''Dashboard''
 
-<$checkbox tiddler="$:/config/GSD5DashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group actions in Dashboard by project</$checkbox><br/>
+//Dashboard Lists//<br/>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5Lists]!has[draft.of]]" variable="listItem">
+<$checkbox tiddler=<<config-lists>> field="text" checked="show" unchecked="hide"> <<list-caption>> </$checkbox><br/>
+</$list>
+
+//Dashboard Options//<br/>
+<$checkbox tiddler="$:/config/GSD5DashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group Actions in Dashboard by Project</$checkbox><br/>
 <$checkbox tiddler="$:/config/GSD5DashboardCore/visibility/$:/plugins/gsd5/core/ui/lists/realm-list" field="text" checked="show" unchecked="hide"> Show Realm selector in the Dashboard </$checkbox>
 
 </div>

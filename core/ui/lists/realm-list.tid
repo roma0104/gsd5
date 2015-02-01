@@ -1,5 +1,5 @@
 title: $:/plugins/gsd5/core/ui/lists/realm-list
-tags: $:/tags/GSD5DashboardPlugin
+tags: $:/tags/GSD5DashboardCore
 
 <div class="tw-menu-list-item">
   Realm

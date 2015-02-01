@@ -2,39 +2,4 @@ title: $:/plugins/gsd5/core/ui/lists/completed-project-list
 tags: $:/tags/GSD5Lists
 caption: Completed Projects
 
-<div class="tw-menu-list-item">
-  Completed Projects
-  <hr/>
-  <$reveal state="$:/currentRealm" type="match" text="all" default="all">
-    <$list filter="[field:gsd_type[project]field:gsd_complete[true]]">
-      <div class="tw-menu-list-subitem">
-        <$complete tiddler=<<currentTiddler>>/>
-        <span class="list-link">
-          <$link to={{!!title}}>
-            <$view field="title"/>
-          </$link>
-        </span>
-        &nbsp;
-        <$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
-          {{$:/plugins/gsd5/core/images/rubbishbin}}
-        </$button>
-      </div>
-    </$list>
-  </$reveal>
-  <$reveal state="$:/currentRealm" type="nomatch" text="all" default="all">
-    <$list filter="[field:gsd_type[project]field:gsd_complete[true]field:gsd_realm{$:/currentRealm!!text}]">
-      <div class="tw-menu-list-subitem">
-        <$complete tiddler=<<currentTiddler>>/>
-        <span class="list-link">
-          <$link to={{!!title}}>
-            <$view field="title"/>
-          </$link>
-        </span>
-        &nbsp;
-        <$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
-          {{$:/plugins/gsd5/core/images/rubbishbin}}
-        </$button>
-      </div>
-    </$list>
-  </$reveal>
-</div>
+<<gsd5-list title:"Completed Projects" gsd_type:"project" gsd_status:"active" gsd_complete:"true" realmAware:"true" sort:"title" order:"ascending" groupBy:"none" customFilter:"none">>

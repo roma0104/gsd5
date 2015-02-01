@@ -21,12 +21,9 @@ Next Actions
 <hr/>
 <$list filter=[field:gsd_type[action]field:gsd_status[next]field:gsd_complete[false]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
-<$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewPrefix"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
-<$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-</$list>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewSuffix"/>
 </div>
 </$list>
 </div>
@@ -49,12 +46,9 @@ Waiting Actions
 <hr/>
 <$list filter=[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
-<$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewPrefix"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
-<$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-</$list>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewSuffix"/>
 </div>
 </$list>
 </div>
@@ -77,12 +71,9 @@ Future Actions
 <hr/>
 <$list filter=[field:gsd_type[action]field:gsd_status[future]field:gsd_complete[false]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
-<$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewPrefix"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
-<$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-</$list>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewSuffix"/>
 </div>
 </$list>
 </div>
@@ -105,12 +96,9 @@ Subprojects
 <hr/>
 <$list filter=[field:gsd_type[project]field:gsd_project{!!title}]>
 <div class="tc-menu-list-subitem">
-<$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewPrefix"/>
 <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
-<$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
-</$list>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewSuffix"/>
 </div>
 </$list>
 </div>

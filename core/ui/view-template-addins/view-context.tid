@@ -1,23 +1,29 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewContext
 tags: $:/tags/GSD5ActionPlugin
 
-\define unique-id() 
+\define unique-id()
 $(currentTiddler)$-toggle
 \end
 
 <p>
     <div class="gsd-context-box">
         <$set name="parentTiddler" value=<<currentTiddler>>>
-            <input type="checkbox" id=<<unique-id>> class="gsd-context-toggle gsd-checkbox-center"/><label title="Click to expand" for=<<unique-id>>> Contexts</label>
-            <div class="gsd-context-list">
-                <$list filter="[field:gsd_type[context]field:gsd_realm{!!gsd_realm}] [field:gsd_type[context]field:gsd_realm[all]]" emptyMessage="<em>-no contexts-</em>">
-                    <div class="tc-menu-list-subitem">
-                    <$checkbox tiddler=<<parentTiddler>> tag=<<currentTiddler>>>
-                        <<currentTiddler>>
-                    </$checkbox>
-                    </div>
-                </$list>
-            </div>
+        <$set name="ContextStatus" value=<<qualify "$:/state/popup/context">>>
+            <$button popup=<<ContextStatus>> class="tc-btn-invisible gsd-context-button">+ Contexts</$button>
+            <$reveal state=<<ContextStatus>> type="nomatch" text="" class="tc-popup-handle" default="" retain="yes" animate="yes">
+            <div class="tc-menu-list-subitem">
+
+			<$list filter="[field:gsd_type[context]field:gsd_realm{!!gsd_realm}] [field:gsd_type[context]field:gsd_realm[all]]" emptyMessage="<em>-no contexts-</em>">
+				<div class="tc-menu-list-subitem">
+				<$checkbox tiddler=<<parentTiddler>> tag=<<currentTiddler>>>
+					<<currentTiddler>>
+				</$checkbox>
+				</div>
+			</$list>
+
+			</div>
+			</$reveal>
+		</$set>
         </$set>
     </div>
 </p>

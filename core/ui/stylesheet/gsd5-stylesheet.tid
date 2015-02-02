@@ -113,22 +113,7 @@ tags: $:/tags/Stylesheet
   padding-left: 5px;
 }
 
-.gsd-context-toggle {
-  display: none;
-}
-
-.gsd-context-toggle + label:before {
-  content: "+";
-}
-
-.gsd-context-toggle:checked + label:before {
-  content: "&#8211;";
-}
-
-.gsd-context-toggle + label + div {
-  display: none;
-}
-
-.gsd-context-toggle:checked + label + div {
-  display: block;
+.gsd-context-button {
+  width:100%;
+  text-align:left;
 }

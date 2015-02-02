@@ -10,8 +10,8 @@ Next Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
-<span class="gsd-list-new-button">+</span>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
++
 </$action>
 </$set>
 </$set>
@@ -35,8 +35,8 @@ Waiting Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
-<span class="gsd-list-new-button">+</span>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
++
 </$action>
 </$set>
 </$set>
@@ -60,8 +60,8 @@ Future Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
-<span class="gsd-list-new-button">+</span>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
++
 </$action>
 </$set>
 </$set>
@@ -85,8 +85,8 @@ Subprojects
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
-<span class="gsd-list-new-button">+</span>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
++
 </$action>
 </$set>
 </$set>
@@ -108,8 +108,8 @@ References
 <$set name="gsd_type" value="reference">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class=<<tv-config-toolbar-class>>>
-<span class="gsd-list-new-button">+</span>
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
++
 </$action>
 </$set>
 </$set>

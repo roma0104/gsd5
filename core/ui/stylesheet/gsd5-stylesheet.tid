@@ -117,3 +117,7 @@ tags: $:/tags/Stylesheet
   width:100%;
   text-align:left;
 }
+
+.gsd-list-new-button {
+  font-size:1.5em;
+}

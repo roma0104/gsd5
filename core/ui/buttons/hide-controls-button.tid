@@ -3,25 +3,8 @@ tags: $:/tags/ViewToolbar
 caption: {{$:/plugins/gsd5/core/images/control}} hide controls
 description: Hide GSD5 Controls
 
-<$set name="blueboxState" value=<<qualify "$:/state/gsd/bluebox">>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show">
-<$button popup=<<blueboxState>> set="hide" tooltip="Hide GSD5 Controls" aria-label="hide controls" class=<<tv-config-toolbar-class>>>
-<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+<div class="gsd-bluebox-toggle">
+<$checkbox tiddler=<<blueboxState>> field="text" checked="show" unchecked="hide" default="show">
 {{$:/plugins/gsd5/core/images/control}}
-</$list>
-<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
-<span class="tc-btn-text"><$text text="hide controls"/></span>
-</$list>
-</$button>
-</$reveal>
-<$reveal state=<<blueboxState>> type="match" text="hide" default="show">
-<$button popup=<<blueboxState>> set="show" tooltip="Hide GSD5 Controls" aria-label="hide controls" class=<<tv-config-toolbar-class>>>
-<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
-{{$:/plugins/gsd5/core/images/control}}
-</$list>
-<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
-<span class="tc-btn-text"><$text text="hide controls"/></span>
-</$list>
-</$button>
-</$reveal>
-</$set>
+</$checkbox>
+</div>

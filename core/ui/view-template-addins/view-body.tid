@@ -4,19 +4,18 @@ title: $:/plugins/gsd5/core/ui/addins/ViewBody
 $:/config/GSD5DashboardCore/visibility/$(listItem)$
 \end
 
-\define bluebox-toggle()
-<span class="gsd-bluebox-toggle"><$checkbox tiddler=<<blueboxState>> checked="show" unchecked="hide" default="show" field="text"><div><$reveal state=<<blueboxState>> type="match" text="show" default="show">{{$:/core/images/chevron-up}}</$reveal><$reveal state=<<blueboxState>> type="match" text="hide" default="show">{{$:/core/images/chevron-down}}</$reveal> ~BlueBox Controls</div></$checkbox></span>
+\define minimized-notice()
+<$reveal state=<<blueboxState>> type="match" text="hide" default="show">
+<div class="gsd-bluebox-min-notice">//BlueBox minimized//</div>
+</$reveal>
 \end
-
-
-<$set name="blueboxState" value=<<qualify "$:/state/gsd/bluebox">>>
 
 <!-- Dashboard -->
 <$list filter="[all[shadows+tiddlers]is[current]field:title[Dashboard]]">
 <$list filter="[all[shadows+tiddlers]prefix[$:/config/GSD5DashboardCore/visibility/]!has[draft.of]field:text[show]] [all[shadows+tiddlers]prefix[$:/config/GSD5DashboardPlugin/visibility/]!has[draft.of]field:text[show]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
-<<bluebox-toggle>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" animate="yes" retain="yes">
+<<minimized-notice>>
+<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardCore]!has[draft.of]]" variable="listItem">
 <$reveal state=<<dashboard-visibility>> type="match" text="show" default="hide">
@@ -38,8 +37,8 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter=[is[current]field:gsd_type[action]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
-<<bluebox-toggle>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" animate="yes" retain="yes">
+<<minimized-notice>>
+<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -59,8 +58,8 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter=[is[current]field:gsd_type[project]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
-<span class="gsd-bluebox-toggle"><$checkbox tiddler=<<blueboxState>> checked="show" unchecked="hide" default="show" field="text"><div>+ ~BlueBox Controls</div></$checkbox></span>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" animate="yes" retain="yes">
+<<minimized-notice>>
+<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -80,8 +79,8 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter=[is[current]field:gsd_type[reference]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ReferencePlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
-<<bluebox-toggle>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" animate="yes" retain="yes">
+<<minimized-notice>>
+<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -101,8 +100,8 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter=[is[current]field:gsd_type[contact]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContactPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
-<<bluebox-toggle>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" animate="yes" retain="yes">
+<<minimized-notice>>
+<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -123,8 +122,8 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter=[is[current]field:gsd_type[context]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContextPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
-<<bluebox-toggle>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" animate="yes" retain="yes">
+<<minimized-notice>>
+<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -143,13 +142,11 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <!-- Reference Dashboard -->
 <$list filter="[all[shadows+tiddlers]is[current]field:title[References]]">
 <div class="tc-message-box">
-<<bluebox-toggle>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" animate="yes" retain="yes">
+<<minimized-notice>>
+<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
 
 <$checkbox tiddler="$:/config/GSD5ReferencesGroup" field="text" checked="gsd_project" unchecked="none">&nbsp;Group By Project</$checkbox>
 
 </$reveal>
 </div>
 </$list>
-
-</$set>

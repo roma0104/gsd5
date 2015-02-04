@@ -122,21 +122,30 @@ tags: $:/tags/Stylesheet
   font-size:1.5em;
 }
 
-.gsd-bluebox-toggle div{
+.gsd-bluebox-title{
   font-size:1.33em;
-  font-weight:bold;
-  margin-top:0.5em;
-  margin-bottom:0.5em;
-  background-color:lightblue;
+  width:100%;
 }
 
-.gsd-bluebox-toggle input {
+.gsd-bluebox-toggle{
+  display:inline;
+  vertical-align:bottom;
+  fill:<<colour tiddler-controls-foreground>>;
+}
+
+.gsd-bluebox-toggle:hover{
+  fill:<<colour tiddler-controls-foreground-hover>>;
+}
+
+.gsd-bluebox-toggle input{
   display:none;
 }
 
 .gsd-bluebox-toggle svg {
-  height:1em;
-  width:1em;
-  fill:<<colour message-foreground>>;
+  vertical-align:middle;
+  height:0.75em;
+}
 
+.gsd-bluebox-min-notice {
+  width:100$;
 }

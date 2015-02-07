@@ -149,3 +149,12 @@ tags: $:/tags/Stylesheet
 .gsd-bluebox-min-notice {
   width:100$;
 }
+
+.gsd-list-title input[type=checkbox]{
+  display:none;
+}
+
+.gsd-list-title input[type=checkbox] + span svg {
+  fill: <<colour tiddler-controls-foreground>>;
+  height: 0.8em;
+}

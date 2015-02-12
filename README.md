@@ -43,5 +43,4 @@ If you wish to build GSD5, this is the method of building I use:
 12. Start the server: `./bin/serve.sh ./editions/gsd5`
 13. Navigate to http://localhost:8080 or whatever your server returns in the console.
 
-*This method will build against the latest commits from both TiddlyWiki5 and GSD5, things may be broken or act oddly.  Checkout to latest releases for both if you want a more stable build.*
-*I usually test with Chromium, and other when I remember...*
+*This method will build against the latest commits from both TiddlyWiki5 and GSD5, things may be broken or act oddly.  Checkout to latest releases for both if you want a more stable build.  I usually test with Chromium.*

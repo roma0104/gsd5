@@ -27,7 +27,7 @@ http://gsd5-nightly.tiddlyspot.com
 
 ### Build
 
-If you wish to build GSD5, this is the method of building I use:
+If you wish to build GSD5 as a standalone file, this is the method of building I use:
 
 1. Clone [TiddlyWiki5](https://github.com/Jermolene/TiddlyWiki5/).
 2. Create the following directory: `~/TiddlyWiki5/plugins/gsd5`

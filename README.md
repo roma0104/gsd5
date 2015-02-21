@@ -25,22 +25,16 @@ http://gsd5-nightly.tiddlyspot.com
 
 *Nightly builds are performed 01:00 UTC*
 
-### Build
+### Building
 
-If you wish to build GSD5 as a standalone file, this is the method of building I use:
+If you wish to build GSD5 as a standalone file:
 
-1. Clone [TiddlyWiki5](https://github.com/Jermolene/TiddlyWiki5/).
-2. Create the following directory: `~/TiddlyWiki5/plugins/gsd5`
-3. Change directories to the directory you just created.
-4. Clone this repository.  The finally layout should appear as: `~/TiddlyWiki5/plugins/gsd5/core/{...}`
-5. Return to TiddlyWiki5 root. `~/TiddlyWiki5`
-6. Navigate to `./editions`
-7. Duplicate the directory `./empty` and rename it to `gsd5`.
-8. Edit the file `./gsd5/tiddlywiki.info`.
-9. In the `plugins` property add `"gsd5/core"` to the list. No trailing commas.
-10.  Add or remove any other plugins or themes. (Remember GSD5 is rather invasive and may not play well with other plugins)
-11. Return to TiddlyWiki5 root. `~/TiddlyWiki5`
-12. Start the server: `./bin/serve.sh ./editions/gsd5`
-13. Navigate to http://localhost:8080 or whatever your server returns in the console.
+- Clone [TiddlyWiki5](https://github.com/Jermolene/TiddlyWiki5/)
+- Clone this repo (or your fork of it). Make sure the two repos are side by side, rather than with one inside the other's directory.
+- Change directory to the top level of the GSD5 directory.
+- To serve GSD5 using node.js run `bin/server.sh`, then visit <http://localhost:8080> with your browser.
+- To build an empty GSD5 file run `bin/build.sh`.
+
+Note there are currently no .cmd equivalents of the server.sh and build.sh scripts for windows users (but perhaps you can write them based on the bash versions).
 
 *This method will build against the latest commits from both TiddlyWiki5 and GSD5, things may be broken or act oddly.  Checkout to latest releases for both if you want a more stable build.  I usually test with Chromium.*

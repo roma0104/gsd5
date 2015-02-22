@@ -10,7 +10,7 @@ Next Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-action-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
 +
 </$action>
 </$set>
@@ -35,7 +35,7 @@ Waiting Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-action-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
 +
 </$action>
 </$set>
@@ -60,7 +60,7 @@ Future Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-action-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
 +
 </$action>
 </$set>
@@ -85,7 +85,7 @@ Subprojects
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
+<$action skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-project-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
 +
 </$action>
 </$set>

@@ -122,4 +122,16 @@ References
 </$list>
 </div>
 
+<div class="tc-menu-list-item">
+Completed Actions
+<hr/>
+<$list filter=[field:gsd_type[action]field:gsd_complete[true]field:gsd_project{!!title}]>
+<div class="tc-menu-list-subitem">
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewPrefix"/>
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewSuffix"/>
+</div>
+</$list>
+</div>
+
 </$list>

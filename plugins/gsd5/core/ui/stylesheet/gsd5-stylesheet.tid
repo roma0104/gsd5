@@ -154,6 +154,10 @@ tags: $:/tags/Stylesheet
   color: <<colour muted-foreground>>;
 }
 
+.gsd-muted svg {
+  opacity: 0.25;
+}
+
 .gsd-list-title input[type=checkbox]{
   display:none;
 }

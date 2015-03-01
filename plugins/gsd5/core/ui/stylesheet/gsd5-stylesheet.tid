@@ -150,6 +150,10 @@ tags: $:/tags/Stylesheet
   width:100$;
 }
 
+.gsd-muted {
+  color: <<colour muted-foreground>>;
+}
+
 .gsd-list-title input[type=checkbox]{
   display:none;
 }

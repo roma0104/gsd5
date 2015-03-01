@@ -5,6 +5,7 @@ title: $:/plugins/gsd5/core/ui/lists/ListViewSuffix
 <$transclude tiddler="$:/plugins/gsd5/core/images/excerpt"/>
 </$list>
 <$list filter="[is[current]field:gsd_complete[true]]">
+<span class="gsd-muted">(<$view field="gsd_comp_date" format="relativedate"/>)</span>
 <$transclude tiddler="$:/plugins/gsd5/core/ui/buttons/delete-tiddler-button"/>
 </$list>
 </$list>

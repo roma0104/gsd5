@@ -80,6 +80,22 @@ CompleteWidget.prototype.execute = function() {
   this.makeChildWidgets();
 };
 
+CompleteWidget.prototype.refresh = function(changedTiddlers) {
+  var changedAttributes = this.computeAttributes();
+  console.log(changedAttributes);
+  if(changedAttributes.tiddler || changedAttributes.checked || changedAttributes.unchecked) {
+    this.refreshSelf();
+    return true;
+  } else {
+    var refreshed = false;
+    if(changedTiddlers[this.completeTitle]) {
+      this.inputDomNode.checked = this.getValue();
+      refreshed = true;
+    }
+    return this.refreshChildren(changedTiddlers) || refreshed;
+  }
+};
+
 exports.complete = CompleteWidget;
 
 })();

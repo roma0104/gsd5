@@ -10,7 +10,7 @@ Projects without Next Actions
 
 -----
 
-<$list filter="[field:gsd_type[project]!field:gsd_status[future]] -[field:gsd_type[action]field:gsd_status[next]!field:gsd_complete[true]_fieldvalue[gsd_project]]">
+<$list filter="[field:gsd_type[project]!field:gsd_status[future]!field:gsd_complete[true]] -[field:gsd_type[action]field:gsd_status[next]!field:gsd_complete[true]_fieldvalue[gsd_project]]">
 <div class="tw-menu-list-subitem">
 <$complete tiddler=<<currentTiddler>>/>
 <$transclude tiddler="$:/plugins/gsd5/core/ui/lists/ListViewStatus"/>

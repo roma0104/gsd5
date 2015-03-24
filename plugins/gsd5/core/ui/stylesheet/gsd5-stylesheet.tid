@@ -150,6 +150,14 @@ tags: $:/tags/Stylesheet
   width:100$;
 }
 
+.gsd-muted {
+  color: <<colour muted-foreground>>;
+}
+
+.gsd-muted svg {
+  opacity: 0.25;
+}
+
 .gsd-list-title input[type=checkbox]{
   display:none;
 }

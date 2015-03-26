@@ -45,3 +45,9 @@ caption: Collect
 <$set name="gsd_type" value="realm">
 <$action skeleton="$:/plugins/gsd5/core/ui/skeletons/RealmSkeleton" edit="no">{{$:/plugins/gsd5/core/images/globe}} New Realm</$action>
 </$set>
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5Collect]!has[draft.of]]">
+
+  {{currentTiddler}}
+  
+</$list>

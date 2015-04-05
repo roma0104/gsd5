@@ -96,7 +96,7 @@ ToggleButton.prototype.getValue = function() {
 ToggleButton.prototype.execute = function() {
     // Get attributes
     this.toggleTitle = this.getAttribute("tiddler",this.getVariable("currentTiddler"));
-    this.toggleField = this.getAttribute("field");
+    this.toggleField = this.getAttribute("field","text");
     this.toggleOn = this.getAttribute("on");
     this.toggleOff = this.getAttribute("off");
     this.toggleDefault = this.getAttribute("default");

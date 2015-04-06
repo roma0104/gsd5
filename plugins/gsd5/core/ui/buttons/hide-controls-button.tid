@@ -3,6 +3,7 @@ tags: $:/tags/ViewToolbar
 caption: {{$:/plugins/gsd5/core/images/control}} hide controls
 description: Hide GSD5 Controls
 
+<$list filter="[is[current]has[gsd_type]] [is[current]field:title[Dashboard]]">
 <$toggle tiddler=<<blueboxState>> on="hide" off="show" default="show" tooltip="Toggle Blue-Box Controls" aria-label="toggle controls" class=<<tv-config-toolbar-class>> selectedClass="tc-selected">
 <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
 {{$:/plugins/gsd5/core/images/control}}
@@ -11,3 +12,4 @@ description: Hide GSD5 Controls
 <span class="tc-btn-text"><$text text="toggle controls"/></span>
 </$list>
 </$toggle>
+</$list>

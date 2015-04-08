@@ -91,6 +91,12 @@ ActionWidget.prototype.handleClick = function(event) {
         case "no":
             break;
     }
+    // Set the dependant on-the-fly, if enabled.
+    if(this.setNow) {
+		var gsdType = this.getVariable("gsd_type");
+		// Set the target tiddler, usually currentTiddler, gsd_* field to the title of the newly created GSD5 tiddler.
+		this.wiki.setText(this.parentTiddler, "gsd_"+gsdType, null, title)
+	}
     $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
 };
 
@@ -101,6 +107,8 @@ ActionWidget.prototype.execute = function() {
     this.title = this.getAttribute("title");
     this.newtiddlerSkeleton = this.getAttribute("skeleton");
     this.newtiddlerEdit = this.getAttribute("edit", "show");
+    this.parentTiddler = this.getAttribute("tiddler", this.getVariable("currentTiddler"));
+    this.setNow = this.getAttribute("setNow", "false");
     this.makeChildWidgets();
 };
 

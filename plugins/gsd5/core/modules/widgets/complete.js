@@ -82,7 +82,6 @@ CompleteWidget.prototype.execute = function() {
 
 CompleteWidget.prototype.refresh = function(changedTiddlers) {
   var changedAttributes = this.computeAttributes();
-  console.log(changedAttributes);
   if(changedAttributes.tiddler || changedAttributes.checked || changedAttributes.unchecked) {
     this.refreshSelf();
     return true;

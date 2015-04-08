@@ -1,5 +1,5 @@
 /*\
-title: $:/core/modules/widgets/convert.js
+title: $:/plugins/gsd5/core/modules/widgets/convert.js
 type: application/javascript
 module-type: widget
 

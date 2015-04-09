@@ -91,6 +91,9 @@ ActionWidget.prototype.handleClick = function(event) {
         case "no":
             break;
     }
+    // var self = this.
+    // setTimeout(function() {
+    // Be sure to change the following this to self to use timeout.
     // Set the dependant on-the-fly, if enabled.
     if(this.setNow==="true") {
 		var gsdType = this.getVariable("gsd_type");
@@ -98,6 +101,7 @@ ActionWidget.prototype.handleClick = function(event) {
 		this.wiki.setText(this.parentTiddler, "gsd_"+gsdType, null, title)
 	}
     $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
+    // }, 2000);
 };
 
 ActionWidget.prototype.execute = function() {

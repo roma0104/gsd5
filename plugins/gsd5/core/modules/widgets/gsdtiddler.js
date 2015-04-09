@@ -91,14 +91,13 @@ GSDTiddler.prototype.handleClick = function(event) {
         case "no":
             break;
     }
-    // var self = this.
+    var self = this.
     // setTimeout(function() {
-    // Be sure to change the following this to self to use timeout.
     // Set the dependant on-the-fly, if enabled.
-    if(this.setNow==="true") {
-		var gsdType = this.getVariable("gsd_type");
+    if(self.setNow==="true") {
+		var gsdType = self.getVariable("gsd_type");
 		// Set the target tiddler, usually currentTiddler, gsd_* field to the title of the newly created GSD5 tiddler.
-		this.wiki.setText(this.parentTiddler, "gsd_"+gsdType, null, title)
+		self.wiki.setText(self.parentTiddler, "gsd_"+gsdType, null, title);
 	}
     $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
     // }, 2000);

@@ -92,7 +92,7 @@ GSDTiddler.prototype.handleClick = function(event) {
             break;
     }
     // Set the dependant on-the-fly, if enabled.
-    if(this.setNow) {
+    if(this.setNow==="true") {
 		var gsdType = this.getVariable("gsd_type");
 		// Set the target tiddler, usually currentTiddler, gsd_* field to the title of the newly created GSD5 tiddler.
 		this.wiki.setText(this.parentTiddler, "gsd_"+gsdType, null, title)

@@ -9,6 +9,7 @@ caption: Review
 <$link to="Project Dashboard">Project Dashboard</$link><br/>
 <$link to="Delegated Actions">Delegated Actions</$link><br/>
 <$link to="References">References</$link><br/>
+<$link to="Contacts">Contacts</$link><br/>
 <$link to="No Realm Items">No Realm Items</$link><br/>
 <$link to="No Next Action">No Next Action</$link><br/>
 <$link to="Contexts">Contexts</$link><br/>

@@ -1,0 +1,3 @@
+title: Contacts
+
+<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/contacts-list"/>

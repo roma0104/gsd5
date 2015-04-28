@@ -91,7 +91,7 @@ GSDTiddler.prototype.handleClick = function(event) {
         case "no":
             break;
     }
-    var self = this.
+    var self = this;
     // setTimeout(function() {
     // Set the dependant on-the-fly, if enabled.
     if(self.setNow==="true") {

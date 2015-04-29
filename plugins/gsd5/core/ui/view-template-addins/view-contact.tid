@@ -27,7 +27,7 @@ tags: $:/tags/GSD5ActionCore $:/tags/GSD5ProjectCore
         <$list filter=[is[current]field:gsd_contact[]]>
         <$set name="gsd_type" value="contact">
         <$set name="gsd_realm" value={{$:/currentRealm}}>
-        <$gsdtiddler class="tc-btn-invisible" setNow="true" skeleton="$:/plugins/gsd5/core/ui/skeletons/ContactSkeleton" edit={{$:/plugins/gsd5/core/ui/config/new-tiddler-show}}>&nbsp;new</$gsdtiddler>
+        &nbsp;<$gsdtiddler class="tc-btn-invisible" setNow="true" skeleton="$:/plugins/gsd5/core/ui/skeletons/ContactSkeleton" edit={{$:/plugins/gsd5/core/ui/config/new-tiddler-show}}><span style="text-decoration:underline">new</span></$gsdtiddler>
         </$set>
         </$set>
         </$list>

@@ -68,7 +68,7 @@ CompleteWidget.prototype.changeDependants = function() {
   var self = this;
   if(this.inputDomNode.checked === true) {
     this.wiki.forEachTiddler(function(title, tiddler) {
-      if(tiddler.fields.gsd_status === "future" && tiddler.fields.gsd_prereq === self.completeTitle) {
+      if(tiddler.fields.gsd_status === "future" && tiddler.fields.gsd_action === self.completeTitle) {
         this.setText(title, "gsd_status", null, "next");
       }
     });

@@ -69,8 +69,8 @@ ConvertWidget.prototype.handleClickEvent = function() {
             this.wiki.setText(this.to, "gsd_status", null, "future");
         }
         // Remove previous dependencies.
-        if(tiddler.fields.gsd_prereq) {
-            this.wiki.setText(this.to, "gsd_prereq", null, "");
+        if(tiddler.fields.gsd_action) {
+            this.wiki.setText(this.to, "gsd_action", null, "");
         }
         // Finally, change the type to project.
         this.wiki.setText(this.to, "gsd_type", null, "project");

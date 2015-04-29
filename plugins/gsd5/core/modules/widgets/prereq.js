@@ -46,8 +46,8 @@ PrereqWidget.prototype.execute = function() {
 PrereqWidget.prototype.setSelectValue = function() {
     var value = this.prereqDefault;
     var tiddler = this.wiki.getTiddler(this.prereqTitle);
-    if(tiddler.fields.gsd_prereq) {
-        value = tiddler.fields.gsd_prereq;
+    if(tiddler.fields.gsd_action) {
+        value = tiddler.fields.gsd_action;
     }
     this.selectDomNode.value = value;
 };
@@ -57,7 +57,7 @@ PrereqWidget.prototype.handleChangeEvent = function() {
     if(tiddler.fields.gsd_type !== "action") {
         return;
     }
-    this.wiki.setText(this.prereqTitle, "gsd_prereq", null, this.selectDomNode.value);
+    this.wiki.setText(this.prereqTitle, "gsd_action", null, this.selectDomNode.value);
     this.setStatus();
 };
 

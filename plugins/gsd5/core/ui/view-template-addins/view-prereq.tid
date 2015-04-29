@@ -78,7 +78,7 @@ Depends on: <br/>
   <$list filter=[is[current]!field:gsd_action[]]>
     &nbsp;<$link to={{!!gsd_action}}>>></$link>
   </$list>
-  <$list filter="[is[current]field:gsd_project[]]">
+  <$list filter="[is[current]field:gsd_action[]]">
     &nbsp;<<gsd-tiddler-fly "action" "next">>
   </$list>
 </span>

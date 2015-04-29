@@ -92,7 +92,7 @@ GSDTiddler.prototype.handleClick = function(event) {
             break;
     }
     var self = this;
-    // setTimeout(function() {
+    setTimeout(function() {
     // Set the dependant on-the-fly, if enabled.
     if(self.setNow==="true") {
 		var gsdType = self.getVariable("gsd_type");
@@ -100,7 +100,7 @@ GSDTiddler.prototype.handleClick = function(event) {
 		self.wiki.setText(self.parentTiddler, "gsd_"+gsdType, null, title);
 	}
     $tw.rootWidget.dispatchEvent({type: "tm-auto-save-wiki"});
-    // }, 2000);
+    }, 500);
 };
 
 GSDTiddler.prototype.execute = function() {

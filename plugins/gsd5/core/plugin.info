@@ -2,7 +2,7 @@
   "title": "$:/plugins/gsd5/core",
   "description": "TiddlyWiki5 Getting Stuff Done plugin",
   "author": "Roma Hicks",
-  "core-version": ">=5.1.4",
+  "core-version": ">=5.1.8",
   "list": "readme",
-  "version": "0.5.3-beta"
+  "version": "0.6-beta"
 }

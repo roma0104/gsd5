@@ -32,6 +32,6 @@ $:/config/GSD5Lists/visibility/$(listItem)$
 
 //Dashboard Options//<br/>
 <$checkbox tiddler="$:/config/GSD5DashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group Actions in Dashboard by Project</$checkbox><br/>
-<$checkbox tiddler="$:/config/GSD5DashboardCore/visibility/$:/plugins/gsd5/core/ui/lists/realm-list" field="text" checked="show" unchecked="hide"> Show Realm selector in the Dashboard </$checkbox>
+<$checkbox tiddler="$:/config/GSD5DashboardCore/visibility/$:/plugins/gsd5/core/ui/addins/ViewDashboardRealm" field="text" checked="show" unchecked="hide"> Show Realm selector in the Dashboard </$checkbox>
 
 </div>

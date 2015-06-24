@@ -1,4 +1,5 @@
-title: $:/plugins/gsd5/core/ui/lists/realm-list
+title: $:/plugins/gsd5/core/ui/addins/ViewDashboardRealm
+tags: $:/tags/GSD5DashboardCore
 
 <div class="tw-menu-list-item">
   Realm
@@ -19,4 +20,3 @@ title: $:/plugins/gsd5/core/ui/lists/realm-list
     </$list>
   </$linkcatcher>
 </div>
-

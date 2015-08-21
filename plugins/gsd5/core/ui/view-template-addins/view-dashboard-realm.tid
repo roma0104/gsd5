@@ -28,7 +28,7 @@ tags: $:/tags/GSD5DashboardCore
     <div class="gsd-context-box">
         <$set name="parentTiddler" value=<<currentTiddler>>>
         <$set name="RealmStatus" value=<<qualify "$:/state/popup/realm">>>
-            <$button popup=<<RealmStatus>> class="tc-btn-invisible gsd-context-button">+ Contexts</$button>
+            <$button popup=<<RealmStatus>> class="tc-btn-invisible gsd-context-button">+ Realms</$button>
             <$reveal state=<<RealmStatus>> type="nomatch" text="" class="tc-popup-handle" default="" retain="yes" animate="yes">
             <div class="tc-menu-list-subitem">
 

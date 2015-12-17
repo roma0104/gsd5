@@ -3,7 +3,8 @@ title: $:/plugins/gsd5/core/macro/list-composer.js
 type: application/javascript
 module-type: macro
 
-Macro to choose which of two colours has the highest contrast with a base colour
+Compose a list widget filter that finds the gsd5 tidders requested.
+This is a fairly convoluted tree of if/else logic, it is not easy to read.
 
 \*/
 (function(){
@@ -27,39 +28,49 @@ exports.params = [
 	{name: "groupHeader"},
 	{name: "customFilter"},
 	{name: "ownerField"},
-	{name: "owner"}
+	{name: "hideFutureProj"}
 ];
 
+// What type of gsd5 tiddlers does the list need to be?
 function processType(filter) {
 	filter.strings.type = "field:gsd_type[" + filter.values.gsd_type + "]";
 	return filter;
 }
 
+// What is the desired completed status of the tiddler list?
 function processComplete(filter) {
+	// Only process if tidders support gsd_complete; actions & projects
 	if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {
 		filter.strings.complete = "field:gsd_complete[" + filter.values.gsd_complete + "]";
 	}
 	return filter;
 }
 
+// What is the desired status of the tiddler list?
 function processStatus(filter) {
+	// Ignore if a list of completed tiddlers or not requested.
 	if(filter.values.gsd_complete==="true"||filter.values.gsd_status==="none") {
 		return filter;
 	}
+	// Only process if tidders support gsd_status; actions & projects
 	if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {
 		filter.strings.status = "field:gsd_status[" + filter.values.gsd_status + "]";
 	}
 	return filter;
 }
 
+// What is the desired realm of the tiddler list?
 function processRealm(filter) {
+	// Only process if list is requested to be realm aware.
 	if(filter.values.realmAware==="true") {
 		filter.strings.realm = "field:gsd_realm{$:/currentRealm}";
 	}
 	return filter;
 }
 
+// What is the desired sort of the tiddler list?
 function processSort(filter) {
+	// Process only if there is a desired sort.
 	if(filter.values.sort!=="none") {
 		if(filter.values.order==="descending") {
 			filter.strings.sort = "!nsort[" + filter.values.sort + "]";
@@ -70,23 +81,31 @@ function processSort(filter) {
 	return filter;
 }
 
+// Depending on the desired group, and the 'group part' change the list
 function processGroup(filter) {
+	// If the list is for a group header process the following:
 	if(filter.values.groupHeader==="true") {
+		// No groupBy just return
 		if(filter.values.groupBy==="none") {
 			return filter;
 		} else {
+			// If the groupBy is a temporal field
 			if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="gsd_comp_date") {
 				filter.strings.group = "has[" + filter.values.groupBy + "]eachday[" + filter.values.groupBy + "]";
+			// else group by other field
 			} else {
 				filter.strings.group = "has[" + filter.values.groupBy + "]each[" + filter.values.groupBy + "]";
 			}
 		}
+	/// Process all other tiddlers that do not belong to a member of the groupBy field.
+	 // This is mostly for a true/false check if there non-grouped tiddlers and whether to display the 'No Group' title.
 	} else if(filter.values.groupTailHeader==="true") {
 		if(filter.values.groupBy==="none") {
 			return filter;
 		} else {
 			filter.strings.group = "field:" + filter.values.groupBy + "[]limit[1]";
 		}
+	// Finally, display all tiddlers that are not a member of groupBy member.
 	} else if(filter.values.groupTail==="true") {
 		if(filter.values.groupBy==="none") {
 			return filter;
@@ -97,6 +116,7 @@ function processGroup(filter) {
 	return filter;
 }
 
+// Attach custom filter the end of the filter query.
 function processCustomFilter(filter) {
 	if(filter.values.customFilter!=="none") {
 		filter.strings.customFilter = filter.values.customFilter;
@@ -104,6 +124,8 @@ function processCustomFilter(filter) {
 	return filter;
 }
 
+// Find tiddlers that have the calling tiddler's name as the value for the ownerField
+// e.g. Current tiddler name is 'Frank'; ownerField is 'gsd_contact'; only pull tiddlers tha have gsd_contact with value Frank
 function processOwner(filter) {
 	if(filter.values.groupHeader==="true") {
 		if(filter.values.ownerField==="none") {
@@ -129,6 +151,7 @@ function processOwner(filter) {
 		} else {
 			filter.strings.owner = "field:" + filter.values.ownerField + "<caller>";
 		}
+	// Special case, where tiddlers are 'owned' by dates
 	} else {
 		if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="gsd_comp_date") {
 			filter.strings.owner = "sameday:" + filter.values.groupBy + "{!!title}";
@@ -146,6 +169,7 @@ function processOwner(filter) {
 	return filter;
 }
 
+// A hacky filter that takes all preceeding tiddlers and return just the values found in the field
 function processFieldValue(filter) {
 	if(filter.values.groupHeader==="true") {
 		filter.strings.fieldValue = "_fieldvalue[" + filter.values.groupBy + "]";
@@ -153,11 +177,35 @@ function processFieldValue(filter) {
 	return filter;
 }
 
+// Do not select Actions where the parent Project's status is Future.
+// Produces a negating filter e.g. -[field:gsd_project["FutureProject"]]
+function processHideFutureProj(filter) {
+	if(filter.values.hideFutureProj==="true" && filter.values.gsd_type==="action") {
+		if(filter.values.groupHeader==="true") {
+			filter.strings.hideFutureProj = " -[field:gsd_type[project]field:gsd_status[future]]";
+		} else {
+			var filterString = " -[";
+			var count = 0;
+			$tw.wiki.forEachTiddler(function (title,tiddler) {
+				if(tiddler.fields.gsd_type==="project" && tiddler.fields.gsd_status==="future") {
+					filterString = filterString + "field:gsd_project[" + title + "]";
+					count++;
+					console.log(count,title);
+				}
+			});
+			if(count>0) {
+				filter.strings.hideFutureProj = filterString + "]";
+			}
+		}
+	}
+	return filter
+}
+
 // Run the macro
-exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,owner) {
+exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,hideFutureProj) {
 	// Prepare the filterString object.
-	var filter = {},
-		composedFilter= "";
+	var filter = {};
+	var composedFilter= "";
 
 	// Process values to resolve any wikitext.
 	filter.values = {
@@ -172,7 +220,8 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		groupTailHeader: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupTailHeader),
 		groupHeader: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupHeader),
 		customFilter: customFilter,
-		ownerField: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",ownerField)
+		ownerField: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",ownerField),
+		hideFutureProj: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",hideFutureProj)
 	};
 
 	// String are used to created the final filter statement.
@@ -185,7 +234,8 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		group: "",
 		customFilter: "",
 		owner: "",
-		fieldValue: ""
+		fieldValue: "",
+		hideFutureProj: ""
 	};
 
 	/*
@@ -205,13 +255,18 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 	filter = processCustomFilter(filter);
 	filter = processOwner(filter);
 	filter = processFieldValue(filter);
+	filter = processHideFutureProj(filter);
 
-	// Finally, compose the final filter statement.
-	for(var x in filter.strings) {
-		if(filter.strings.hasOwnProperty(x)) {
-			composedFilter += filter.strings[x];
-		}
-	}
+	// Compose the final filter statement.
+	composedFilter += filter.strings.type;
+	composedFilter += filter.strings.complete;
+	composedFilter += filter.strings.status;
+	composedFilter += filter.strings.realm;
+	composedFilter += filter.strings.sort;
+	composedFilter += filter.strings.group;
+	composedFilter += filter.strings.customFilter;
+	composedFilter += filter.strings.owner;
+	composedFilter += filter.strings.fieldValue;
 
 	if(filter.values.groupHeader==="true"&&filter.values.groupBy==="none"){
 		composedFilter = "";
@@ -221,6 +276,9 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 		composedFilter = "[" + composedFilter + "]";
 	}
 
+	composedFilter += filter.strings.hideFutureProj;
+
+	if(filter.values.hideFutureProj === "true") {console.log(composedFilter);}
 	return composedFilter;
 };
 

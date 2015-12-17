@@ -190,7 +190,6 @@ function processHideFutureProj(filter) {
 				if(tiddler.fields.gsd_type==="project" && tiddler.fields.gsd_status==="future") {
 					filterString = filterString + "field:gsd_project[" + title + "]";
 					count++;
-					console.log(count,title);
 				}
 			});
 			if(count>0) {
@@ -278,7 +277,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 
 	composedFilter += filter.strings.hideFutureProj;
 
-	if(filter.values.hideFutureProj === "true") {console.log(composedFilter);}
 	return composedFilter;
 };
 

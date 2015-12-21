@@ -3,5 +3,5 @@ description: Convert Action to Project
 tags: $:/tags/GSD5ActionCore
 
 <$list filter="[is[current]field:gsd_complete[false]]">
-<$convert class="gsd-bluebox-button" tooltip="Covert Action to Project" aria-label="Convert Action to Project">{{$:/plugins/gsd5/core/images/convert}} Convert</$convert>
+<$convert class="gsd-gsdpanel-button" tooltip="Covert Action to Project" aria-label="Convert Action to Project">{{$:/plugins/gsd5/core/images/convert}} Convert</$convert>
 </$list>

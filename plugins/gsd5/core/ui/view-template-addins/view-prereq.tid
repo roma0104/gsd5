@@ -14,7 +14,7 @@ tags: $:/tags/GSD5ActionCore $:/tags/GSD5ProjectCore $:/tags/GSD5ReferenceCore
 \end
 
 <$list filter=[is[current]field:gsd_type[project]]>
-<p class="gsd-bluebox-droplist">
+<p class="gsd-gsdpanel-droplist">
 Subproject of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
@@ -34,7 +34,7 @@ Subproject of: <br/>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[action]]>
-<p class="gsd-bluebox-droplist">
+<p class="gsd-gsdpanel-droplist">
 Project of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>
@@ -51,7 +51,7 @@ Project of: <br/>
   </$list>
 </span>
 </p>
-<p class="gsd-bluebox-droplist">
+<p class="gsd-gsdpanel-droplist">
 Depends on: <br/>
 <$prereq default="">
   <option value="">--</option>
@@ -86,7 +86,7 @@ Depends on: <br/>
 </$list>
 
 <$list filter=[is[current]field:gsd_type[reference]]>
-<p class="gsd-bluebox-droplist">
+<p class="gsd-gsdpanel-droplist">
 Project of: <br/>
 <$select field="gsd_project" default="">
   <option value="">--</option>

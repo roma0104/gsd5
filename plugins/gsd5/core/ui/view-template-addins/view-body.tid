@@ -5,8 +5,8 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 \end
 
 \define minimized-notice()
-<$reveal state=<<blueboxState>> type="match" text="hide" default="show">
-<div class="gsd-bluebox-min-notice">//BlueBox minimized//</div>
+<$reveal state=<<gsdpanelState>> type="match" text="hide" default="show">
+<div class="gsd-gsdpanel-min-notice">//gsdpanel minimized//</div>
 </$reveal>
 \end
 
@@ -15,7 +15,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter="[all[shadows+tiddlers]prefix[$:/config/GSD5DashboardCore/visibility/]!has[draft.of]field:text[show]] [all[shadows+tiddlers]prefix[$:/config/GSD5DashboardPlugin/visibility/]!has[draft.of]field:text[show]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <<minimized-notice>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5DashboardCore]!has[draft.of]]" variable="listItem">
 <$reveal state=<<dashboard-visibility>> type="match" text="show" default="hide">
@@ -38,7 +38,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ActionPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <<minimized-notice>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ActionCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -59,7 +59,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ProjectPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <<minimized-notice>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ProjectCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -80,7 +80,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ReferencePlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <<minimized-notice>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ReferenceCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -101,7 +101,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContactPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <<minimized-notice>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContactCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -123,7 +123,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSD5ContextPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
 <div class="tc-message-box gsd-plugin-box">
 <<minimized-notice>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
 <div class="gsd-plugin-core">
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSD5ContextCore]!has[draft.of]]" variable="listItem">
 <$transclude tiddler=<<listItem>>/>
@@ -143,7 +143,7 @@ $:/config/GSD5DashboardCore/visibility/$(listItem)$
 <$list filter="[all[shadows+tiddlers]is[current]field:title[References]]">
 <div class="tc-message-box">
 <<minimized-notice>>
-<$reveal state=<<blueboxState>> type="match" text="show" default="show" retain="yes">
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
 
 <$checkbox tiddler="$:/config/GSD5ReferencesGroup" field="text" checked="gsd_project" unchecked="none">&nbsp;Group By Project</$checkbox>
 

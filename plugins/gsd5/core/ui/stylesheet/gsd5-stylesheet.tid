@@ -122,31 +122,31 @@ tags: $:/tags/Stylesheet
   font-size:1.5em;
 }
 
-.gsd-bluebox-title{
+.gsd-gsdpanel-title{
   font-size:1.33em;
   width:100%;
 }
 
-.gsd-bluebox-toggle{
+.gsd-gsdpanel-toggle{
   display:inline;
   vertical-align:bottom;
   fill:<<colour tiddler-controls-foreground>>;
 }
 
-.gsd-bluebox-toggle:hover{
+.gsd-gsdpanel-toggle:hover{
   fill:<<colour tiddler-controls-foreground-hover>>;
 }
 
-.gsd-bluebox-toggle input{
+.gsd-gsdpanel-toggle input{
   display:none;
 }
 
-.gsd-bluebox-toggle svg {
+.gsd-gsdpanel-toggle svg {
   vertical-align:middle;
   height:0.75em;
 }
 
-.gsd-bluebox-min-notice {
+.gsd-gsdpanel-min-notice {
   width:100%;
 }
 

@@ -1,7 +1,7 @@
 title: $:/plugins/gsd5/core/ui/addins/ViewRealm
 tags: $:/tags/GSD5ActionCore $:/tags/GSD5ProjectCore $:/tags/GSD5ReferenceCore $:/tags/GSD5ContactCore $:/tags/GSD5ContextCore
 
-<p class="gsd-bluebox-droplist">
+<p class="gsd-gsdpanel-droplist">
 Realm:<br/>
 <$select field="gsd_realm" default="">
 <option value="all">--</option>

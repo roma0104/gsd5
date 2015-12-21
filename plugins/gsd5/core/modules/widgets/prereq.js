@@ -31,6 +31,17 @@ PrereqWidget.prototype.render = function(parent,nextSibling) {
     this.selectDomNode.addEventListener("change", function() {
         self.handleChangeEvent();
     });
+    // Assign classes
+    var classes = this["class"].split(" ") || [];
+    if(this.selectedClass) {
+        if(this.set && this.setTo && this.isSelected()) {
+            $tw.utils.pushTop(classes,this.selectedClass.split(" "));
+        }
+        if(this.popup && this.isPoppedUp()) {
+            $tw.utils.pushTop(classes,this.selectedClass.split(" "));
+        }
+    }
+    selectDomNode.className = classes.join(" ");
     parent.insertBefore(this.selectDomNode,nextSibling);
     this.renderChildren(this.selectDomNode,null);
     this.domNodes.push(this.selectDomNode);
@@ -40,6 +51,7 @@ PrereqWidget.prototype.render = function(parent,nextSibling) {
 PrereqWidget.prototype.execute = function() {
     this.prereqTitle = this.getAttribute("tiddler",this.getVariable("currentTiddler"));
     this.prereqDefault = this.getAttribute("default");
+    this["class"] = this.getAttribute("class","");
     this.makeChildWidgets();
 };
 

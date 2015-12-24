@@ -41,7 +41,7 @@ PrereqWidget.prototype.render = function(parent,nextSibling) {
             $tw.utils.pushTop(classes,this.selectedClass.split(" "));
         }
     }
-    selectDomNode.className = classes.join(" ");
+    this.selectDomNode.className = classes.join(" ");
     parent.insertBefore(this.selectDomNode,nextSibling);
     this.renderChildren(this.selectDomNode,null);
     this.domNodes.push(this.selectDomNode);

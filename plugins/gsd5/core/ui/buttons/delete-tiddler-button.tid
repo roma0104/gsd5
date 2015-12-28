@@ -3,5 +3,5 @@ caption: {{$:/plugins/gsd5/core/images/rubbishbin}} delete tiddler
 description: Delete tiddler
 
 <$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
-	{{$:/plugins/gsd5/core/images/rubbishbin}}
+    {{$:/plugins/gsd5/core/images/rubbishbin}}
 </$button>

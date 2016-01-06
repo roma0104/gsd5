@@ -5,7 +5,7 @@ tags: $:/tags/GSD5ActionPlugin
     <div class="gsd-context-box">
         <$set name="parentTiddler" value=<<currentTiddler>>>
         <$set name="ContextStatus" value=<<qualify "$:/state/popup/context">>>
-            <$button popup=<<ContextStatus>> class="tc-btn-invisible gsd-context-button">+ Ticklers</$button>
+            <$button popup=<<ContextStatus>> class="tc-btn-invisible gsd-context-button">+ Contexts</$button>
             <$reveal state=<<ContextStatus>> type="nomatch" text="" class="tc-popup-handle" default="" retain="yes" animate="yes">
             <div class="tc-menu-list-subitem">
 

@@ -1,7 +1,7 @@
 title: $:/plugins/gsd5/core/macro/gsd5-list
 tags: $:/tags/Macro
 
-\define gsd5-list(title:"Next Action",gsd_type:"action",gsd_status:"next",gsd_complete:"false",realmAware:"false",sort:"title",order:"ascending",groupBy:"none",customFilter:"none",dateTemplate:"DDth MMM YYYY",ownerField:"none",hideFutureProj:"false")
+\define gsd5-list(title:"Next Action",gsd_type:"action",gsd_status:"next",gsd_complete:"false",realmAware:"false",sort:"title",order:"ascending",groupBy:"none",customFilter:"none",dateTemplate:"DDth MMM YYYY",ownerField:"none",owner:"{{!!title}}",hideFutureProj:"false")
 <$set name="listState" value=<<qualify "$:/state/gsd-list">>>
 <$set name="caller" value=$owner$>
 <div class="tw-menu-list-item">

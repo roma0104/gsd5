@@ -28,6 +28,7 @@ exports.params = [
     {name: "groupHeader"},
     {name: "customFilter"},
     {name: "ownerField"},
+    {name: "owner"},
     {name: "hideFutureProj"}
 ];
 
@@ -201,7 +202,7 @@ function processHideFutureProj(filter) {
 }
 
 // Run the macro
-exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,hideFutureProj) {
+exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,owner,hideFutureProj) {
     // Prepare the filterString object.
     var filter = {};
     var composedFilter= "";

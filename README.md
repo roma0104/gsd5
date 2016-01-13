@@ -32,9 +32,9 @@ If you wish to build GSD5 as a standalone file:
 - Clone [TiddlyWiki5](https://github.com/Jermolene/TiddlyWiki5/)
 - Clone this repo (or your fork of it). Make sure the two repos are side by side, rather than with one inside the other's directory.
 - Change directory to the top level of the GSD5 directory.
-- To serve GSD5 using node.js run `bin/server.sh`, then visit <http://localhost:8080> with your browser.
+- To serve GSD5 using node.js run `bin/serve.sh`, then visit <http://localhost:8080> with your browser.
 - To build an empty GSD5 file run `bin/build.sh`.
 
-Note there are currently no .cmd equivalents of the server.sh and build.sh scripts for windows users (but perhaps you can write them based on the bash versions).
+Note there are currently no .cmd equivalents of the serve.sh and build.sh scripts for windows users (but perhaps you can write them based on the bash versions).
 
 *This method will build against the latest commits from both TiddlyWiki5 and GSD5, things may be broken or act oddly.  Checkout to latest releases for both if you want a more stable build.  I usually test with Chromium.*

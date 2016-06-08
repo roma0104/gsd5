@@ -95,7 +95,7 @@ function processGroup(filter) {
                 filter.strings.group = "has[" + filter.values.groupBy + "]eachday[" + filter.values.groupBy + "]";
             // else group by other field
             } else {
-                filter.strings.group = "has[" + filter.values.groupBy + "]each[" + filter.values.groupBy + "]";
+                filter.strings.group = "has[" + filter.values.groupBy + "]";
             }
         }
     /// Process all other tiddlers that do not belong to a member of the groupBy field.
@@ -173,7 +173,7 @@ function processOwner(filter) {
 // A hacky filter that takes all preceeding tiddlers and return just the values found in the field
 function processFieldValue(filter) {
     if(filter.values.groupHeader==="true") {
-        filter.strings.fieldValue = "_fieldvalue[" + filter.values.groupBy + "]";
+        filter.strings.fieldValue = "_fieldvalue[" + filter.values.groupBy + "]each[title]";
     }
     return filter;
 }

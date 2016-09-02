@@ -4,5 +4,5 @@
   "author": "Roma Hicks",
   "core-version": ">=5.1.8",
   "list": "readme",
-  "version": "0.6-beta"
+  "version": "0.6.1"
 }

@@ -2,4 +2,5 @@ title: $:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton
 gsd_type: $(gsd_type)$
 gsd_project: $(gsd_project)$
 gsd_realm: $(gsd_realm)$
-text:
+
+This is a new reference... bla bla bla 

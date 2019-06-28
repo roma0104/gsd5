@@ -47,10 +47,8 @@ GSDTiddler.prototype.render = function(parent,nextSibling) {
 };
 
 GSDTiddler.prototype.handleClick = function(event) {
-    var title = prompt("Enter title:");
-    if(!title) {
-        return;
-    }
+    var title = "new " + this.getVariable("gsd_type");
+
     /*
     Special thanks to Stephan "Skeeve" Hradek for the NewTiddler plugin.
     Much of the following code is pulled from his plugin.

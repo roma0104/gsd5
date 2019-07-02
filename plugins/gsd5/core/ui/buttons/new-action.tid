@@ -1,0 +1,18 @@
+title: $:/plugins/gsd5/core/ui/buttons/new-action
+
+\define concat(prefix, postfix) $prefix$$(gsd_type)$$postfix$
+
+<$action-createtiddler
+    $basetitle=<<concat "New " "">>
+    $savetitle="!!justCreated"
+    text=<<concat "My new great " "">> 
+    gsd_type=<<gsd_type>>
+    gsd_status=<<gsd_status>>
+    gsd_complete=<<gsd_complete>>
+    gsd_realm=<<gsd_realm>>
+    gsd_project=<<gsd_project>>
+/>
+
+<$reveal type="match" state=<<concat "$:/plugins/gsd5/core/ui/config/new-" "-show">>  text="show">
+    <$action-sendmessage $message="tm-edit-tiddler" $param={{!!justCreated}}/>
+</$reveal>

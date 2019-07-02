@@ -7,14 +7,16 @@ description: Add new project
 <$set name="gsd_status" value="active">
 <$set name="gsd_complete" value="false">
 <$set name="gsd_realm" value={{$:/currentRealm}}>
-<$gsdtiddler skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" edit={{$:/plugins/gsd5/core/ui/config/new-project-show}} title="Add new project" aria-label="new project" class=<<tv-config-toolbar-class>>>
-<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
-{{$:/plugins/gsd5/core/images/project}}
-</$list>
-<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
-<$text text="new project"/>
-</$list>
-</$gsdtiddler>
+  <$button class=<<tv-config-toolbar-class>> >
+    {{$:/plugins/gsd5/core/ui/buttons/new-action}}
+
+    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+        {{$:/plugins/gsd5/core/images/project}}
+    </$list>
+    <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+        <$text text="new project"/>
+    </$list>
+  </$button>
 </$set>
 </$set>
 </$set>

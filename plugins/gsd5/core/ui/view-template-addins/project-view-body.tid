@@ -10,9 +10,10 @@ Next Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$gsdtiddler skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-action-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
-+
-</$gsdtiddler>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/gsd5/core/ui/buttons/new-action}}
+        +
+    </$button>
 </$set>
 </$set>
 </$set>
@@ -35,9 +36,10 @@ Waiting Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$gsdtiddler skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-action-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
-+
-</$gsdtiddler>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/gsd5/core/ui/buttons/new-action}}
+        +
+    </$button>
 </$set>
 </$set>
 </$set>
@@ -60,9 +62,10 @@ Future Actions
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$gsdtiddler skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-action-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
-+
-</$gsdtiddler>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/gsd5/core/ui/buttons/new-action}}
+        +
+    </$button>
 </$set>
 </$set>
 </$set>
@@ -85,9 +88,10 @@ Subprojects
 <$set name="gsd_complete" value="false">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$gsdtiddler skeleton="$:/plugins/gsd5/core/ui/skeletons/ActionSkeleton" title="Add new action" edit={{$:/plugins/gsd5/core/ui/config/new-project-show}} aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
-+
-</$gsdtiddler>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/gsd5/core/ui/buttons/new-action}}
+        +
+    </$button>
 </$set>
 </$set>
 </$set>
@@ -108,9 +112,10 @@ References
 <$set name="gsd_type" value="reference">
 <$set name="gsd_project" value={{!!title}}>
 <$set name="gsd_realm" value={{!!gsd_realm}}>
-<$gsdtiddler skeleton="$:/plugins/gsd5/core/ui/skeletons/ReferenceSkeleton" title="Add new action" aria-label="new action" class="gsd-list-new-button tc-btn-invisible">
-+
-</$gsdtiddler>
+    <$button class="gsd-list-new-button tc-btn-invisible" >
+        {{$:/plugins/gsd5/core/ui/buttons/new-action}}
+        +
+    </$button>  
 </$set>
 </$set>
 </$set>

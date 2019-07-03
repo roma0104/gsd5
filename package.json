@@ -1,0 +1,23 @@
+{
+  "name": "getsebdoing",
+  "version": "1.0.0",
+  "description": "Get Seb Doing",
+  "main": "index.js",
+  "scripts": {
+    "test": "./bin/build.sh",
+    "build": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianovide/GetSebDoing.git"
+  },
+  "author": "Sebastian Ovide",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastianovide/GetSebDoing/issues"
+  },
+  "homepage": "https://github.com/sebastianovide/GetSebDoing#readme",
+  "dependencies": {
+    "tiddlywiki": "^5.1.19"
+  }
+}

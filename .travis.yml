@@ -1,0 +1,10 @@
+language: node_js
+  - "node"
+
+# script:
+#   - ./bin/build.sh
+
+# deploy:
+#   provider: releases
+#   api_key: "GITHUB OAUTH TOKEN"
+#   file: "output/gsd5-empty.html"

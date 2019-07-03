@@ -1,3 +1,4 @@
 output/*
 editions/gsd5/tiddlers
 editions/gsd5-server/tiddlers
+node_modules

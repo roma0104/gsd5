@@ -1,0 +1,7 @@
+title: $:/plugins/sebastianovide/gsebd/ui/control-panel
+tags: $:/tags/ControlPanel
+caption: GSEBD
+
+<div class="tc-control-panel">
+<<tabs "[all[shadows+tiddlers]tag[$:/tags/GSEBDPlugin]!has[draft.of]]" "$:/plugins/sebastianovide/gsebd/ui/control-panel/core" "$:/state/tab/gsebdpanel" "tc-vertical">>
+</div>

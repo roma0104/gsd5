@@ -1,21 +1,22 @@
 {
-  "name": "getsebdoing",
+  "name": "gettingsebdoing",
   "version": "1.0.0",
-  "description": "TiddlyWiki5 Getting Seb Doing plugin",
+  "description": "Getting Seb Doing",
   "scripts": {
     "test": "./bin/updateVersion.js && ./bin/build.sh",
-    "build": "npm run test"
+    "build": "npm run test",
+    "serve": "./bin/serve.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebastianovide/GetSebDoing.git"
+    "url": "git+https://github.com/sebastianovide/GettingSebDoing.git"
   },
   "author": "Sebastian Ovide",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sebastianovide/GetSebDoing/issues"
+    "url": "https://github.com/sebastianovide/GettingSebDoing/issues"
   },
-  "homepage": "https://github.com/sebastianovide/GetSebDoing#readme",
+  "homepage": "https://github.com/sebastianovide/GettingSebDoing#readme",
   "dependencies": {
     "tiddlywiki": "^5.1.19"
   }

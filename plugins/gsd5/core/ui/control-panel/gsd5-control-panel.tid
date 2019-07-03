@@ -1,7 +1,0 @@
-title: $:/plugins/gsd5/core/ui/control-panel
-tags: $:/tags/ControlPanel
-caption: GSD5
-
-<div class="tc-control-panel">
-<<tabs "[all[shadows+tiddlers]tag[$:/tags/GSD5Plugin]!has[draft.of]]" "$:/plugins/gsd5/core/ui/control-panel/core" "$:/state/tab/gsd5panel" "tc-vertical">>
-</div>

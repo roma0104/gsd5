@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/completed-project-list
+tags: $:/tags/GSEBDLists
+caption: Completed Projects
+
+<<gsebd-list title:"Completed Projects" gsd_type:"project" gsd_status:"active" gsd_complete:"true" realmAware:"true" sort:"gsd_comp_date" order:"descending" groupBy:"none" customFilter:"none">>

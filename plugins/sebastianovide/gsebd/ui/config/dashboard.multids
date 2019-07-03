@@ -1,0 +1,6 @@
+title: $:/config/GSEBDLists/visibility/$:/
+
+plugins/sebastianovide/gsebd/ui/lists/next-action-list: show
+plugins/sebastianovide/gsebd/ui/lists/waiting-action-list: show
+plugins/sebastianovide/gsebd/ui/lists/future-action-list: show
+plugins/sebastianovide/gsebd/ui/lists/active-project-list: show

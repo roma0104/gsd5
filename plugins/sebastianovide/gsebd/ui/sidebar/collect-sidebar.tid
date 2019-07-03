@@ -1,0 +1,71 @@
+title: $:/plugins/sebastianovide/gsebd/ui/sidebar/collect-sidebar
+tags: $:/tags/SideBar
+caption: Collect
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/realm-list"/>
+
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="next">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+  <$button>
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    {{$:/plugins/sebastianovide/gsebd/images/task}} New Action
+  </$button>
+</$set>
+</$set>
+</$set>
+</$set>
+
+<$set name="gsd_type" value="project">
+<$set name="gsd_status" value="active">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+  <$button>
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    {{$:/plugins/sebastianovide/gsebd/images/project}} New Project
+  </$button>
+</$set>
+</$set>
+</$set>
+</$set>
+
+<$set name="gsd_type" value="contact">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+  <$button>
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    {{$:/plugins/sebastianovide/gsebd/images/contact}} New Contact
+  </$button>
+</$set>
+</$set>
+
+<$set name="gsd_type" value="reference">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+  <$button>
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    {{$:/plugins/sebastianovide/gsebd/images/reference}} New Reference
+  </$button>
+</$set>
+</$set>
+
+<$set name="gsd_type" value="context">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+  <$button>
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    {{$:/plugins/sebastianovide/gsebd/images/context}} New Context
+  </$button>
+</$set>
+</$set>
+
+<$set name="gsd_type" value="realm">
+  <$button>
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    {{$:/plugins/sebastianovide/gsebd/images/globe}} New Realm
+  </$button>
+</$set>
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDCollect]!has[draft.of]]">
+
+  {{currentTiddler}}
+  
+</$list>

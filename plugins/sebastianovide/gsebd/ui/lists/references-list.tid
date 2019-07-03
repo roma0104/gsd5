@@ -1,0 +1,4 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/references-list
+caption: References
+
+<<gsebd-list title:"References" gsd_type:"reference" realmAware:"true" sort:"title" order:"ascending" groupBy:{{$:/config/GSEBDReferencesGroup}} filter:"none">>

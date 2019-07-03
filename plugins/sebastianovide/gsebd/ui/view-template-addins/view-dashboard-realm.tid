@@ -1,0 +1,58 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewDashboardRealm
+tags: $:/tags/GSEBDDashboardCore
+
+<$reveal state="$:/config/gsebd/compactWidgets" type="match" text="false" default="false">
+<div class="tw-menu-list-item">
+  Realm
+  <$linkcatcher set="$:/currentRealm" setTo="all">
+    <div class="tw-menu-list-subitem">
+      <$reveal state="$:/currentRealm" type="match" text="all">&bull;</$reveal>
+      <$reveal state="$:/currentRealm" type="nomatch" text="all">&nbsp;&nbsp;</$reveal>
+      <$link to="">&nbsp;all</$link>
+    </div>
+  </$linkcatcher>
+  <$linkcatcher to="$:/currentRealm">
+    <$list filter="[field:gsd_type[realm]]">
+      <div class="tw-menu-list-subitem">
+        <$reveal state="$:/currentRealm" type="match" text={{!!title}}>&bull;</$reveal>
+        <$reveal state="$:/currentRealm" type="nomatch" text={{!!title}}>&nbsp;&nbsp;</$reveal>
+        <$link to={{!!title}}>&nbsp;<$view field="title" format="text"/></$link>
+      </div>
+    </$list>
+  </$linkcatcher>
+</div>
+</$reveal>
+
+<$reveal state="$:/config/gsebd/compactWidgets" type="match" text="true" default="false">
+<p>
+    <div class="gsd-context-box">
+        <$set name="parentTiddler" value=<<currentTiddler>>>
+        <$set name="RealmStatus" value=<<qualify "$:/state/popup/realm">>>
+            <$button popup=<<RealmStatus>> class="tc-btn-invisible gsd-context-button">+ Realms</$button>
+            <$reveal state=<<RealmStatus>> type="nomatch" text="" class="tc-popup-handle" default="" retain="yes" animate="yes">
+            <div class="tc-menu-list-subitem">
+
+<$linkcatcher set="$:/currentRealm" setTo="all">
+    <div class="tw-menu-list-subitem">
+      <$reveal state="$:/currentRealm" type="match" text="all">&bull;</$reveal>
+      <$reveal state="$:/currentRealm" type="nomatch" text="all">&nbsp;&nbsp;</$reveal>
+      <$link to="">&nbsp;all</$link>
+    </div>
+  </$linkcatcher>
+  <$linkcatcher to="$:/currentRealm">
+    <$list filter="[field:gsd_type[realm]]">
+      <div class="tw-menu-list-subitem">
+        <$reveal state="$:/currentRealm" type="match" text={{!!title}}>&bull;</$reveal>
+        <$reveal state="$:/currentRealm" type="nomatch" text={{!!title}}>&nbsp;&nbsp;</$reveal>
+        <$link to={{!!title}}>&nbsp;<$view field="title" format="text"/></$link>
+      </div>
+    </$list>
+  </$linkcatcher>
+
+      </div>
+      </$reveal>
+    </$set>
+        </$set>
+    </div>
+</p>
+</$reveal>

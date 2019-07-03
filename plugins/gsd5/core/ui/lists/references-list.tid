@@ -1,4 +1,0 @@
-title: $:/plugins/gsd5/core/ui/lists/references-list
-caption: References
-
-<<gsd5-list title:"References" gsd_type:"reference" realmAware:"true" sort:"title" order:"ascending" groupBy:{{$:/config/GSD5ReferencesGroup}} filter:"none">>

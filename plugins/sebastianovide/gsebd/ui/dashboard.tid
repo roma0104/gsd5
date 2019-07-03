@@ -1,0 +1,13 @@
+title: Dashboard
+
+\define config-lists()
+$:/config/GSEBDLists/visibility/$(listItem)$
+\end
+
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">
+
+<$reveal state=<<config-lists>> type="match" text="show" default="hide">
+<$transclude tiddler=<<listItem>>/>
+</$reveal>
+
+</$list>

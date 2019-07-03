@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/waiting-action-list
+tags: $:/tags/GSEBDLists
+caption: Waiting Actions
+
+<<gsebd-list title:"Waiting Action" gsd_type:"action" gsd_status:"waiting" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:{{$:/config/GSEBDDashboardGroup}} customFilter:"none" hideFutureProj:"true">>

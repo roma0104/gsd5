@@ -1,9 +1,0 @@
-title: Action Dashboard
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/next-action-list"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/waiting-action-list"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/future-action-list"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/completed-action-list"/>

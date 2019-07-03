@@ -1,0 +1,7 @@
+title: $:/plugins/sebastianovide/gsebd/ui/buttons/delete-tiddler-button
+caption: {{$:/plugins/sebastianovide/gsebd/images/rubbishbin}} delete tiddler
+description: Delete tiddler
+
+<$button class="tc-btn-invisible" message="tm-delete-tiddler" param=<<currentTiddler>>>
+    {{$:/plugins/sebastianovide/gsebd/images/rubbishbin}}
+</$button>

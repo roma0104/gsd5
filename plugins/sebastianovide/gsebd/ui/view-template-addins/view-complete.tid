@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewComplete
+
+<$list filter=[is[current]field:gsd_type[action]][is[current]field:gsd_type[project]]>
+<$complete></$complete>
+</$list>

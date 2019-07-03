@@ -1,0 +1,12 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewRealm
+tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCore $:/tags/GSEBDContactCore $:/tags/GSEBDContextCore
+
+<p class="gsd-gsdpanel-droplist">
+Realm:<br/>
+<$select field="gsd_realm" default="">
+<option value="all">--</option>
+<$list filter="[field:gsd_type[realm]]">
+<option value=<<currentTiddler>>><<currentTiddler>></option>
+</$list>
+</$select>
+</p>

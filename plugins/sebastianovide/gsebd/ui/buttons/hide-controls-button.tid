@@ -1,0 +1,15 @@
+title: $:/plugins/sebastianovide/gsebd/ui/buttons/hide-controls
+tags: $:/tags/ViewToolbar
+caption: {{$:/plugins/sebastianovide/gsebd/images/control}} hide controls
+description: Hide GSEBD Controls
+
+<$list filter="[is[current]has[gsd_type]] [is[current]field:title[Dashboard]]">
+<$toggle tiddler=<<gsdpanelState>> on="hide" off="show" default="show" tooltip="Toggle GSDPanel Controls" aria-label="toggle controls" class=<<tv-config-toolbar-class>> selectedClass="tc-selected">
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/plugins/sebastianovide/gsebd/images/control}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<span class="tc-btn-text"><$text text="toggle controls"/></span>
+</$list>
+</$toggle>
+</$list>

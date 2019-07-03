@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/active-project-list
+tags: $:/tags/GSEBDLists
+caption: Active Projects
+
+<<gsebd-list title:"Active Projects" gsd_type:"project" gsd_status:"active" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"none" customFilter:"none">>

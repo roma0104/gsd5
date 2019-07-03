@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/skeletons/ContextSkeleton
+gsd_type: $(gsd_type)$
+gsd_realm: $(gsd_realm)$
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/context-action-list" mode="block"/>

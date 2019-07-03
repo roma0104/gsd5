@@ -1,5 +1,0 @@
-title: $:/plugins/gsd5/core/ui/lists/next-action-list
-tags: $:/tags/GSD5Lists
-caption: Next Actions
-
-<<gsd5-list title:"Next Action" gsd_type:"action" gsd_status:"next" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:{{$:/config/GSD5DashboardGroup}} customFilter:"none" hideFutureProj:"true">>

@@ -1,2 +1,0 @@
-title: $:/tags/GSD5Lists
-list: [[$:/plugins/gsd5/core/ui/lists/next-action-list]] [[$:/plugins/gsd5/core/ui/lists/waiting-action-list]] [[$:/plugins/gsd5/core/ui/lists/waiting-action-list-by-contact]] [[$:/plugins/gsd5/core/ui/lists/future-action-list]] [[$:/plugins/gsd5/core/ui/lists/active-project-list]] [[$:/plugins/gsd5/core/ui/lists/future-project-list]] [[$:/plugins/gsd5/core/ui/lists/completed-action-list]] [[$:/plugins/gsd5/core/ui/lists/completed-project-list]] [[$:/plugins/gsd5/core/ui/lists/contacts]]

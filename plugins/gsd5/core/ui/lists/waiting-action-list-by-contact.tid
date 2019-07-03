@@ -1,5 +1,0 @@
-title: $:/plugins/gsd5/core/ui/lists/waiting-action-list-by-contact
-tags: $:/tags/GSD5Lists
-caption: Waiting Actions by Contact
-
-<<gsd5-list title:"Delegated Actions By Contact" gsd_type:"action" gsd_status:"waiting" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"gsd_contact" customFilter:"none">>

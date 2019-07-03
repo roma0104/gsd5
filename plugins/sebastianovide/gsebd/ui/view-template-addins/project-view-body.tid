@@ -1,0 +1,142 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ProjectViewBody
+tags: $:/tags/ViewTemplate
+
+<$list filter=[is[current]field:gsd_type[project]]>
+
+<div class="tc-menu-list-item">
+Next Actions
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="next">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+        +
+    </$button>
+</$set>
+</$set>
+</$set>
+</$set>
+</$set>
+<hr/>
+<$list filter=[field:gsd_type[action]field:gsd_status[next]field:gsd_complete[false]field:gsd_project{!!title}]>
+<div class="tc-menu-list-subitem">
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewSuffix"/>
+</div>
+</$list>
+</div>
+
+<div class="tc-menu-list-item">
+Waiting Actions
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="waiting">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+        +
+    </$button>
+</$set>
+</$set>
+</$set>
+</$set>
+</$set>
+<hr/>
+<$list filter=[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_project{!!title}]>
+<div class="tc-menu-list-subitem">
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewSuffix"/>
+</div>
+</$list>
+</div>
+
+<div class="tc-menu-list-item">
+Future Actions
+<$set name="gsd_type" value="action">
+<$set name="gsd_status" value="future">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+        +
+    </$button>
+</$set>
+</$set>
+</$set>
+</$set>
+</$set>
+<hr/>
+<$list filter=[field:gsd_type[action]field:gsd_status[future]field:gsd_complete[false]field:gsd_project{!!title}]>
+<div class="tc-menu-list-subitem">
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewSuffix"/>
+</div>
+</$list>
+</div>
+
+<div class="tc-menu-list-item">
+Subprojects
+<$set name="gsd_type" value="project">
+<$set name="gsd_status" value="active">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
+    <$button class="gsd-list-new-button tc-btn-invisible">
+        {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+        +
+    </$button>
+</$set>
+</$set>
+</$set>
+</$set>
+</$set>
+<hr/>
+<$list filter=[field:gsd_type[project]field:gsd_project{!!title}]>
+<div class="tc-menu-list-subitem">
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewSuffix"/>
+</div>
+</$list>
+</div>
+
+<div class="tc-menu-list-item">
+References
+<$set name="gsd_type" value="reference">
+<$set name="gsd_project" value={{!!title}}>
+<$set name="gsd_realm" value={{!!gsd_realm}}>
+    <$button class="gsd-list-new-button tc-btn-invisible" >
+        {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+        +
+    </$button>  
+</$set>
+</$set>
+</$set>
+<hr/>
+<$list filter=[field:gsd_type[reference]field:gsd_project{!!title}]>
+<div class="tc-menu-list-subitem">
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+</div>
+</$list>
+</div>
+
+<div class="tc-menu-list-item">
+Completed Actions
+<hr/>
+<$list filter=[field:gsd_type[action]field:gsd_complete[true]field:gsd_project{!!title}!sort[gsd_comp_date]]>
+<div class="tc-menu-list-subitem">
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
+<span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewSuffix"/>
+</div>
+</$list>
+</div>
+
+</$list>

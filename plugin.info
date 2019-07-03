@@ -1,5 +1,6 @@
 {
-  "title": "$:/plugins/gsd5/core",
+  "title": "$:/plugins/sebastianovide/gsebd",
   "list": "readme",
-  "plugin-type": "plugin"
+  "plugin-type": "plugin",
+  "source": "https://github.com/sebastianovide/GettingSebDoing"
 }

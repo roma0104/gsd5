@@ -1,0 +1,7 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/context-action-list
+
+<<gsebd-list title:"Next Action By Project" gsd_type:"action" gsd_status:"next" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"gsd_project" customFilter:"none" ownerField:"tag">>
+
+<<gsebd-list title:"Wating Action By Project" gsd_type:"action" gsd_status:"waiting" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"gsd_project" customFilter:"none" ownerField:"tag">>
+
+<<gsebd-list title:"Future Action By Project" gsd_type:"action" gsd_status:"future" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"gsd_project" customFilter:"none" ownerField:"tag">>

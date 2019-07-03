@@ -1,0 +1,17 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/ListViewSuffix
+
+<$list filter="[is[current]field:gsd_type[action]]">
+<$list filter="[is[current]!field:text[]!field:gsd_complete[true]]">
+<span class="gsd-muted"><$transclude tiddler="$:/plugins/sebastianovide/gsebd/images/excerpt"/></span>
+</$list>
+<$list filter="[is[current]field:gsd_complete[true]]">
+<span class="gsd-muted">(<$view field="gsd_comp_date" format="relativedate"/>)</span>
+<span class="gsd-muted"><$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/buttons/delete-tiddler-button"/></span>
+</$list>
+</$list>
+
+<$list filter="[is[current]field:gsd_type[project]]">
+<$list filter="[is[current]field:gsd_complete[true]]">
+<span class="gsd-muted"><$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/buttons/delete-tiddler-button"/></span>
+</$list>
+</$list>

@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/future-action-list
+tags: $:/tags/GSEBDLists
+caption: Future Actions
+
+<<gsebd-list title:"Future Action" gsd_type:"action" gsd_status:"future" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:{{$:/config/GSEBDDashboardGroup}} customFilter:"none" hideFutureProj:"true">>

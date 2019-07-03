@@ -1,5 +1,0 @@
-title: $:/plugins/gsd5/core/ui/lists/completed-project-list
-tags: $:/tags/GSD5Lists
-caption: Completed Projects
-
-<<gsd5-list title:"Completed Projects" gsd_type:"project" gsd_status:"active" gsd_complete:"true" realmAware:"true" sort:"gsd_comp_date" order:"descending" groupBy:"none" customFilter:"none">>

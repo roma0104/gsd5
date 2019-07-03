@@ -1,6 +1,0 @@
-title: $:/config/GSD5Lists/visibility/$:/
-
-plugins/gsd5/core/ui/lists/next-action-list: show
-plugins/gsd5/core/ui/lists/waiting-action-list: show
-plugins/gsd5/core/ui/lists/future-action-list: show
-plugins/gsd5/core/ui/lists/active-project-list: show

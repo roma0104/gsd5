@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/future-project-list
+tags: $:/tags/GSEBDLists
+caption: Future Projects
+
+<<gsebd-list title:"Future Projects" gsd_type:"project" gsd_status:"future" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"none" customFilter:"none">>

@@ -1,0 +1,23 @@
+title: $:/plugins/sebastianovide/gsebd/ui/buttons/add-action-button
+tags: $:/tags/PageControls
+caption: {{$:/core/images/refresh-button}} new action
+description: Add new action
+
+<$button class=<<tv-config-toolbar-class>> >
+    <$set name="gsd_type" value="action">
+    <$set name="gsd_status" value="next">
+    <$set name="gsd_complete" value="false">
+    <$set name="gsd_realm" value={{$:/currentRealm}}>
+        {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    </$set>
+    </$set>
+    </$set>
+    </$set>
+
+    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+        {{$:/plugins/sebastianovide/gsebd/images/task}}
+    </$list>
+    <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+        <$text text="new action"/>
+    </$list>
+</$button>

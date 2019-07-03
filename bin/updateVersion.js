@@ -11,7 +11,7 @@ const tiddlywikiVersion = packageJson.dependencies.tiddlywiki;
 
 // write version in plugin.info
 const fs = require('fs');
-const pluginInfoOutputPath = "./plugins/gsd5/core/plugin.info";
+const pluginInfoOutputPath = "./plugins/sebastianovide/gsebd/plugin.info";
 const pluginInfoInputPath = "./plugin.info";
 const pluginInfo = JSON.parse(fs.readFileSync(pluginInfoInputPath));
 pluginInfo.version = versionArray.join(".");

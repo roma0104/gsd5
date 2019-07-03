@@ -1,3 +1,0 @@
-title: Completed Actions
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/completed-action-list" mode="block">

@@ -1,5 +1,0 @@
-title: $:/plugins/gsd5/core/ui/lists/contacts-list
-tags: $:/tags/GSD5Lists
-caption: Contacts
-
-<<gsd5-list title:"Contacts" gsd_type:"contact" realmAware:"true" sort:"title" order:"ascending" customFilter:"none">>

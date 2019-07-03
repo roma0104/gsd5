@@ -1,0 +1,7 @@
+title: $:/plugins/sebastianovide/gsebd/ui/buttons/convert-action-button
+description: Convert Action to Project
+tags: $:/tags/GSEBDActionCore
+
+<$list filter="[is[current]field:gsd_complete[false]]">
+<$convert class="gsd-gsdpanel-button" tooltip="Covert Action to Project" aria-label="Convert Action to Project">{{$:/plugins/sebastianovide/gsebd/images/convert}} Convert</$convert>
+</$list>

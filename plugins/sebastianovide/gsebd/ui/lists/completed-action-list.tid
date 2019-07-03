@@ -1,0 +1,5 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/completed-action-list
+tags: $:/tags/GSEBDLists
+caption: Completed Actions
+
+<<gsebd-list title:"Completed Action" gsd_type:"action" gsd_complete:"true" realmAware:"true" sort:"gsd_comp_date" order:"descending" groupBy:{{$:/config/GSEBDDashboardGroup}} customFilter:"none">>

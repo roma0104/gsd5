@@ -1,0 +1,3 @@
+title: Completed Projects
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/completed-project-list"/>

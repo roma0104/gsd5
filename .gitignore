@@ -1,5 +1,5 @@
 output
-editions/gsd5/tiddlers
-editions/gsd5-server/tiddlers
+editions/gsebd/tiddlers
+editions/gsebd-server/tiddlers
 node_modules
-plugins/gsd5/core/plugin.info
+plugins/sebastianovide/gsebd/plugin.info

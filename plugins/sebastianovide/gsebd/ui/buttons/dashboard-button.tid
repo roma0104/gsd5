@@ -1,0 +1,13 @@
+title: $:/plugins/sebastianovide/gsebd/ui/buttons/dashboard-button
+tags: $:/tags/PageControls
+caption: {{$:/plugins/sebastianovide/gsebd/images/dashboard}} open dashboard
+description: Open the dashboard
+
+<$button to="Dashboard" title="Open the dashboard" aria-label="open dashboard" class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/plugins/sebastianovide/gsebd/images/dashboard}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<$text text="open dashboard"/>
+</$list>
+</$button>

@@ -1,0 +1,7 @@
+title: Project Dashboard
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/active-project-list"/>
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/future-project-list"/>
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/completed-project-list"/>

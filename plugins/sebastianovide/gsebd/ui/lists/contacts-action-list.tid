@@ -1,0 +1,8 @@
+title: $:/plugins/sebastianovide/gsebd/ui/lists/contacts-action-list
+
+<p>
+<<gsebd-list title:"Waiting Actions" gsd_type:"action" gsd_status:"waiting" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"gsd_project" customFilter:"none" ownerField:"gsd_contact">>
+</p>
+<p>
+<<gsebd-list title:"Future Actions" gsd_type:"action" gsd_status:"future" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"gsd_project" customFilter:"none" ownerField:"gsd_contact">>
+</p>

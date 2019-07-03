@@ -1,0 +1,2 @@
+title: $:/tags/SideBar
+list: [[$:/core/ui/SideBar/Open]] [[$:/plugins/sebastianovide/gsebd/ui/sidebar/collect-sidebar]] [[$:/plugins/sebastianovide/gsebd/ui/sidebar/review-sidebar]] [[$:/core/ui/SideBar/Recent]] [[$:/core/ui/SideBar/Tools]] [[$:/core/ui/SideBar/More]]

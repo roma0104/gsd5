@@ -1,0 +1,17 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewStatus
+tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore
+
+<$list filter=[is[current]field:gsd_type[action]!field:gsd_complete[true]]>
+<p class="gsd-gsdpanel-droplist">
+<$radio class="body-status next" field="gsd_status" value="next">next</$radio>
+<$radio class="body-status waiting" field="gsd_status" value="waiting">waiting</$radio>
+<$radio class="body-status future" field="gsd_status" value="future">future</$radio>
+</p>
+</$list>
+
+<$list filter=[is[current]field:gsd_type[project]!field:gsd_complete[true]]>
+<p class="gsd-gsdpanel-droplist">
+<$radio class="body-status next" field="gsd_status" value="active">active</$radio>
+<$radio class="body-status future" field="gsd_status" value="future">future</$radio>
+</p>
+</$list>

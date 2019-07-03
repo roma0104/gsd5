@@ -1,0 +1,43 @@
+title: $:/plugins/sebastianovide/gsebd/ui/control-panel/core
+tags: $:/tags/GSEBDPlugin
+caption: Core
+
+\define config-lists()
+$:/config/GSEBDLists/visibility/$(listItem)$
+\end
+\define list-caption()
+{{$(listItem)$!!caption}}
+\end
+
+! Core
+
+<div style="border-top:1px solid #eee;">
+
+''General''
+
+<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-action-show" field="text" checked="show" unchecked="no"> Show new Actions upon creation</$checkbox><br/>
+<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-project-show" field="text" checked="show" unchecked="no"> Show new Projects upon creation</$checkbox><br/>
+<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-realm-show" field="text" checked="show" unchecked="no"> Show new Realm upon creation</$checkbox><br/>
+<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-contact-show" field="text" checked="show" unchecked="no"> Show new Contact upon creation</$checkbox><br/>
+<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-reference-show" field="text" checked="show" unchecked="no"> Show new Reference upon creation</$checkbox><br/>
+<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-context-show" field="text" checked="show" unchecked="no"> Show new Context upon creation</$checkbox><br/>
+
+<$checkbox tiddler="$:/config/ViewToolbarButtons/Visibility/$:/plugins/sebastianovide/gsebd/ui/buttons/hide-controls" field="text" checked="show" unchecked="hide"> Show ~gsdpanel minimize button</$checkbox><br/>
+<$checkbox tiddler="$:/config/gsebd/compactWidgets" field="text" checked="true" unchecked="false"> Compact GSEBD widgets (when possible)</$checkbox>
+
+</div>
+
+<div style="border-top:1px solid #eee;">
+
+''Dashboard''
+
+//Dashboard Lists//<br/>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">
+<$checkbox tiddler=<<config-lists>> field="text" checked="show" unchecked="hide"> <<list-caption>> </$checkbox><br/>
+</$list>
+
+//Dashboard Options//<br/>
+<$checkbox tiddler="$:/config/GSEBDDashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group Actions in Dashboard by Project</$checkbox><br/>
+<$checkbox tiddler="$:/config/GSEBDDashboardCore/visibility/$:/plugins/sebastianovide/gsebd/ui/addins/ViewDashboardRealm" field="text" checked="show" unchecked="hide"> Show Realm selector in the Dashboard </$checkbox>
+
+</div>

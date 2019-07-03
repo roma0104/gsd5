@@ -1,7 +1,0 @@
-title: Project Dashboard
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/active-project-list"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/future-project-list"/>
-
-<$transclude tiddler="$:/plugins/gsd5/core/ui/lists/completed-project-list"/>

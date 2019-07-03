@@ -1,0 +1,152 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody
+
+\define dashboard-visibility()
+$:/config/GSEBDDashboardCore/visibility/$(listItem)$
+\end
+
+\define minimized-notice()
+<$reveal state=<<gsdpanelState>> type="match" text="hide" default="show">
+<div class="gsd-gsdpanel-min-notice">//gsdpanel minimized//</div>
+</$reveal>
+\end
+
+<!-- Dashboard -->
+<$list filter="[all[shadows+tiddlers]is[current]field:title[Dashboard]]">
+<$list filter="[all[shadows+tiddlers]prefix[$:/config/GSEBDDashboardCore/visibility/]!has[draft.of]field:text[show]] [all[shadows+tiddlers]prefix[$:/config/GSEBDDashboardPlugin/visibility/]!has[draft.of]field:text[show]] +[limit[1]]" variable="pass">
+<div class="tc-message-box gsd-plugin-box">
+<<minimized-notice>>
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
+<div class="gsd-plugin-core">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDDashboardCore]!has[draft.of]]" variable="listItem">
+<$reveal state=<<dashboard-visibility>> type="match" text="show" default="hide">
+<$transclude tiddler=<<listItem>>/>
+</$reveal>
+</$list>
+</div>
+<div class="gsd-plugin-other">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDDashboardPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+</$reveal>
+</div>
+</$list>
+</$list>
+
+<!-- Action -->
+<$list filter=[is[current]field:gsd_type[action]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDActionCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDActionPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
+<div class="tc-message-box gsd-plugin-box">
+<<minimized-notice>>
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
+<div class="gsd-plugin-core">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDActionCore]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+<div class="gsd-plugin-other">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDActionPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+</$reveal>
+</div>
+</$list>
+</$list>
+
+<!-- Project -->
+<$list filter=[is[current]field:gsd_type[project]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDProjectPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
+<div class="tc-message-box gsd-plugin-box">
+<<minimized-notice>>
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
+<div class="gsd-plugin-core">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+<div class="gsd-plugin-other">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+</$reveal>
+</div>
+</$list>
+</$list>
+
+<!-- Reference -->
+<$list filter=[is[current]field:gsd_type[reference]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDReferenceCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDReferencePlugin]!has[draft.of]] +[limit[1]]" variable="pass">
+<div class="tc-message-box gsd-plugin-box">
+<<minimized-notice>>
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
+<div class="gsd-plugin-core">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDReferenceCore]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+<div class="gsd-plugin-other">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDReferencePlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+</$reveal>
+</div>
+</$list>
+</$list>
+
+<!-- Contact -->
+<$list filter=[is[current]field:gsd_type[contact]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContactCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDContactPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
+<div class="tc-message-box gsd-plugin-box">
+<<minimized-notice>>
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
+<div class="gsd-plugin-core">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContactCore]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+<div class="gsd-plugin-other">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContactPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+</$reveal>
+</div>
+</$list>
+{{||$:/plugins/sebastianovide/gsebd/ui/lists/contacts-action-list}}
+</$list>
+
+<!-- Context -->
+<$list filter=[is[current]field:gsd_type[context]]>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContextCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDContextPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
+<div class="tc-message-box gsd-plugin-box">
+<<minimized-notice>>
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
+<div class="gsd-plugin-core">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContextCore]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+<div class="gsd-plugin-other">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContextPlugin]!has[draft.of]]" variable="listItem">
+<$transclude tiddler=<<listItem>>/>
+</$list>
+</div>
+</$reveal>
+</div>
+</$list>
+</$list>
+
+<!-- Reference Dashboard -->
+<$list filter="[all[shadows+tiddlers]is[current]field:title[References]]">
+<div class="tc-message-box">
+<<minimized-notice>>
+<$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
+
+<$checkbox tiddler="$:/config/GSEBDReferencesGroup" field="text" checked="gsd_project" unchecked="none">&nbsp;Group By Project</$checkbox>
+
+</$reveal>
+</div>
+</$list>

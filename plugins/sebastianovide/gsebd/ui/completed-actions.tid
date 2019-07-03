@@ -1,0 +1,3 @@
+title: Completed Actions
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/completed-action-list" mode="block">

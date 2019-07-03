@@ -1,5 +1,0 @@
-title: $:/plugins/gsd5/core/ui/lists/active-project-list
-tags: $:/tags/GSD5Lists
-caption: Active Projects
-
-<<gsd5-list title:"Active Projects" gsd_type:"project" gsd_status:"active" gsd_complete:"false" realmAware:"true" sort:"title" order:"ascending" groupBy:"none" customFilter:"none">>

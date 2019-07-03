@@ -1,0 +1,18 @@
+title: $:/core/ui/ViewTemplate/body
+tags: $:/tags/ViewTemplate
+
+<div class="tc-tiddler-body">
+
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewBody"/>
+
+<$list filter="[all[current]!has[plugin-type]!field:hide-body[yes]]">
+
+<$transclude>
+
+<$transclude tiddler="$:/language/MissingTiddler/Hint"/>
+
+</$transclude>
+
+</$list>
+
+</div>

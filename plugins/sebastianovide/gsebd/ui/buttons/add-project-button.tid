@@ -1,0 +1,24 @@
+title: $:/plugins/sebastianovide/gsebd/ui/buttons/add-project-button
+tags: $:/tags/PageControls
+caption: {{$:/plugins/sebastianovide/gsebd/images/project}} new project
+description: Add new project
+
+<$set name="gsd_type" value="project">
+<$set name="gsd_status" value="active">
+<$set name="gsd_complete" value="false">
+<$set name="gsd_realm" value={{$:/currentRealm}}>
+  <$button class=<<tv-config-toolbar-class>> >
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+
+    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+        {{$:/plugins/sebastianovide/gsebd/images/project}}
+    </$list>
+    <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+        <$text text="new project"/>
+    </$list>
+  </$button>
+</$set>
+</$set>
+</$set>
+</$set>
+

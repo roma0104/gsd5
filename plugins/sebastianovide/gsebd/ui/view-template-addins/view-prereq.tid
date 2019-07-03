@@ -1,0 +1,109 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq
+tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCore
+
+\define gsd-tiddler-fly(type,status)
+  <$button class="tc-btn-invisible">
+      <$set name="gsd_type" value=$type$>
+      <$set name="gsd_status" value=$status$>
+      <$set name="gsd_complete" value="false">
+      <$set name="gsd_realm" value={{$:/currentRealm}}>
+        {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+      </$set>
+      </$set>
+      </$set>      
+      </$set>
+      new
+  </$button>
+\end
+
+<$list filter=[is[current]field:gsd_type[project]]>
+  <p class="gsd-gsdpanel-droplist">
+    Subproject of: <br/>
+    <$select field="gsd_project" default="">
+      <option value="">--</option>
+      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]!is[current]field:gsd_realm{!!gsd_realm}]">
+       <option value=<<currentTiddler>>><<currentTiddler>></option>
+      </$list>
+    </$select>
+    <span class="goto-link">
+      <$list filter=[is[current]!field:gsd_project[]]>
+        &nbsp;<$link to={{!!gsd_project}}>>></$link>
+      </$list>
+      <$list filter="[is[current]field:gsd_project[]]">
+        &nbsp;<<gsd-tiddler-fly "project" "active">>
+      </$list>
+    </span>
+  </p>
+</$list>
+
+<$list filter=[is[current]field:gsd_type[action]]>
+  <p class="gsd-gsdpanel-droplist">
+    Project of: <br/>
+    <$select field="gsd_project" default="">
+      <option value="">--</option>
+      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}]">
+        <option value=<<currentTiddler>>><<currentTiddler>></option>
+      </$list>
+    </$select>
+    <span class="goto-link">
+      <$list filter=[is[current]!field:gsd_project[]]>
+        &nbsp;<$link to={{!!gsd_project}}>>></$link>
+      </$list>
+      <$list filter="[is[current]field:gsd_project[]]">
+        &nbsp;<<gsd-tiddler-fly "project" "active">>
+      </$list>
+    </span>
+  </p>
+  <p class="gsd-gsdpanel-droplist">
+    Depends on: <br/>
+    <$prereq default="">
+      <option value="">--</option>
+      <$set name="currentTitle" value=<<currentTiddler>> >
+        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}!has[gsd_project]limit[1]]">
+          <optgroup label="No Project">
+            <$list filter="[field:gsd_type[action]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}!has[gsd_project]!title<currentTitle>]">
+              <option value=<<currentTiddler>>><<currentTiddler>></option>
+            </$list>
+          </optgroup>
+        </$list>
+      </$set>
+      <$set name="currentTitle" value=<<currentTiddler>> >
+        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}has[gsd_project]each[gsd_project]]">
+          <optgroup label={{!!gsd_project}}>
+          <$list filter="[field:gsd_type[action]!field:gsd_complete[true]!title<currentTitle>field:gsd_project{!!gsd_project}]">
+            <option value=<<currentTiddler>>><<currentTiddler>></option>
+          </$list>
+          </optgroup>
+        </$list>
+      </$set>
+    </$prereq>
+    <span class="goto-link">
+      <$list filter=[is[current]!field:gsd_action[]]>
+        &nbsp;<$link to={{!!gsd_action}}>>></$link>
+      </$list>
+      <$list filter="[is[current]field:gsd_action[]]">
+        &nbsp;<<gsd-tiddler-fly "action" "next">>
+      </$list>
+    </span>
+  </p>
+</$list>
+
+<$list filter=[is[current]field:gsd_type[reference]]>
+  <p class="gsd-gsdpanel-droplist">
+    Project of: <br/>
+    <$select field="gsd_project" default="">
+      <option value="">--</option>
+      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}]">
+       <option value=<<currentTiddler>>><<currentTiddler>></option>
+      </$list>
+    </$select>
+    <span class="goto-link">
+      <$list filter=[is[current]!field:gsd_project[]]>
+        &nbsp;<$link to={{!!gsd_project}}>>></$link>
+      </$list>
+      <$list filter="[is[current]field:gsd_project[]]">
+        &nbsp;<<gsd-tiddler-fly "project" "active">>
+      </$list>
+    </span>
+  </p>
+</$list>

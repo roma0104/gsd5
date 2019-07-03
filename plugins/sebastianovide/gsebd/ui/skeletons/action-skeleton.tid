@@ -1,0 +1,9 @@
+title: $:/plugins/sebastianovide/gsebd/ui/skeletons/ActionSkeleton
+gsd_type: $(gsd_type)$
+gsd_status: $(gsd_status)$
+gsd_complete: $(gsd_complete)$
+gsd_realm: $(gsd_realm)$
+gsd_project: $(gsd_project)$
+gsd_contact:
+
+This is a new action... bla bla bla!

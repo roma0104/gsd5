@@ -1,7 +1,7 @@
 {
   "name": "getsebdoing",
   "version": "1.0.0",
-  "description": "Get Seb Doing",
+  "description": "TiddlyWiki5 Getting Seb Doing plugin",
   "scripts": {
     "test": "./bin/updateVersion.js && ./bin/build.sh",
     "build": "npm run test"

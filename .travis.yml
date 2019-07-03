@@ -1,10 +1,14 @@
 language: node_js
-  - "node"
 
-# script:
-#   - ./bin/build.sh
+before_deploy:
+  - ls -la
+  - export TRAVIS_TAG=v`cat output/APP_VERSION`
 
-# deploy:
-#   provider: releases
-#   api_key: "GITHUB OAUTH TOKEN"
-#   file: "output/gsd5-empty.html"
+deploy:
+  provider: releases
+  api_key:
+    secure: I1IwvM3dV2krQJGPT3Wtm+6YjkEjVvAFpo3VKAOdOxpq5x+s30SVz9T3Nzz6L+uakzHIRwNsQDGqzKI1eUBMMMP29HMnUaGipoe/9bTr1ey3JMXnyp5kW7fTbhKhTxOzRwGTDXw4sTs2YNweV7sv2nJz+C+qlW+qvhlxi8OUAVr6waqNFaOf4ajjZL75t5Wjl4s3Tc63H/m925ccSFpIo/etrdNV4ObAsx4PWYdxpCIXunrgBR8zAE2hUr526AY+FVzxMyte07fCX9rjN0BFdhR+RHEXaDrSHEvG9NmlCw4SnjfbQkbTMs4/szsFKX6HZ+WWgBABYZR9hoSJOJBezVbW1wPeOCc9LzxdVUkSRIZiRmyp7kHaVE1kcqFHDGNM+XjhQ/BzkV9TkTTlyLDT7aZq1Ospp/2UjV4jg5GH4bCa4iaQ4e3lDVpbuf6AHnS92IcytCMwXPP6GdcY4QM7UPz+AOCQN1ui2+bD+fjBqBh3oe+q7xXeM2RJvGI8RF1KfhnzZl/tLM+nIOZGgUws8GptSaaL/FhdVIXbn4muyFPU9PDZOdAYTDtYKdc+WrynCiaSRynndW80EUP00RV5wtKMK4hPtTavram+rfl1BD/C6nCrkoXUtJmUKchgLy/A2yIYaCiZqGnPoQT1khbGjQZClm2XWuztYJpRHglR9cE=
+  file: output/gsd5-empty.html
+  skip_cleanup: true
+  on:
+    repo: sebastianovide/GetSebDoing

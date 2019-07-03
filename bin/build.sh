@@ -7,11 +7,6 @@ OUTPUT_DIR=$GSD5_DIR/output
 OUTPUT_FILE=gsd5-empty.html
 mkdir -p $OUTPUT_DIR
 
-
-pwd
-ls -la
-
-
 export TIDDLYWIKI_PLUGIN_PATH=$GSD5_DIR/plugins
 
 ( cd $TIDDLYWIKI5_DIR && node ./tiddlywiki.js \

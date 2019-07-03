@@ -2,9 +2,8 @@
   "name": "getsebdoing",
   "version": "1.0.0",
   "description": "Get Seb Doing",
-  "main": "index.js",
   "scripts": {
-    "test": "./bin/build.sh",
+    "test": "./bin/updateVersion.js && ./bin/build.sh",
     "build": "npm run test"
   },
   "repository": {

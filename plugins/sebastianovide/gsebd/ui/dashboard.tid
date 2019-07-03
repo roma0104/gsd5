@@ -4,6 +4,12 @@ title: Dashboard
 $:/config/GSEBDLists/visibility/$(listItem)$
 \end
 
+![[Vision]]
+{{Vision}}
+
+![[Areas]]
+{{Areas}}
+
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">
 
 <$reveal state=<<config-lists>> type="match" text="show" default="hide">

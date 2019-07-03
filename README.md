@@ -1,4 +1,4 @@
-# GSEBD
+# GSebD (Getting-Seb-Doing)
 
 [![Build Status](https://travis-ci.org/sebastianovide/GettingSebDoing.svg?branch=master)](https://travis-ci.org/sebastianovide/GettingSebDoing)
 

@@ -2,7 +2,7 @@
 
 // combine version from package and TRAVIS_BUILD_NUMBER
 const version = require("./../package.json").version;
-const buildNumber = process.env.TRAVIS_BUILD_NUMBER || "dev";
+const buildNumber = process.env.TRAVIS_BUILD_NUMBER || "dev-" + new Date().getTime();
 
 const versionArray = version.split(".");
 versionArray[2] = buildNumber;

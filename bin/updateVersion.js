@@ -9,10 +9,11 @@ versionArray[2] = buildNumber;
 
 // write version in plugin.info
 const fs = require('fs');
-const pluginInfoPath = "./plugins/gsd5/core/plugin.info";
-const pluginInfo = JSON.parse(fs.readFileSync(pluginInfoPath));
+const pluginInfoOutputPath = "./plugins/gsd5/core/plugin.info";
+const pluginInfoInputPath = "./plugin.info";
+const pluginInfo = JSON.parse(fs.readFileSync(pluginInfoInputPath));
 pluginInfo.version = versionArray.join(".");
-fs.writeFileSync(pluginInfoPath, JSON.stringify(pluginInfo, "", 2));
+fs.writeFileSync(pluginInfoOutputPath, JSON.stringify(pluginInfo, "", 2));
 
 // save the version for git tagging
 const dir = './output';

@@ -3,7 +3,7 @@
 // combine version from package and TRAVIS_BUILD_NUMBER
 const packageJson = require("./../package.json");
 const version = packageJson.version;
-const buildNumber = process.env.TRAVIS_BUILD_NUMBER || "dev-" + new Date().getTime();
+const buildNumber = process.env.TRAVIS_BUILD_NUMBER || new Date().getTime();
 
 const versionArray = version.split(".");
 versionArray[2] = buildNumber;
@@ -27,3 +27,4 @@ if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
 }
 fs.writeFileSync(dir + "/APP_VERSION", pluginInfo.version);
+console.log("Building version: ", pluginInfo.version);

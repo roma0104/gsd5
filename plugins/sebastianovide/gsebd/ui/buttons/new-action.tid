@@ -1,16 +1,20 @@
 title: $:/plugins/sebastianovide/gsebd/ui/buttons/new-action
 
 \define concat(prefix, postfix) $prefix$$(gsd_type)$$postfix$
+\define newHereButtonTags()
+[[$(gsd_area)$]]
+\end
 
 <$action-createtiddler
     $basetitle=<<concat "New " "">>
     $savetitle="!!justCreated"
-    text=<<concat "My new great " "">> 
+    text=<<concat "My new great " "">>
     gsd_type=<<gsd_type>>
     gsd_status=<<gsd_status>>
     gsd_complete=<<gsd_complete>>
     gsd_realm=<<gsd_realm>>
     gsd_project=<<gsd_project>>
+    tags=<<newHereButtonTags>>
 />
 
 <$reveal type="match" state=<<concat "$:/plugins/sebastianovide/gsebd/ui/config/new-" "-show">>  text="show">

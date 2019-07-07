@@ -29,10 +29,10 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore
         <$set name="gsd_realm" value={{$:/currentRealm}}>
             &nbsp;
 
-            <$button class="gsd-list-new-button tc-btn-invisible" >
+            <$button class="tc-btn-invisible" >
                 {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
                 new
-            </$button>  
+            </$button>
 
         </$set>
         </$set>

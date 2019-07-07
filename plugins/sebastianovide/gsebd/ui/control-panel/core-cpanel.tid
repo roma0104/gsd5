@@ -21,6 +21,7 @@ $:/config/GSEBDLists/visibility/$(listItem)$
 <$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-contact-show" field="text" checked="show" unchecked="no"> Show new Contact upon creation</$checkbox><br/>
 <$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-reference-show" field="text" checked="show" unchecked="no"> Show new Reference upon creation</$checkbox><br/>
 <$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-context-show" field="text" checked="show" unchecked="no"> Show new Context upon creation</$checkbox><br/>
+<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-area-show" field="text" checked="show" unchecked="no"> Show new Area upon creation</$checkbox><br/>
 
 <$checkbox tiddler="$:/config/ViewToolbarButtons/Visibility/$:/plugins/sebastianovide/gsebd/ui/buttons/hide-controls" field="text" checked="show" unchecked="hide"> Show ~gsdpanel minimize button</$checkbox><br/>
 <$checkbox tiddler="$:/config/gsebd/compactWidgets" field="text" checked="true" unchecked="false"> Compact GSEBD widgets (when possible)</$checkbox>

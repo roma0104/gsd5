@@ -4,16 +4,30 @@ title: Dashboard
 $:/config/GSEBDLists/visibility/$(listItem)$
 \end
 
-![[Vision]]
-{{Vision}}
+<hr/>
 
-![[Areas]]
-{{Areas}}
+![[Vision]]
+
+!!<$list filter="[[Vision]is[tiddler]]" emptyMessage="Define your vision here !">
+{{Vision}}
+</$list>
+
+<hr/>
+
+!Areas
+
+<$list filter="[field:gsd_type[area]]">
+  <$range tiddler=<<currentTiddler>> field="level" min="0" max="10" default="5" increment="1"/>
+  <$link to={{!!title}}>&nbsp;<$view field="title" format="text"/></$link>  
+  <br/>
+</$list>
+
+<hr/>
 
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">
 
-<$reveal state=<<config-lists>> type="match" text="show" default="hide">
-<$transclude tiddler=<<listItem>>/>
-</$reveal>
+  <$reveal state=<<config-lists>> type="match" text="show" default="hide">
+    <$transclude tiddler=<<listItem>>/>
+  </$reveal>
 
 </$list>

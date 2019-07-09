@@ -3,6 +3,9 @@ title: Dashboard
 \define config-lists()
 $:/config/GSEBDLists/visibility/$(listItem)$
 \end
+\define emoticon(satisfaction)
+{{$:/plugins/sebastianovide/gsebd/ui/levels/$satisfaction$}}
+\end
 
 <hr/>
 
@@ -16,8 +19,13 @@ $:/config/GSEBDLists/visibility/$(listItem)$
 
 !Areas
 
-<$list filter="[field:gsd_type[area]]">
-  <$range tiddler=<<currentTiddler>> field="level" min="0" max="10" default="5" increment="1"/>
+<$list filter="[field:gsd_type[area]!has[draft.of]]">
+  <$range tiddler=<<currentTiddler>> field="gsd_area_satisfaction" min="1" max="7" /> 
+  
+  <$set name="satisfaction" value={{!!gsd_area_satisfaction}}>
+   <<emoticon $(satisfaction)$>>
+  </$set>
+  
   <$link to={{!!title}}>&nbsp;<$view field="title" format="text"/></$link>  
   <br/>
 </$list>

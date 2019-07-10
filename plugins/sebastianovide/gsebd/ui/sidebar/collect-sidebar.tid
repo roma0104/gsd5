@@ -4,6 +4,7 @@ caption: Collect
 
 <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/realm-list"/>
 
+<!-- it should be created from within a project
 <$set name="gsd_type" value="action">
 <$set name="gsd_status" value="next">
 <$set name="gsd_complete" value="false">
@@ -16,7 +17,9 @@ caption: Collect
 </$set>
 </$set>
 </$set>
+-->
 
+<!-- it should be created from within an area
 <$set name="gsd_type" value="project">
 <$set name="gsd_status" value="active">
 <$set name="gsd_complete" value="false">
@@ -29,6 +32,7 @@ caption: Collect
 </$set>
 </$set>
 </$set>
+-->
 
 <$set name="gsd_type" value="contact">
 <$set name="gsd_realm" value={{$:/currentRealm}}>

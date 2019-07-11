@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Getting Seb Doing",
   "scripts": {
-    "test": "./bin/updateVersion.js && ./bin/build.sh && cp output/gsebd-empty.html output/index.html",
+    "test": "./bin/updateVersion.js && ./bin/build.sh && mkdir -p output/gh-pages && cp output/gsebd-empty.html output/gh-pages/index.html",
     "build": "npm run test",
     "serve": "./bin/serve.sh"
   },

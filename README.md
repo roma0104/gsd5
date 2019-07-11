@@ -17,8 +17,8 @@ To the fun stuff or at least more productive!
 
 GSEBD is most definitely a work-in-progress project and beta quality.  There might be changes that might break from past versions in ways that make forward comptatiblity of user-created content non-trival to correct.
 
-https://github.com/sebastianovide/GettingSebDoing/releases/latest
-https://sebastianovide.github.io/GettingSebDoing/
+* https://sebastianovide.github.io/GettingSebDoing/
+* https://github.com/sebastianovide/GettingSebDoing/releases/latest
 
 ### Building
 

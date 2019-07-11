@@ -2,7 +2,7 @@ title: $:/plugins/sebastianovide/gsebd/ui/pd/areas
 
 !Areas
 
-<$list filter="[field:gsd_type[area]!has[draft.of]]">
+<$list filter="[field:gsd_type[area]!has[draft.of]]" emptyMessage="""Create your fist <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/buttons/new-area" /> """ >
   <$range tiddler=<<currentTiddler>> field="gsd_area_satisfaction" min="-3" max="3" /> 
   
   <$set name="satisfaction" value={{!!gsd_area_satisfaction}}>

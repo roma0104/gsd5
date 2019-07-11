@@ -1,0 +1,8 @@
+title: $:/plugins/sebastianovide/gsebd/ui/buttons/new-area
+
+<$set name="gsd_type" value="area">
+  <$button>
+    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+    {{$:/plugins/sebastianovide/gsebd/images/flag}} New Area
+  </$button>
+</$set>

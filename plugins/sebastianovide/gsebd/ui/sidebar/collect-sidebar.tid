@@ -68,12 +68,7 @@ caption: Collect
   </$button>
 </$set>
 
-<$set name="gsd_type" value="area">
-  <$button>
-    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
-    {{$:/plugins/sebastianovide/gsebd/images/flag}} New Area
-  </$button>
-</$set>
+{{$:/plugins/sebastianovide/gsebd/ui/buttons/new-area}}
 
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDCollect]!has[draft.of]]">
 

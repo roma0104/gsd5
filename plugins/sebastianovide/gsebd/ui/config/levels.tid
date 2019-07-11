@@ -1,0 +1,10 @@
+title: $:/plugins/sebastianovide/gsebd/ui/config/levels
+type: application/x-tiddler-dictionary
+
+-3: {{$:/plugins/sebastianovide/gsebd/images/mood_bad}}
+-2: {{$:/plugins/sebastianovide/gsebd/images/sentiment_very_dissatisfied}}
+-1: {{$:/plugins/sebastianovide/gsebd/images/sentiment_dissatisfied}}
+0: {{$:/plugins/sebastianovide/gsebd/images/face}}
+1: {{$:/plugins/sebastianovide/gsebd/images/sentiment_satisfied}}
+2: {{$:/plugins/sebastianovide/gsebd/images/sentiment_satisfied_alt}}
+3: {{$:/plugins/sebastianovide/gsebd/images/sentiment_very_satisfied}}

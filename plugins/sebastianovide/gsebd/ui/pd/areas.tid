@@ -1,0 +1,14 @@
+title: $:/plugins/sebastianovide/gsebd/ui/pd/areas
+
+!Areas
+
+<$list filter="[field:gsd_type[area]!has[draft.of]]">
+  <$range tiddler=<<currentTiddler>> field="gsd_area_satisfaction" min="-3" max="3" /> 
+  
+  <$set name="satisfaction" value={{!!gsd_area_satisfaction}}>
+    <<emoticon $(satisfaction)$>>
+  </$set>
+  
+  <$link to={{!!title}}>&nbsp;<$view field="title" format="text"/></$link>  
+  <br/>
+</$list>

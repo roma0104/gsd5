@@ -166,3 +166,11 @@ tags: $:/tags/Stylesheet
   fill: <<colour tiddler-controls-foreground>>;
   height: 0.8em;
 }
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 1 1 0;
+}

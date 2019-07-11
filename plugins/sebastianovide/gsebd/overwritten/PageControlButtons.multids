@@ -16,3 +16,5 @@ core/ui/Buttons/permaview: hide
 core/ui/Buttons/storyview: hide
 core/ui/Buttons/theme: hide
 core/ui/Buttons/new-tiddler: hide
+plugins/sebastianovide/gsebd/ui/buttons/add-action-button: hide
+plugins/sebastianovide/gsebd/ui/buttons/add-project-button: hide

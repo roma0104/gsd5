@@ -23,7 +23,6 @@ $:/config/GSEBDLists/visibility/$(listItem)$
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds" mode="block"/>
   </div>
 </div>
-
 <hr/>
 
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">

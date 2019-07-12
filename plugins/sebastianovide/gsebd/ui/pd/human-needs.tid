@@ -1,6 +1,8 @@
 title: $:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds
+tags: PD
+caption: Human Needs
 
-!Core Human needs
+!Human Needs
 * [[Certainty]]
 * [[Uncertainty]]
 * [[Significance]]

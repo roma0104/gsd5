@@ -1,0 +1,7 @@
+title: $:/plugins/sebastianovide/gsebd/ui/sidebar/toolbox-sidebar
+tags: $:/tags/SideBar
+caption: Toolbox
+
+<$list filter="[all[shadows+tiddlers]tag[PD]!has[draft.of]]">
+  <$link to={{!!title}}>{{!!caption}}</$link><br/>
+</$list>

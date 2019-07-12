@@ -34,6 +34,7 @@ caption: Collect
 </$set>
 -->
 
+<!-- it should be created from within a project
 <$set name="gsd_type" value="contact">
 <$set name="gsd_realm" value={{$:/currentRealm}}>
   <$button>
@@ -42,7 +43,9 @@ caption: Collect
   </$button>
 </$set>
 </$set>
+-->
 
+<!-- it should be created from within a project
 <$set name="gsd_type" value="reference">
 <$set name="gsd_realm" value={{$:/currentRealm}}>
   <$button>
@@ -51,6 +54,7 @@ caption: Collect
   </$button>
 </$set>
 </$set>
+-->
 
 <$set name="gsd_type" value="context">
 <$set name="gsd_realm" value={{$:/currentRealm}}>

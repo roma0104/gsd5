@@ -1,6 +1,0 @@
-title: $:/plugins/sebastianovide/gsebd/macro/gsebd-utils
-tags: $:/tags/Macro
-
-\define emoticon(satisfaction)
-{{$:/plugins/sebastianovide/gsebd/ui/config/levels##$satisfaction$}}
-\end

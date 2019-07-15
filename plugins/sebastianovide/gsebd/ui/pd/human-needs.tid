@@ -2,11 +2,16 @@ title: $:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds
 tags: PD
 caption: Human Needs
 
-!Human Needs
-* [[Certainty]]
-* [[Uncertainty]]
-* [[Significance]]
-* [[Love and Connection]]
+!Human Needs 
 
-* [[Growth]]
-* [[Contribution]]
+<$set name="tiddler" value="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds">
+
+* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_certainty">>[[Certainty]]
+* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_uncertainty">>[[Uncertainty]]
+* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_significance">>[[Significance]]
+* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_love_and_connection">>[[Love and Connection]]
+---
+* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_growth">>[[Growth]]
+* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_contribution">>[[Contribution]]
+
+</$set>

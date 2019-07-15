@@ -1,0 +1,7 @@
+title: $:/plugins/sebastianovide/gsebd/macro/gsebd-satisfaction
+tags: $:/tags/Macro
+
+\define gsebd-satisfaction(satisfaction, tiddler:"nothing", field:"nothing")
+  <$range tiddler="""$tiddler$""" field=$field$ min="-3" max="3" /> 
+  <<emoticon $satisfaction$>>
+\end

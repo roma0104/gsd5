@@ -3,9 +3,6 @@ title: Dashboard
 \define config-lists()
 $:/config/GSEBDLists/visibility/$(listItem)$
 \end
-\define emoticon(satisfaction)
-{{$:/plugins/sebastianovide/gsebd/ui/config/levels##$satisfaction$}}
-\end
 <hr/>
 
 ![[Vision]]

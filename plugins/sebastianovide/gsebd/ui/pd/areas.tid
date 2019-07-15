@@ -4,12 +4,13 @@ caption: Areas
 
 !Areas
 <$list filter="[field:gsd_type[area]!has[draft.of]]" emptyMessage="""Create your fist <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/buttons/new-area" /> """ >
-  <$range tiddler=<<currentTiddler>> field="gsd_area_satisfaction" min="-3" max="3" /> 
-  
   <$set name="satisfaction" value={{!!gsd_area_satisfaction}}>
-    <<emoticon $(satisfaction)$>>
+  <$set name="tiddler" value=<<currentTiddler>> >
+  <$set name="field" value="gsd_area_satisfaction">
+    <<gsebd-satisfaction satisfaction:$(satisfaction)$ tiddler:$(tiddler)$ field:$(field)$>> 
   </$set>
-  
+  </$set>
+  </$set>
   <$link to={{!!title}}>&nbsp;<$view field="title" format="text"/></$link>  
   <br/>
 </$list>

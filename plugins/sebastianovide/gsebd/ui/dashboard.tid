@@ -1,14 +1,8 @@
 title: Dashboard
-edge: 20
 
 \define config-lists()
 $:/config/GSEBDLists/visibility/$(listItem)$
 \end
-
-Your edge <$edit-text  field="edge" size="3"/> <br>
-<$macrocall $name="life-line" edge={{!!edge}}/>
-
-<hr/>
 
 ![[Vision]]
 
@@ -16,7 +10,13 @@ Your edge <$edit-text  field="edge" size="3"/> <br>
 {{Vision}}
 </$list>
 
-<hr/>
+---
+
+!{{$:/plugins/sebastianovide/gsebd/ui/pd/life-line!!caption}}
+<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/life-line" mode="block"/>
+
+---
+
 <div class="row">
   <div class="col">
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/areas" mode="block"/>
@@ -25,7 +25,8 @@ Your edge <$edit-text  field="edge" size="3"/> <br>
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds" mode="block"/>
   </div>
 </div>
-<hr/>
+
+---
 
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">
 

@@ -1,8 +1,13 @@
 title: Dashboard
+edge: 20
 
 \define config-lists()
 $:/config/GSEBDLists/visibility/$(listItem)$
 \end
+
+Your edge <$edit-text  field="edge" size="3"/> <br>
+<$macrocall $name="life-line" edge={{!!edge}}/>
+
 <hr/>
 
 ![[Vision]]

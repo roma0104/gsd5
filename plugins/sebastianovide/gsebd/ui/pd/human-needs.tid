@@ -6,12 +6,13 @@ caption: Human Needs
 
 <$set name="tiddler" value="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds">
 
-* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_certainty">>[[Certainty]]
-* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_uncertainty">>[[Uncertainty]]
-* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_significance">>[[Significance]]
-* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_love_and_connection">>[[Love and Connection]]
+<<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_certainty">>[[Certainty]]<br>
+<<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_uncertainty">>[[Uncertainty]]<br>
+<<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_significance">>[[Significance]]<br>
+<<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_love_and_connection">>[[Love and Connection]]<br>
+
 ---
-* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_growth">>[[Growth]]
-* <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_contribution">>[[Contribution]]
+<<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_growth">>[[Growth]]<br>
+<<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_contribution">>[[Contribution]]<br>
 
 </$set>

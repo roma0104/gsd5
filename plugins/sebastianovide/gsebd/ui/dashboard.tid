@@ -4,17 +4,20 @@ title: Dashboard
 $:/config/GSEBDLists/visibility/$(listItem)$
 \end
 
+<div style="text-align: center;"> 
+
 ![[Vision]]
+</div>
 
 !!<$list filter="[[Vision]is[tiddler]]" emptyMessage="Define your vision here !">
 {{Vision}}
 </$list>
 
 ---
-
-!{{$:/plugins/sebastianovide/gsebd/ui/pd/life-line!!caption}}
-
 <div style="text-align: center;"> 
+
+  !{{$:/plugins/sebastianovide/gsebd/ui/pd/life-line!!caption}}
+
   <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/life-line" mode="block"/>
 </div>
 

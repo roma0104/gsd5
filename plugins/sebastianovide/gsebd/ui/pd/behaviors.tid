@@ -3,7 +3,11 @@ tags: PD
 caption: Behaviors
 
 !Behaviors
-* [[Pleasure - Pleasure]]
-* [[Pain - Pleasure]]
-* [[Pleasure - Pain]]
-* [[Pain - Pain]]
+!!![[Pleasure - Pleasure]]
+{{Pleasure - Pleasure}}
+!!![[Pain - Pleasure]]
+{{Pain - Pleasure}}
+!!![[Pleasure - Pain]]
+{{Pleasure - Pain}}
+!!![[Pain - Pain]]
+{{Pain - Pain}}

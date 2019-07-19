@@ -6,27 +6,25 @@ caption: Human Needs
 
   !Human Needs 
 
-  <$set name="tiddler" value="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds">
   <$wikify name="humanNeeds" text=""" 
-      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_certainty">0</$transclude>
-      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_uncertainty">0</$transclude>
-      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_significance">0</$transclude>
-      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_love_and_connection">0</$transclude>
-      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_growth">0</$transclude>
-      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_contribution">0</$transclude>
-        """>
+      <$transclude tiddler="me" field="gsd_satisfaction_certainty">0</$transclude>
+      <$transclude tiddler="me" field="gsd_satisfaction_uncertainty">0</$transclude>
+      <$transclude tiddler="me" field="gsd_satisfaction_significance">0</$transclude>
+      <$transclude tiddler="me" field="gsd_satisfaction_love_and_connection">0</$transclude>
+      <$transclude tiddler="me" field="gsd_satisfaction_growth">0</$transclude>
+      <$transclude tiddler="me" field="gsd_satisfaction_contribution">0</$transclude>
+  """>
     <$wheelChart values=<<humanNeeds>> />
   </$wikify>
 
   <div style="text-align: left;">
-    <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_certainty">>[[Certainty]]<br>
-    <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_uncertainty">>[[Uncertainty]]<br>
-    <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_significance">>[[Significance]]<br>
-    <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_love_and_connection">>[[Love and Connection]]
+    <<gsebd-satisfaction tiddler:"me" field:"gsd_satisfaction_certainty">>[[Certainty]]<br>
+    <<gsebd-satisfaction tiddler:"me" field:"gsd_satisfaction_uncertainty">>[[Uncertainty]]<br>
+    <<gsebd-satisfaction tiddler:"me" field:"gsd_satisfaction_significance">>[[Significance]]<br>
+    <<gsebd-satisfaction tiddler:"me" field:"gsd_satisfaction_love_and_connection">>[[Love and Connection]]
     <hr>
-    <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_growth">>[[Growth]]<br>
-    <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_contribution">>[[Contribution]]<br>
+    <<gsebd-satisfaction tiddler:"me" field:"gsd_satisfaction_growth">>[[Growth]]<br>
+    <<gsebd-satisfaction tiddler:"me" field:"gsd_satisfaction_contribution">>[[Contribution]]<br>
   </div>
-  </$set>
 
 </div>

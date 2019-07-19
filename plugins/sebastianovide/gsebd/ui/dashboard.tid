@@ -18,10 +18,10 @@ $:/config/GSEBDLists/visibility/$(listItem)$
 ---
 
 <div class="row">
-  <div class="col">
+  <div class="col" style="text-align: center;">
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/areas" mode="block"/>
   </div>
-  <div class="col">
+  <div class="col" style="text-align: center;">
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds" mode="block"/>
   </div>
 </div>

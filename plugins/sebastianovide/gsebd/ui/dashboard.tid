@@ -13,7 +13,10 @@ $:/config/GSEBDLists/visibility/$(listItem)$
 ---
 
 !{{$:/plugins/sebastianovide/gsebd/ui/pd/life-line!!caption}}
-<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/life-line" mode="block"/>
+
+<div style="text-align: center;"> 
+  <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/pd/life-line" mode="block"/>
+</div>
 
 ---
 

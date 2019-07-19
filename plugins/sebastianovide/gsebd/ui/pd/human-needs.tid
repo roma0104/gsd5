@@ -2,19 +2,19 @@ title: $:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds
 tags: PD
 caption: Human Needs
 
-<$set name="tiddler" value="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds">
 <div style="display: inline-block;"}>
 
   !Human Needs 
 
+  <$set name="tiddler" value="$:/plugins/sebastianovide/gsebd/ui/pd/humanNeeds">
   <$wikify name="humanNeeds" text=""" 
-  <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_certainty">0</$transclude>
-  <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_uncertainty">0</$transclude>
-  <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_significance">0</$transclude>
-  <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_love_and_connection">0</$transclude>
-  <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_growth">0</$transclude>
-  <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_contribution">0</$transclude>
-    """>
+      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_certainty">0</$transclude>
+      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_uncertainty">0</$transclude>
+      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_significance">0</$transclude>
+      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_love_and_connection">0</$transclude>
+      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_growth">0</$transclude>
+      <$transclude tiddler=<<tiddler>> field="gsd_satisfaction_contribution">0</$transclude>
+        """>
     <$wheelChart values=<<humanNeeds>> />
   </$wikify>
 
@@ -27,5 +27,6 @@ caption: Human Needs
     <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_growth">>[[Growth]]<br>
     <<gsebd-satisfaction tiddler:$(tiddler)$ field:"gsd_satisfaction_contribution">>[[Contribution]]<br>
   </div>
+  </$set>
+
 </div>
-</$set>

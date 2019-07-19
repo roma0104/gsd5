@@ -2,7 +2,9 @@ title: $:/plugins/sebastianovide/gsebd/ui/pd/life-line
 tags: PD
 caption: Life Line
 
-Your date of birth <$edit-text tiddler="me" field="dob" type="date" size="10"/> 
-Your edge and the end<$edit-text tiddler="me" field="lifeExpectation" size="3" type="number"/> <br>
+<div style="display:inline-block"> 
+  Your date of birth <$edit-text tiddler="me" field="dob" type="date" size="10"/> 
+  Your edge and the end<$edit-text tiddler="me" field="lifeExpectation" size="3" type="number"/> <br>
 
-<$macrocall $name="life-line" dob={{me!!dob}} lifeExpectation={{me!!lifeExpectation}}/>
+  <$macrocall $name="life-line" dob={{me!!dob}} lifeExpectation={{me!!lifeExpectation}}/>
+</div>

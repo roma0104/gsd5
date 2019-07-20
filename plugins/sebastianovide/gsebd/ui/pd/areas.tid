@@ -7,20 +7,24 @@ caption: Areas
   !Areas
 
   <$wikify name="areas" text=""" 
-      <$list filter="[field:gsd_type[area]!has[draft.of]]"  >
-        <$transclude field="gsd_area_satisfaction">0</$transclude>
-      </$list> """>
+        <$list filter="[field:gsd_type[area]]" >
+          <$list filter="area satisfaction [<currentTiddler>] +[split[ ]join[_]] " variable="name">
+            <$transclude tiddler="me" field=<<name>>>0</$transclude>
+          </$list>
+        </$list>      
+      """>
     <$wheelChart values=<<areas>> />
   </$wikify>
 
   <div style="text-align: left;">
     <$list filter="[field:gsd_type[area]!has[draft.of]]" emptyMessage="""Create your fist <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/buttons/new-area" /> """ >
-      <$vars satisfaction={{!!gsd_area_satisfaction}} 
-             tiddler=<<currentTiddler>> 
-             field="gsd_area_satisfaction">
-        <<gsebd-satisfaction satisfaction:$(satisfaction)$ tiddler:$(tiddler)$ field:$(field)$>> 
-      </$vars>
-
+         <$wikify name="me_field" text=""" 
+              <$list filter="area satisfaction [<currentTiddler>] +[split[ ]join[_]] " variable="name">
+                <<name>>
+              </$list>
+            """>            
+            <<gsebd-satisfaction tiddler:"me" field:$(me_field)$>> 
+         </$wikify>         
       <$link to={{!!title}}>&nbsp;<$view field="title" format="text"/></$link>  
       <br/>
     </$list>

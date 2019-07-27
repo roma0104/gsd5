@@ -172,3 +172,8 @@ tags: $:/tags/Stylesheet
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.row > * {
+  flex: 1 0 auto;
+  padding: 10px
+}

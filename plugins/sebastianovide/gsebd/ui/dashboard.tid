@@ -1,16 +1,31 @@
 title: Dashboard
 
-\define config-lists()
-$:/config/GSEBDLists/visibility/$(listItem)$
+\define config-lists(listItem)
+$:/config/GSEBDLists/visibility/$listItem$
+\end
+\define show(tiddler)
+  <$reveal state=<<config-lists $tiddler$>> type="match" text="show" default="hide">
+    {{$tiddler$}}
+  </$reveal>
 \end
 
 <div style="text-align: center;"> 
 
-![[Vision]]
+![[Vision Statement]]
 </div>
 
-!!<$list filter="[[Vision]is[tiddler]]" emptyMessage="Define your vision here !">
-{{Vision}}
+!!<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage="Define your vision statement here !">
+{{Vision Statement}}
+</$list>
+
+---
+<div style="text-align: center;"> 
+
+![[Mision Statement]]
+</div>
+
+!!<$list filter="[[Mision Statement]is[tiddler]]" emptyMessage="Define your mission statement here !">
+{{Mision Statement}}
 </$list>
 
 ---
@@ -33,11 +48,22 @@ $:/config/GSEBDLists/visibility/$(listItem)$
 </div>
 
 ---
+<div class="row">
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/next-action-list>>
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/waiting-action-list>>
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/waiting-action-list-by-contact>>
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/future-action-list>>
+</div>
 
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">
+---
+<div class="row">
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/active-project-list>>
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/future-project-list>>
+</div>
 
-  <$reveal state=<<config-lists>> type="match" text="show" default="hide">
-    <$transclude tiddler=<<listItem>>/>
-  </$reveal>
-
-</$list>
+---
+<div class="row">
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/completed-action-list>>
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/completed-project-list>>
+  <<show $:/plugins/sebastianovide/gsebd/ui/lists/contacts-list>> 
+</div>

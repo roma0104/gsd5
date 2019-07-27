@@ -5,7 +5,7 @@ tags: $:/tags/Macro
 <$set name="listState" value=<<qualify "$:/state/gsd-list">>>
 <$set name="caller" value=$owner$>
 <div class="tw-menu-list-item">
-<span class="gsd-list-title"><$checkbox tiddler=<<listState>> field="text" checked="hide" unchecked="show" default="show">&nbsp;$title$<$reveal state=<<listState>> type="match" text="hide" default="show" retain="yes">{{$:/core/images/chevron-down}}</$reveal></$checkbox></span>
+<span class="gsd-list-title"><$checkbox tiddler=<<listState>> field="text" checked="hide" unchecked="show" default="show"><strong>$title$</strong><$reveal state=<<listState>> type="match" text="hide" default="show" retain="yes">{{$:/core/images/chevron-down}}</$reveal></$checkbox></span>
 <hr/>
 <!-- No/All Realm -->
 <$reveal state="$:/currentRealm" type="match" text="all" default="all">

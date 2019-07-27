@@ -2,11 +2,11 @@ title: $:/plugins/sebastianovide/gsebd/ui/control-panel/core
 tags: $:/tags/GSEBDPlugin
 caption: Core
 
-\define config-lists()
-$:/config/GSEBDLists/visibility/$(listItem)$
+\define config-lists(tiddler)
+$:/config/GSEBDLists/visibility/$tiddler$
 \end
-\define list-caption()
-{{$(listItem)$!!caption}}
+\define show(tiddler)
+<$checkbox tiddler=<<config-lists $tiddler$>> field="text" checked="show" unchecked="hide"> {{$tiddler$!!caption}} </$checkbox>
 \end
 
 ! Core
@@ -33,9 +33,19 @@ $:/config/GSEBDLists/visibility/$(listItem)$
 ''Dashboard''
 
 //Dashboard Lists//<br/>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDLists]!has[draft.of]]" variable="listItem">
-<$checkbox tiddler=<<config-lists>> field="text" checked="show" unchecked="hide"> <<list-caption>> </$checkbox><br/>
-</$list>
+
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/next-action-list>><br>
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/waiting-action-list>><br>
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/waiting-action-list-by-contact>><br>
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/future-action-list>><br>
+
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/active-project-list>><br>
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/future-project-list>><br>
+
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/completed-action-list>><br>
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/completed-project-list>><br>
+<<show $:/plugins/sebastianovide/gsebd/ui/lists/contacts-list>><br>
+
 
 //Dashboard Options//<br/>
 <$checkbox tiddler="$:/config/GSEBDDashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group Actions in Dashboard by Project</$checkbox><br/>

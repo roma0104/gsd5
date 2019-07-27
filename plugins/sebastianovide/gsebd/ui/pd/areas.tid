@@ -8,7 +8,7 @@ caption: Areas
 
   <$wikify name="areas" text=""" 
         <$list filter="[field:gsd_type[area]]" >
-          <$list filter="area satisfaction [<currentTiddler>] +[split[ ]join[_]] " variable="name">
+          <$list filter="area satisfaction [<currentTiddler>] +[split[ ]join[_]lowercase[]] " variable="name">
             <$transclude tiddler="me" field=<<name>>>0</$transclude>
           </$list>
         </$list>      
@@ -19,7 +19,7 @@ caption: Areas
   <div style="text-align: left;">
     <$list filter="[field:gsd_type[area]!has[draft.of]]" emptyMessage="""Create your fist <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/buttons/new-area" /> """ >
          <$wikify name="me_field" text=""" 
-              <$list filter="area satisfaction [<currentTiddler>] +[split[ ]join[_]] " variable="name">
+              <$list filter="area satisfaction [<currentTiddler>] +[split[ ]join[_]lowercase[]] " variable="name">
                 <<name>>
               </$list>
             """>            

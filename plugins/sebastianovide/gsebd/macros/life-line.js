@@ -19,17 +19,18 @@ exports.name = "life-line";
 
 exports.params = [
 	{name: "dob"},
-  {name: "lifeExpectation"}
+  {name: "life_expectation"}
 ];
 
 /*
 Run the macro
 */
-exports.run = function(dob, lifeExpectation) {
+exports.run = function(dob, life_expectation) {
+  
   dob = new Date(dob);
   const millsPerYear = 365.25 * 24 * 60 * 60 * 1000;
   const age = Math.round((new Date().getTime() - dob.getTime()) / millsPerYear);
-  lifeExpectation = parseInt(lifeExpectation)
+  let lifeExpectation = parseInt(life_expectation)
   if (isNaN(lifeExpectation)) lifeExpectation = 85
 
   let witiText = "`???`";

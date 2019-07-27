@@ -4,7 +4,7 @@ caption: Life Line
 
 <div style="display:inline-block"> 
   Your date of birth <$edit-text tiddler="me" field="dob" type="date" size="10"/> 
-  Your edge and the end<$edit-text tiddler="me" field="lifeExpectation" size="3" type="number"/> <br>
+  Your edge and the end<$edit-text tiddler="me" field="life_expectation" size="3" type="number"/> <br>
 
-  <$macrocall $name="life-line" dob={{me!!dob}} lifeExpectation={{me!!lifeExpectation}}/>
+  <$macrocall $name="life-line" dob={{me!!dob}} life_expectation={{me!!life_expectation}}/>
 </div>

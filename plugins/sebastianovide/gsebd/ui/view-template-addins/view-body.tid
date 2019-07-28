@@ -1,4 +1,5 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody
+tags: $:/tags/ViewTemplate
 
 \define dashboard-visibility()
 $:/config/GSEBDDashboardCore/visibility/$(listItem)$

@@ -1,9 +1,0 @@
-title: $:/core/ui/ViewTemplate/subtitle
-tags: $:/tags/ViewTemplate
-
-<div class="tc-subtitle">
-//{{!!gsd_type}}//<br/>
-<$link to={{!!modifier}}>
-<$view field="modifier"/>
-</$link> <$view field="modified" format="relativedate"/>
-</div>

@@ -1,7 +1,7 @@
 title: $:/core/ui/ViewTemplate/body
 tags: $:/tags/ViewTemplate
 
-<div class="tc-tiddler-body">
+<$reveal tag="div" class="tc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
 
 <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewBody"/>
 
@@ -15,4 +15,4 @@ tags: $:/tags/ViewTemplate
 
 </$list>
 
-</div>
+</$reveal>

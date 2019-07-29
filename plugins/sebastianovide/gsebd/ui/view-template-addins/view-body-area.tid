@@ -1,0 +1,36 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Area
+tags: $:/tags/ViewTemplate
+
+<!-- Area -->
+<$list filter="[is[current]field:gsd_type[area]]">
+
+  <$list filter="[is[current]field:text[]]">
+  Write a motivating story about this area. What is it about ? What are your goals ?
+  </$list>
+
+  <div class="tc-menu-list-item">
+  Projects
+  <$set name="gsd_type" value="project">
+  <$set name="gsd_status" value="future">
+  <$set name="gsd_complete" value="false">
+  <$set name="gsd_realm" value={{$:/currentRealm}}>
+  <$set name="gsd_area" value=<<currentTiddler>> >
+      <$button class="gsd-list-new-button tc-btn-invisible">
+          {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
+          +
+      </$button>
+  </$set>
+  </$set>
+  </$set>
+  </$set>
+  </$set>
+  <hr/>
+  <$list filter="[tag<currentTiddler>field:gsd_type[project]]">
+    <div class="tc-menu-list-subitem">
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
+      <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewSuffix"/>
+    </div>
+  </$list>
+  </div>
+</$list>

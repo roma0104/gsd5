@@ -1,12 +1,6 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Project
 tags: $:/tags/ViewTemplate
 
-\define minimized-notice()
-<$reveal state=<<gsdpanelState>> type="match" text="hide" default="show">
-<div class="gsd-gsdpanel-min-notice">//gsdpanel minimized//</div>
-</$reveal>
-\end
-
 <$list filter=[is[current]field:gsd_type[project]]>
 
   <$list filter="[is[current]field:text[]]">
@@ -21,8 +15,6 @@ tags: $:/tags/ViewTemplate
 
   <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDProjectPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
     <div class="tc-message-box gsd-plugin-box">
-    <<minimized-notice>>
-    <$reveal state=<<gsdpanelState>> type="match" text="show" default="show" retain="yes">
     <div class="gsd-plugin-core">
     <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]]" variable="listItem">
     <$transclude tiddler=<<listItem>>/>
@@ -33,7 +25,6 @@ tags: $:/tags/ViewTemplate
     <$transclude tiddler=<<listItem>>/>
     </$list>
     </div>
-    </$reveal>
     </div>
   </$list>
 

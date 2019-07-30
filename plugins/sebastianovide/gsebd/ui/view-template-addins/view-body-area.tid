@@ -25,7 +25,7 @@ tags: $:/tags/ViewTemplate
   </$set>
   </$set>
   <hr/>
-  <$list filter="[tag<currentTiddler>field:gsd_type[project]]">
+  <$list filter="[tag<currentTiddler>field:gsd_type[project]!has[draft.of]]">
     <div class="tc-menu-list-subitem">
       <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
       <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>

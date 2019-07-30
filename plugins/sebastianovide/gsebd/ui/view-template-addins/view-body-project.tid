@@ -1,6 +1,12 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Project
 tags: $:/tags/ViewTemplate
 
+\define minimized-notice()
+<$reveal state=<<gsdpanelState>> type="match" text="hide" default="show">
+<div class="gsd-gsdpanel-min-notice">//gsdpanel minimized//</div>
+</$reveal>
+\end
+
 <$list filter=[is[current]field:gsd_type[project]]>
 
   <$list filter="[is[current]field:text[]]">

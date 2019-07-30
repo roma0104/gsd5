@@ -23,8 +23,6 @@ $:/config/GSEBDLists/visibility/$tiddler$
 <$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-context-show" field="text" checked="show" unchecked="no"> Show new Context upon creation</$checkbox><br/>
 <$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-area-show" field="text" checked="show" unchecked="no"> Show new Area upon creation</$checkbox><br/>
 
-<$checkbox tiddler="$:/config/gsebd/compactWidgets" field="text" checked="true" unchecked="false"> Compact GSEBD widgets (when possible)</$checkbox>
-
 </div>
 
 <div style="border-top:1px solid #eee;">
@@ -48,6 +46,5 @@ $:/config/GSEBDLists/visibility/$tiddler$
 
 //Dashboard Options//<br/>
 <$checkbox tiddler="$:/config/GSEBDDashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group Actions in Dashboard by Project</$checkbox><br/>
-<$checkbox tiddler="$:/config/GSEBDDashboardCore/visibility/$:/plugins/sebastianovide/gsebd/ui/addins/ViewDashboardRealm" field="text" checked="show" unchecked="hide"> Show Realm selector in the Dashboard </$checkbox>
 
 </div>

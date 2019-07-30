@@ -1,30 +1,6 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody
 tags: $:/tags/ViewTemplate
 
-\define dashboard-visibility()
-$:/config/GSEBDDashboardCore/visibility/$(listItem)$
-\end
-
-<!-- Dashboard -->
-<$list filter="[all[shadows+tiddlers]is[current]field:title[Dashboard]]">
-<$list filter="[all[shadows+tiddlers]prefix[$:/config/GSEBDDashboardCore/visibility/]!has[draft.of]field:text[show]] [all[shadows+tiddlers]prefix[$:/config/GSEBDDashboardPlugin/visibility/]!has[draft.of]field:text[show]] +[limit[1]]" variable="pass">
-<div class="tc-message-box gsd-plugin-box">
-<div class="gsd-plugin-core">
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDDashboardCore]!has[draft.of]]" variable="listItem">
-<$reveal state=<<dashboard-visibility>> type="match" text="show" default="hide">
-<$transclude tiddler=<<listItem>>/>
-</$list>
-</div>
-<div class="gsd-plugin-other">
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDDashboardPlugin]!has[draft.of]]" variable="listItem">
-<$transclude tiddler=<<listItem>>/>
-</$list>
-</div>
-</$reveal>
-</div>
-</$list>
-</$list>
-
 <!-- Reference -->
 <$list filter=[is[current]field:gsd_type[reference]]>
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDReferenceCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDReferencePlugin]!has[draft.of]] +[limit[1]]" variable="pass">

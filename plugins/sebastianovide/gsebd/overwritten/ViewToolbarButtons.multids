@@ -6,7 +6,7 @@ core/ui/Buttons/export-tiddler: hide
 core/ui/Buttons/info: hide
 core/ui/Buttons/more-tiddler-actions: show
 core/ui/Buttons/new-here: hide
-core/ui/Buttons/new-journal-here: hide
+core/ui/Buttons/new-journal-here: show
 core/ui/Buttons/permalink: hide
 core/ui/Buttons/permaview: hide
 plugins/sebastianovide/gsebd/ui/buttons/hide-controls: hide

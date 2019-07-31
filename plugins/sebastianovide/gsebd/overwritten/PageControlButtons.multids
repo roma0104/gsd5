@@ -12,9 +12,9 @@ core/ui/Buttons/language: hide
 core/ui/Buttons/tag-manager: hide
 core/ui/Buttons/more-page-actions: hide
 core/ui/Buttons/new-journal: hide
-core/ui/Buttons/permaview: hide
+core/ui/Buttons/permaview: true
 core/ui/Buttons/storyview: hide
 core/ui/Buttons/theme: hide
-core/ui/Buttons/new-tiddler: hide
+core/ui/Buttons/new-tiddler: show
 plugins/sebastianovide/gsebd/ui/buttons/add-action-button: hide
 plugins/sebastianovide/gsebd/ui/buttons/add-project-button: hide

@@ -167,6 +167,16 @@ tags: $:/tags/Stylesheet
   height: 0.8em;
 }
 
+.gsd-help-popup {
+  font-size: initial;
+}
+
+.gsd-help-button {
+  font-size: initial;
+  vertical-align: middle;
+  border: none;
+}
+
 .row {
   display: flex;
   justify-content: space-evenly;

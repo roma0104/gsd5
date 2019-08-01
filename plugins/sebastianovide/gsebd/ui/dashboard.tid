@@ -11,21 +11,23 @@ $:/config/GSEBDLists/visibility/$listItem$
 
 <div style="text-align: center;"> 
 
-![[Vision Statement]]
+![[Mission Statement]] <<helpButton $:/plugins/sebastianovide/gsebd/popups/helpMission """This is all about the ''WHY'' ?
+
+Think about the things that you do that really juice you. Why do you do them ?""">>
 </div>
 
-!!<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage="Define your vision statement here !">
-{{Vision Statement}}
+!!<$list filter="[[Mission Statement]is[tiddler]]" emptyMessage="Define your mission statement here !">
+{{Mission Statement}}
 </$list>
 
 ---
 <div style="text-align: center;"> 
 
-![[Mision Statement]]
+![[Vision Statement]] <<helpButton $:/plugins/sebastianovide/gsebd/popups/helpVision """How would your perfect life look like ?""">>
 </div>
 
-!!<$list filter="[[Mision Statement]is[tiddler]]" emptyMessage="Define your mission statement here !">
-{{Mision Statement}}
+!!<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage="Define your vision statement here !">
+{{Vision Statement}}
 </$list>
 
 ---

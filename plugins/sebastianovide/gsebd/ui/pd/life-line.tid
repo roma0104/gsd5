@@ -4,7 +4,7 @@ caption: Life Line
 
 <div style="text-align: center;">
 
-  !{{$:/plugins/sebastianovide/gsebd/ui/pd/life-line!!caption}}
+  !{{$:/plugins/sebastianovide/gsebd/ui/pd/life-line!!caption}} <<helpButton $:/plugins/sebastianovide/gsebd/popups/helpLifeLine """It could be enlighting to so how much time we have left...""">>
 
   Your date of birth <$edit-text tiddler="me" field="dob" type="date" size="10"/> <br>
   Your life expectation<$edit-text tiddler="me" field="life_expectation" size="3" type="number"/><br>

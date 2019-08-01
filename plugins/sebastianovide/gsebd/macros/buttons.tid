@@ -1,0 +1,10 @@
+title: $:/plugins/sebastianovide/gsebd/macro/buttons
+tags: $:/tags/Macro
+
+\define helpButton(popup, text)
+<$button popup="$popup$" class="gsd-help-button">{{$:/images/fa5/regular/question-circle}}</$button>
+<$reveal type="popup" state="$popup$" class="tc-notification gsd-help-popup">
+
+$text$ 
+</$reveal>
+\end

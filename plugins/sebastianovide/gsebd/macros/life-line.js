@@ -31,6 +31,8 @@ function validRetirment(retirementAge) {
 Run the macro
 */
 exports.run = function(dob, life_expectation, retirement_age) {
+  debugger 
+  
   dob = new Date(dob);
   const millsPerYear = 365.25 * 24 * 60 * 60 * 1000;
   const age = Math.round((new Date().getTime() - dob.getTime()) / millsPerYear);

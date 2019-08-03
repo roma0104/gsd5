@@ -1,0 +1,16 @@
+title: $:/plugins/sebastianovide/gsebd/ui/emojis/list
+
+!Symbol selected: {{$:/state/new-event-icon}}
+
+<$list filter="[all[shadows]tag[$:/tags/GSEBDEmoji]]">
+
+  <$list filter="[all[current]split[/]last[]]" variable="category">
+
+    !!<<category>>
+  </$list>
+
+  <$list filter="[all[current]get[text]split[ ]]" variable="symbol">
+      <$button class="tc-btn-invisible" setTo=<<symbol>> set="$:/state/new-event-icon" ><<symbol>></$button>
+  </$list>
+  <br>
+</$list>

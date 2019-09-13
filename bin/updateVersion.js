@@ -11,7 +11,7 @@ const tiddlywikiVersion = packageJson.dependencies.tiddlywiki;
 
 // write version in plugin.info
 const fs = require('fs');
-const pluginInfoOutputPath = "./plugins/sebastianovide/gsebd/plugin.info";
+const pluginInfoOutputPath = "./plugin/plugin.info";
 const pluginInfoInputPath = "./plugin.info";
 const pluginInfo = JSON.parse(fs.readFileSync(pluginInfoInputPath));
 pluginInfo.version = versionArray.join(".");
@@ -22,7 +22,7 @@ pluginInfo.author = packageJson.author;
 fs.writeFileSync(pluginInfoOutputPath, JSON.stringify(pluginInfo, "", 2));
 
 // save the version for git tagging
-const dir = './output';
+const dir = './build';
 if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
 }

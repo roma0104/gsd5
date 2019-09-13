@@ -1,0 +1,8 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Mission
+tags: $:/tags/ViewTemplate
+
+<$list filter="[all[current]title[Mission Statement]]">
+  <div>
+    To define your Mission you can etc... etc...
+  </div>
+</$list>

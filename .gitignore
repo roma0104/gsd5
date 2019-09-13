@@ -1,5 +1,3 @@
-output
-editions/gsebd/tiddlers
-editions/gsebd-server/tiddlers
+build
 node_modules
-plugins/sebastianovide/gsebd/plugin.info
+plugin/plugin.info

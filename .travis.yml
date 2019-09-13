@@ -7,18 +7,18 @@ branches:
     - master
 
 before_deploy:
-  - export TRAVIS_TAG=v`cat output/APP_VERSION`
+  - export TRAVIS_TAG=v`cat build/APP_VERSION`
 
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
-    file: output/gsebd-empty.html
+    file: build/gh-pages/index.html
     skip_cleanup: true
     on:
       branch: master
 
   - provider: pages
-    local_dir: output/gh-pages
+    local_dir: build/gh-pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
     keep_history: true

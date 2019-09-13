@@ -21,6 +21,8 @@
   "homepage": "https://github.com/sebastianovide/GettingSebDoing#readme",
   "dependencies": {
     "open-cli": "^5.0.0",
+    "semver": "^6.3.0",
+    "simple-git": "^1.126.0",
     "tiddlywiki": "^5.1.21"
   }
 }

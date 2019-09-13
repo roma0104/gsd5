@@ -7,7 +7,7 @@
     "build": "npm run build:prepare && npm run build:TW",
     "build:prepare": "mkdir -p build/ && cp node_modules/tiddlywiki/editions/empty/tiddlywiki.info build/ && node bin/updateVersion.js",
     "build:TW": "tiddlywiki ++./plugin build --verbose --output build/gh-pages/ --build index",
-    "serve": "cp node_modules/tiddlywiki/editions/server/tiddlywiki.info build/ && tiddlywiki ++./plugin build --verbose --listen"
+    "serve": "(sleep 2 && open-cli http://127.0.0.1:8080 &) && cp node_modules/tiddlywiki/editions/server/tiddlywiki.info build/ && tiddlywiki ++./plugin build --verbose --listen"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sebastianovide/GettingSebDoing#readme",
   "dependencies": {
+    "open-cli": "^5.0.0",
     "tiddlywiki": "^5.1.21"
   }
 }

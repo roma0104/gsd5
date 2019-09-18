@@ -3,17 +3,40 @@ title: Dashboard
 \define config-lists(listItem)
 $:/config/GSEBDLists/visibility/$listItem$
 \end
+
 \define show(tiddler)
   <$reveal state=<<config-lists $tiddler$>> type="match" text="show" default="hide">
     {{$tiddler$}}
   </$reveal>
 \end
 
-<div style="text-align: center;"> 
-
-![[Mission Statement]] <<helpButton $:/plugins/sebastianovide/gsebd/popups/helpMission """This is all about the ''WHY'' ?
+\define helpMission()
+<<helpButton $:/plugins/sebastianovide/gsebd/popups/helpMission """This is all about the ''WHY'' ?
 
 Think about the things that you do that really juice you. Why do you do them ?""">>
+\end
+
+\define newButton(title, text)
+<$button class="tc-btn-invisible tc-tiddlylink"  >
+$title$
+
+<$action-createtiddler
+    $basetitle="$title$"
+    $savetitle="!!justCreated"
+    text="$text$"
+/>
+<$action-sendmessage $message="tm-edit-tiddler" $param={{!!justCreated}}/>
+
+</$button>
+\end
+
+
+<div style="text-align: center;"> 
+
+!<$list filter="[[Mission Statement]is[tiddler]]" emptyMessage='<<newButton title:"Mission Statement" text:"To Be Happy every day">>' >
+[[Mission Statement]]
+</$list><<helpMission>>
+
 </div>
 
 !!<$list filter="[[Mission Statement]is[tiddler]]" emptyMessage="Define your mission statement here !">
@@ -23,7 +46,9 @@ Think about the things that you do that really juice you. Why do you do them ?""
 ---
 <div style="text-align: center;"> 
 
-![[Vision Statement]] <<helpButton $:/plugins/sebastianovide/gsebd/popups/helpVision """How would your perfect life look like ?""">>
+!<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage='<<newButton title:"Vision Statement" text:"To Have a Lovely Family in a lovely home">>' >
+[[Vision Statement]]
+</$list><<helpButton $:/plugins/sebastianovide/gsebd/popups/helpVision """How would your perfect life lookss like ?""">>
 </div>
 
 !!<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage="Define your vision statement here !">

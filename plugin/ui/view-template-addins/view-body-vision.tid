@@ -1,0 +1,8 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Mission
+tags: $:/tags/ViewTemplate
+
+<$list filter="[is[current]field:title[Vision Statement]]">
+
+---
+HOW do you imagine your perfect life in harmony with your mmission ?
+</$list>

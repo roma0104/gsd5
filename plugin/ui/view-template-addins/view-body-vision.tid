@@ -1,4 +1,4 @@
-title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Mission
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Vision
 tags: $:/tags/ViewTemplate
 
 <$list filter="[is[current]field:title[Vision Statement]]">

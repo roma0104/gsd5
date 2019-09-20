@@ -9,27 +9,9 @@ $:/config/GSEBDLists/visibility/$tiddler$
 <$checkbox tiddler=<<config-lists $tiddler$>> field="text" checked="show" unchecked="hide"> {{$tiddler$!!caption}} </$checkbox>
 \end
 
-! Core
+!Dashboard
 
-<div style="border-top:1px solid #eee;">
-
-''General''
-
-<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-action-show" field="text" checked="show" unchecked="no"> Show new Actions upon creation</$checkbox><br/>
-<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-project-show" field="text" checked="show" unchecked="no"> Show new Projects upon creation</$checkbox><br/>
-<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-realm-show" field="text" checked="show" unchecked="no"> Show new Realm upon creation</$checkbox><br/>
-<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-contact-show" field="text" checked="show" unchecked="no"> Show new Contact upon creation</$checkbox><br/>
-<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-reference-show" field="text" checked="show" unchecked="no"> Show new Reference upon creation</$checkbox><br/>
-<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-context-show" field="text" checked="show" unchecked="no"> Show new Context upon creation</$checkbox><br/>
-<$checkbox tiddler="$:/plugins/sebastianovide/gsebd/ui/config/new-area-show" field="text" checked="show" unchecked="no"> Show new Area upon creation</$checkbox><br/>
-
-</div>
-
-<div style="border-top:1px solid #eee;">
-
-''Dashboard''
-
-//Dashboard Lists//<br/>
+!!Dashboard Lists
 
 <<show $:/plugins/sebastianovide/gsebd/ui/lists/next-action-list>><br>
 <<show $:/plugins/sebastianovide/gsebd/ui/lists/waiting-action-list>><br>
@@ -43,8 +25,7 @@ $:/config/GSEBDLists/visibility/$tiddler$
 <<show $:/plugins/sebastianovide/gsebd/ui/lists/completed-project-list>><br>
 <<show $:/plugins/sebastianovide/gsebd/ui/lists/contacts-list>><br>
 
+!!Dashboard Options
 
-//Dashboard Options//<br/>
 <$checkbox tiddler="$:/config/GSEBDDashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group Actions in Dashboard by Project</$checkbox><br/>
 
-</div>

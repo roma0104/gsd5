@@ -40,7 +40,7 @@ $title$
 </div>
 
 !!<$list filter="[[Mission Statement]is[tiddler]]" emptyMessage="Define your mission statement here !">
-{{Mission Statement}}
+<$transclude tiddler="Mission Statement" mode="block"/>
 </$list>
 
 ---
@@ -52,7 +52,7 @@ $title$
 </div>
 
 !!<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage="Define your vision statement here !">
-{{Vision Statement}}
+<$transclude tiddler="Vision Statement" mode="block"/>
 </$list>
 
 ---

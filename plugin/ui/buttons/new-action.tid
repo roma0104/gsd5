@@ -16,6 +16,4 @@ title: $:/plugins/sebastianovide/gsebd/ui/buttons/new-action
     tags=<<newHereButtonTags>>
 />
 
-<$reveal type="match" state=<<concat "$:/plugins/sebastianovide/gsebd/ui/config/new-" "-show">>  text="show">
-    <$action-sendmessage $message="tm-edit-tiddler" $param={{!!justCreated}}/>
-</$reveal>
+<$action-sendmessage $message="tm-edit-tiddler" $param={{!!justCreated}}/>

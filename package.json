@@ -5,9 +5,13 @@
   "scripts": {
     "test": "npm run build",
     "build": "npm run build:prepare && npm run build:TW",
-    "build:prepare": "mkdir -p build/ && cp node_modules/tiddlywiki/editions/empty/tiddlywiki.info build/ && node bin/updateVersion.js",
+    "build:prepare": "mkdir -p build/ && cp node_modules/tiddlywiki/editions/server/tiddlywiki.info build/ && node bin/updateVersion.js",
     "build:TW": "tiddlywiki ++./plugin build --verbose --output build/gh-pages/ --build index",
-    "serve": "(sleep 2 && open-cli http://127.0.0.1:8080 &) && cp node_modules/tiddlywiki/editions/server/tiddlywiki.info build/ && tiddlywiki ++./plugin build --verbose --listen"
+    "serve:start": "npm run serve:stop && tiddlywiki ++./plugin build --verbose --listen || echo killed",
+    "serve:stop": "pkill -f \"node `which tiddlywiki`\" || echo nothing running",
+    "serve:open-browser-delayed": "sleep 2 && open-cli http://127.0.0.1:8080 --background &",
+    "serve:listen-changes": "chokidar \"plugin/**/*.tid\" \"plugin/**/*.js\" -c \"npm build && npm run serve:start\" --initial",
+    "serve": "npm run serve:open-browser-delayed && npm run serve:listen-changes"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,7 @@
   },
   "homepage": "https://github.com/sebastianovide/GettingSebDoing#readme",
   "dependencies": {
+    "chokidar-cli": "^2.0.0",
     "open-cli": "^5.0.0",
     "semver": "^6.3.0",
     "simple-git": "^1.126.0",

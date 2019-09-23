@@ -6,9 +6,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
       <$set name="gsd_type" value=$type$>
       <$set name="gsd_status" value=$status$>
       <$set name="gsd_complete" value="false">
-      <$set name="gsd_realm" value={{$:/currentRealm}}>
         {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
-      </$set>
       </$set>
       </$set>      
       </$set>
@@ -21,7 +19,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     Subproject of: <br/>
     <$select field="gsd_project" default="">
       <option value="">--</option>
-      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]!is[current]field:gsd_realm{!!gsd_realm}]">
+      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]!is[current]]">
        <option value=<<currentTiddler>>><<currentTiddler>></option>
       </$list>
     </$select>
@@ -41,7 +39,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     Project of: <br/>
     <$select field="gsd_project" default="">
       <option value="">--</option>
-      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}]">
+      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]]">
         <option value=<<currentTiddler>>><<currentTiddler>></option>
       </$list>
     </$select>
@@ -59,16 +57,16 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     <$prereq default="">
       <option value="">--</option>
       <$set name="currentTitle" value=<<currentTiddler>> >
-        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}!has[gsd_project]limit[1]]">
+        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]!has[gsd_project]limit[1]]">
           <optgroup label="No Project">
-            <$list filter="[field:gsd_type[action]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}!has[gsd_project]!title<currentTitle>]">
+            <$list filter="[field:gsd_type[action]!field:gsd_complete[true]!has[gsd_project]!title<currentTitle>]">
               <option value=<<currentTiddler>>><<currentTiddler>></option>
             </$list>
           </optgroup>
         </$list>
       </$set>
       <$set name="currentTitle" value=<<currentTiddler>> >
-        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}has[gsd_project]each[gsd_project]]">
+        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]has[gsd_project]each[gsd_project]]">
           <optgroup label={{!!gsd_project}}>
           <$list filter="[field:gsd_type[action]!field:gsd_complete[true]!title<currentTitle>field:gsd_project{!!gsd_project}]">
             <option value=<<currentTiddler>>><<currentTiddler>></option>
@@ -93,7 +91,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     Project of: <br/>
     <$select field="gsd_project" default="">
       <option value="">--</option>
-      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]field:gsd_realm{!!gsd_realm}]">
+      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]]">
        <option value=<<currentTiddler>>><<currentTiddler>></option>
       </$list>
     </$select>

@@ -34,12 +34,10 @@ tags: $:/tags/ViewTemplate
     <$set name="gsd_status" value="next">
     <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
-    <$set name="gsd_realm" value={{!!gsd_realm}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
             +
         </$button>
-    </$set>
     </$set>
     </$set>
     </$set>
@@ -60,12 +58,10 @@ tags: $:/tags/ViewTemplate
     <$set name="gsd_status" value="waiting">
     <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
-    <$set name="gsd_realm" value={{!!gsd_realm}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
             +
         </$button>
-    </$set>
     </$set>
     </$set>
     </$set>
@@ -86,12 +82,10 @@ tags: $:/tags/ViewTemplate
     <$set name="gsd_status" value="future">
     <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
-    <$set name="gsd_realm" value={{!!gsd_realm}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
             +
         </$button>
-    </$set>
     </$set>
     </$set>
     </$set>
@@ -112,12 +106,10 @@ tags: $:/tags/ViewTemplate
     <$set name="gsd_status" value="active">
     <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
-    <$set name="gsd_realm" value={{!!gsd_realm}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
             +
         </$button>
-    </$set>
     </$set>
     </$set>
     </$set>
@@ -136,12 +128,10 @@ tags: $:/tags/ViewTemplate
     References
     <$set name="gsd_type" value="reference">
     <$set name="gsd_project" value={{!!title}}>
-    <$set name="gsd_realm" value={{!!gsd_realm}}>
         <$button class="gsd-list-new-button tc-btn-invisible" >
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
             +
         </$button>
-    </$set>
     </$set>
     </$set>
     <hr/>

@@ -19,7 +19,6 @@ exports.params = [
     {name: "gsd_type"},
     {name: "gsd_complete"},
     {name: "gsd_status"},
-    {name: "realmAware"},
     {name: "sort"},
     {name: "order"},
     {name: "groupBy"},
@@ -56,15 +55,6 @@ function processStatus(filter) {
     // Only process if tidders support gsd_status; actions & projects
     if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {
         filter.strings.status = "field:gsd_status[" + filter.values.gsd_status + "]";
-    }
-    return filter;
-}
-
-// What is the desired realm of the tiddler list?
-function processRealm(filter) {
-    // Only process if list is requested to be realm aware.
-    if(filter.values.realmAware==="true") {
-        filter.strings.realm = "field:gsd_realm{$:/currentRealm}";
     }
     return filter;
 }
@@ -202,7 +192,7 @@ function processHideFutureProj(filter) {
 }
 
 // Run the macro
-exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,owner,hideFutureProj) {
+exports.run = function(gsd_type,gsd_complete,gsd_status,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,owner,hideFutureProj) {
     // Prepare the filterString object.
     var filter = {};
     var composedFilter= "";
@@ -212,7 +202,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
         gsd_type: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_type),
         gsd_complete: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_complete),
         gsd_status: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_status),
-        realmAware: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",realmAware),
         sort: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",sort),
         order: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",order),
         groupBy: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupBy),
@@ -229,7 +218,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
         type: "",
         complete: "",
         status: "",
-        realm: "",
         sort: "",
         group: "",
         customFilter: "",
@@ -248,7 +236,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
 
     filter = processType(filter);
     filter = processStatus(filter);
-    filter = processRealm(filter);
     filter = processComplete(filter);
     filter = processSort(filter);
     filter = processGroup(filter);
@@ -261,7 +248,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,realmAware,sort,order,gr
     composedFilter += filter.strings.type;
     composedFilter += filter.strings.complete;
     composedFilter += filter.strings.status;
-    composedFilter += filter.strings.realm;
     composedFilter += filter.strings.sort;
     composedFilter += filter.strings.group;
     composedFilter += filter.strings.customFilter;

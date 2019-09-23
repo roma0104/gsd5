@@ -7,9 +7,7 @@ description: Add new action
     <$set name="gsd_type" value="action">
     <$set name="gsd_status" value="next">
     <$set name="gsd_complete" value="false">
-    <$set name="gsd_realm" value={{$:/currentRealm}}>
         {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
-    </$set>
     </$set>
     </$set>
     </$set>

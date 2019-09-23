@@ -6,18 +6,9 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore
     <$select field="gsd_contact" default="none">
         <option value="">--</option>
         <$set name="parentTiddler" value=<<currentTiddler>> >
-            <$list filter="[is[current]!field:gsd_realm[all]]" >
-                <optgroup label={{!!gsd_realm}}>
-                    <$list filter=[field:gsd_type[contact]field:gsd_realm{!!gsd_realm}]>
-                        <option value=<<currentTiddler>>><<currentTiddler>></option>
-                    </$list>
-                </optgroup>
+            <$list filter="[is[current]field:gsd_type[contact]]" >
+                  <option value=<<currentTiddler>>><<currentTiddler>></option>
             </$list>
-            <optgroup label="All Realms">
-                <$list filter=[field:gsd_type[contact]field:gsd_realm[all]]>
-                    <option value=<<currentTiddler>>><<currentTiddler>></option>
-                </$list>
-            </optgroup>
         </$set>
     </$select>
     <span class="goto-link">
@@ -26,7 +17,6 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore
         </$list>
         <$list filter=[is[current]field:gsd_contact[]]>
         <$set name="gsd_type" value="contact">
-        <$set name="gsd_realm" value={{$:/currentRealm}}>
             &nbsp;
 
             <$button class="tc-btn-invisible" >
@@ -34,7 +24,6 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore
                 new
             </$button>
 
-        </$set>
         </$set>
         </$list>
     </span>

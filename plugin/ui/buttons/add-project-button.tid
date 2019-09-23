@@ -6,7 +6,6 @@ description: Add new project
 <$set name="gsd_type" value="project">
 <$set name="gsd_status" value="active">
 <$set name="gsd_complete" value="false">
-<$set name="gsd_realm" value={{$:/currentRealm}}>
   <$button class=<<tv-config-toolbar-class>> >
     {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
 
@@ -20,5 +19,3 @@ description: Add new project
 </$set>
 </$set>
 </$set>
-</$set>
-

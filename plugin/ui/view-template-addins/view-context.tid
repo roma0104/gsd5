@@ -9,7 +9,7 @@ tags: $:/tags/GSEBDActionPlugin
             <$reveal state=<<ContextStatus>> type="nomatch" text="" class="tc-popup-handle" default="" retain="yes" animate="yes">
             <div class="tc-menu-list-subitem">
 
-            <$list filter="[field:gsd_type[context]field:gsd_realm{!!gsd_realm}] [field:gsd_type[context]field:gsd_realm[all]]" emptyMessage="<em>-no contexts-</em>">
+            <$list filter="[field:gsd_type[context]]" emptyMessage="<em>-no contexts-</em>">
                 <div class="tc-menu-list-subitem">
                 <$checkbox tiddler=<<parentTiddler>> tag=<<currentTiddler>>>
                     <<currentTiddler>>

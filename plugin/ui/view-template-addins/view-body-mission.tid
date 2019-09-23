@@ -10,9 +10,17 @@ From there think about the WHY do you or did you like those things ?
 
 ---
 
-''TODO''
-
-* likes/enjoy list
-* dislike list
+<div class="row">
+  <div class="col">
+    <div class="tw-menu-list-item">
+      <<gsebd-simple-list title:"Likes" gsd_type:"like">>
+    </div>
+  </div>
+  <div class="col">
+    <div class="tw-menu-list-item">
+      <<gsebd-simple-list title:"Dislikes" gsd_type:"dislike">>
+    </div>
+  </div>
+</div>
 
 </$list>

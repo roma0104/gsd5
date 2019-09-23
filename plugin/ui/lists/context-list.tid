@@ -1,3 +1,0 @@
-title: $:/plugins/sebastianovide/gsebd/ui/lists/context-list
-
-<<gsebd-list title:"Contexts" gsd_type:"context" sort:"title" order:"ascending" groupBy:"none" customFilter:"none">>

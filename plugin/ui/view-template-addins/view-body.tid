@@ -38,24 +38,6 @@ tags: $:/tags/ViewTemplate
 {{||$:/plugins/sebastianovide/gsebd/ui/lists/contacts-action-list}}
 </$list>
 
-<!-- Context -->
-<$list filter=[is[current]field:gsd_type[context]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContextCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDContextPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
-<div class="tc-message-box gsd-plugin-box">
-<div class="gsd-plugin-core">
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContextCore]!has[draft.of]]" variable="listItem">
-<$transclude tiddler=<<listItem>>/>
-</$list>
-</div>
-<div class="gsd-plugin-other">
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContextPlugin]!has[draft.of]]" variable="listItem">
-<$transclude tiddler=<<listItem>>/>
-</$list>
-</div>
-</div>
-</$list>
-</$list>
-
 <!-- Reference Dashboard -->
 <$list filter="[all[shadows+tiddlers]is[current]field:title[References]]">
 <div class="tc-message-box">

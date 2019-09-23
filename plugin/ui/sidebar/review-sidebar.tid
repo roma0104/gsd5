@@ -9,7 +9,6 @@ caption: Review
 <$link to="References">References</$link><br/>
 <$link to="Contacts">Contacts</$link><br/>
 <$link to="No Next Action">No Next Action</$link><br/>
-<$link to="Contexts">Contexts</$link><br/>
 <$link to="Completed Actions">Completed Actions</$link><br/>
 <$link to="Completed Projects">Completed Projects</$link><br/>
 <$link to="Cleanup">Cleanup</$link>

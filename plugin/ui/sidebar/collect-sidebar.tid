@@ -2,13 +2,6 @@ title: $:/plugins/sebastianovide/gsebd/ui/sidebar/collect-sidebar
 tags: $:/tags/SideBar
 caption: Collect
 
-<$set name="gsd_type" value="context">
-  <$button>
-    {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
-    {{$:/plugins/sebastianovide/gsebd/images/context}} New Context
-  </$button>
-</$set>
-
 {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-area}}
 
 <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDCollect]!has[draft.of]]">

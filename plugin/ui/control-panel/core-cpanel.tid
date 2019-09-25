@@ -28,4 +28,3 @@ $:/config/GSEBDLists/visibility/$tiddler$
 !!Dashboard Options
 
 <$checkbox tiddler="$:/config/GSEBDDashboardGroup" field="text" checked="gsd_project" unchecked="none"> Group Actions in Dashboard by Project</$checkbox><br/>
-

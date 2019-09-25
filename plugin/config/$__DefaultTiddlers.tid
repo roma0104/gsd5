@@ -1,4 +1,5 @@
 title: $:/DefaultTiddlers
+type: text/vnd.tiddlywiki
 
 [list[$:/StoryList]]
 [[Dashboard]]

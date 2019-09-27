@@ -46,3 +46,22 @@ tags: $:/tags/ViewTemplate
 
 </div>
 </$list>
+
+<$list filter="[tag{!!title}tag[Journal]first[]]" variable="nothing">
+  <hr/>
+
+  <$button popup=<<qualify "$:/temp/popup">>>See journal entries</$button>
+
+  <$reveal type="popup" state=<<qualify "$:/temp/popup">>>
+    <div class="tc-drop-down">
+
+      <$list filter="[tag{!!title}tag[Journal]]" variable="journal">
+          <$link to=<<journal>>>
+            <h2><<journal>></h2> 
+          </$link>
+      </$list>
+
+    </div>
+  </$reveal>
+</$list>
+

@@ -1,0 +1,8 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-LikeAndDislike
+tags: $:/tags/ViewTemplate
+
+<$list filter="[tag[Like]] [tag[Dislike]] +[is[current]first[]]">
+
+---
+''WHY'' do you like/dislike it ? Why again... and why again... //until when you get to your ''inner'' reason//.
+</$list>

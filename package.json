@@ -8,6 +8,8 @@
     "build": "npm run build:prepare && npm run build:TW",
     "build:prepare": "mkdir -p build/ && cp node_modules/tiddlywiki/editions/server/tiddlywiki.info build/ && node bin/updateVersion.js",
     "build:TW": "tiddlywiki ++./plugin build --verbose --output build/gh-pages/ --load deps --build index",
+    "build:clean": "npm run clean && npm run build",
+    "rebuild": "npm run build:clean",
     "serve:start": "npm run serve:stop && tiddlywiki ++./plugin build --verbose --listen || echo killed",
     "serve:stop": "pkill -f \"node `which tiddlywiki`\" || echo nothing running",
     "serve:open-browser-delayed": "sleep 2 && open-cli http://127.0.0.1:8080 --background &",

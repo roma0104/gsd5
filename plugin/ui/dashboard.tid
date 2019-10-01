@@ -48,7 +48,7 @@ $title$
 
 !<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage='<<newButton title:"Vision Statement" text:"To Have a Lovely Family in a lovely home">>' >
 [[Vision Statement]]
-</$list><<helpButton $:/plugins/sebastianovide/gsebd/popups/helpVision """How would your perfect life lookss like ?""">>
+</$list><<helpButton $:/plugins/sebastianovide/gsebd/popups/helpVision """How would your perfect life looks like ?""">>
 </div>
 
 !!<$list filter="[[Vision Statement]is[tiddler]]" emptyMessage="Define your vision statement here !">

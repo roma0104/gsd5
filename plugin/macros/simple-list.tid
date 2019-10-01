@@ -1,21 +1,21 @@
 title: $:/plugins/sebastianovide/gsebd/macro/simple-list
 tags: $:/tags/Macro
 
-\define gsebd-simple-list(title:"Things", gsd_type:"things")
+\define gsebd-simple-list(title:"Things", tag)
 <strong>
   $title$
   <$button class="gsd-list-new-button tc-btn-invisible">
       +
       <$action-createtiddler
-          $basetitle="New $gsd_type$"
+          $basetitle="New $tag$"
           $savetitle="!!justCreated"
-          gsd_type=$gsd_type$
+          tags="""[[$tag$]]"""
       />
       <$action-sendmessage $message="tm-edit-tiddler" $param={{!!justCreated}}/>
   </$button>
 </strong>
 <hr/>
-<$list filter=[field:gsd_type[$gsd_type$]]>
+<$list filter="""[tag[$tag$]!has[draft.of]]""">
   <div class="tc-menu-list-subitem">
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
     <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>

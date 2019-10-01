@@ -6,21 +6,20 @@ tags: $:/tags/ViewTemplate
 ---
 Your mission is yuor purpose. Think about the things that you really enjoy doing. WHAT does juice you ? What did you use to love to do when you were a kid ? What whould you do if you had all the money you need ?
 
-From there think about the WHY do you or did you like those things ?
+From there think about the ''WHY'' do you or did you like those things ?
 
 ---
-
-<div class="row">
-  <div class="col">
-    <div class="tw-menu-list-item">
-      <<gsebd-simple-list title:"Likes" gsd_type:"like">>
+  <div class="row">
+    <div class="col">
+      <div class="tw-menu-list-item">
+        <<gsebd-simple-list title:"Likes" tag:"Like">>
+      </div>
+    </div>
+    <div class="col">
+      <div class="tw-menu-list-item">
+        <<gsebd-simple-list title:"Dislikes" tag:"Dislike">>
+      </div>
     </div>
   </div>
-  <div class="col">
-    <div class="tw-menu-list-item">
-      <<gsebd-simple-list title:"Dislikes" gsd_type:"dislike">>
-    </div>
-  </div>
-</div>
 
 </$list>

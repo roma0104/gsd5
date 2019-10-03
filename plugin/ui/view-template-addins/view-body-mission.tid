@@ -12,12 +12,12 @@ From there think about the ''WHY'' do you or did you like those things ?
   <div class="row">
     <div class="col">
       <div class="tw-menu-list-item">
-        <<gsebd-simple-list title:"Likes" tag:"Like">>
+        <<gsebd-simple-list title:"Likes" tags:"Like">>
       </div>
     </div>
     <div class="col">
       <div class="tw-menu-list-item">
-        <<gsebd-simple-list title:"Dislikes" tag:"Dislike">>
+        <<gsebd-simple-list title:"Dislikes" tags:"Dislike">>
       </div>
     </div>
   </div>

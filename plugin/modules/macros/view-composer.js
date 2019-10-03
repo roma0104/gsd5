@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/sebastianovide/gsebd/macro/view-composer.js
+title: $:/plugins/sebastianovide/gsebd/modules/macros/view-composer.js
 type: application/javascript
 module-type: macro
 

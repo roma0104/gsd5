@@ -1,4 +1,4 @@
-title: $:/plugins/sebastianovide/gsebd/macro/gsebd-list
+title: $:/plugins/sebastianovide/gsebd/modules/macros/gsebd-list
 tags: $:/tags/Macro
 
 \define gsebd-list(title:"Next Action",gsd_type:"action",gsd_status:"next",gsd_complete:"false",sort:"title",order:"ascending",groupBy:"none",customFilter:"none",dateTemplate:"DDth MMM YYYY",ownerField:"none",owner:"{{!!title}}",hideFutureProj:"false")

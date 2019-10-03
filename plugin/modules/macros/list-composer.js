@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/sebastianovide/gsebd/macro/list-composer.js
+title: $:/plugins/sebastianovide/gsebd/modules/macros/list-composer.js
 type: application/javascript
 module-type: macro
 

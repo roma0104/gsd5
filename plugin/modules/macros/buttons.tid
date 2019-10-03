@@ -1,4 +1,4 @@
-title: $:/plugins/sebastianovide/gsebd/macro/buttons
+title: $:/plugins/sebastianovide/gsebd/modules/macros/buttons
 tags: $:/tags/Macro
 
 \define helpButton(popup, text)

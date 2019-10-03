@@ -1,4 +1,4 @@
-title: $:/plugins/sebastianovide/gsebd/macro/gsebd-satisfaction
+title: $:/plugins/sebastianovide/gsebd/modules/macros/gsebd-satisfaction
 tags: $:/tags/Macro
 
 \define gsebd-satisfaction(field:"nothing")

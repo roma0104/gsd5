@@ -2,12 +2,19 @@ title: $:/plugins/sebastianovide/gsebd/ui/pd/behavior
 tags: PD
 caption: Behaviors
 
-!Behaviors
-!!![[Pleasure - Pleasure]]
-{{Pleasure - Pleasure}}
-!!![[Pain - Pleasure]]
-{{Pain - Pleasure}}
-!!![[Pleasure - Pain]]
-{{Pleasure - Pain}}
-!!![[Pain - Pain]]
-{{Pain - Pain}}
+! Behaviors
+<$macrocall $name=gsebd-slider label="Pleasure - Pleasure" text="""
+Paradise: you do what you enjoy and that at the same time will return pleasure in the future
+"""/>
+
+<$macrocall $name=gsebd-slider label="Pain - Pleasure" text="""
+Not nice now but it definetly will return pleasure in the future
+"""/>
+
+<$macrocall $name=gsebd-slider label="Pleasure - Pain" text="""
+Enjoy now but at the cost of the future
+"""/>
+
+<$macrocall $name=gsebd-slider label="Pain - Pain" text="""
+self destruciton mode: pain now that will return even more pain in the future
+"""/>

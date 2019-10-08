@@ -3,18 +3,18 @@ tags: PD
 caption: Behaviors
 
 ! Behaviors
-<$macrocall $name=gsebd-unfold-text label="Pleasure - Pleasure" text="""
+<$macrocall $name=gsebd-accordion caption="Pleasure - Pleasure" body="""
 Paradise: you do what you enjoy and that at the same time will return pleasure in the future
 """/>
 
-<$macrocall $name=gsebd-unfold-text label="Pain - Pleasure" text="""
+<$macrocall $name=gsebd-accordion caption="Pain - Pleasure" body="""
 Not nice now but it definetly will return pleasure in the future
 """/>
 
-<$macrocall $name=gsebd-unfold-text label="Pleasure - Pain" text="""
+<$macrocall $name=gsebd-accordion caption="Pleasure - Pain" body="""
 Enjoy now but at the cost of the future
 """/>
 
-<$macrocall $name=gsebd-unfold-text label="Pain - Pain" text="""
+<$macrocall $name=gsebd-accordion caption="Pain - Pain" body="""
 self destruciton mode: pain now that will return even more pain in the future
 """/>

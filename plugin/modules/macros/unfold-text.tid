@@ -1,8 +1,8 @@
-title: $:/plugins/sebastianovide/gsebd/modules/macros/gsebd-slider
+title: $:/plugins/sebastianovide/gsebd/modules/macros/gsebd-unfold-text
 tags: $:/tags/Macro
 
-\define gsebd-slider(label, text)
-<$set name="revealState" value=<<qualify "$:/state/gsebd-slider/$(currentTiddler)$/$label$">>>
+\define gsebd-unfold-text(label, text)
+<$set name="revealState" value=<<qualify "$:/state/gsebd-unfold-text/$(currentTiddler)$/$label$">>>
   <h2>
     <$reveal type="nomatch" state=<<revealState>> text="yes">
       <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="yes">

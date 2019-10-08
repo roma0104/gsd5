@@ -49,7 +49,7 @@ tags: $:/tags/ViewTemplate
 
 <$list filter="[tag{!!title}tag[Journal]first[]]" variable="nothing">
   <hr/>  
-  <$macrocall $name=gsebd-slider label="journal entries" text="""  
+  <$macrocall $name=gsebd-unfold-text label="journal entries" text="""  
   <<list-links filter:"[tag{!!title}tag[Journal]]">>
   """/>
 </$list>

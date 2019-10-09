@@ -38,19 +38,13 @@ Write a simple list filter by a list of tags and with a + button in the header t
                     <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value=""/>`;
   
     return `
-    <strong>          
-      ${title}
-    </strong>
+    <strong>${title}</strong>
     <hr/>
-    <$list filter="${filterTags} +[!has[draft.of]]">
-      <div class="tc-menu-list-subitem">
-        <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
-      </div>
-    </$list>
-    <$keyboard key="enter" actions='${saveWT}' class="tc-menu-list-subitem">
-      <span class="list-link">
-        <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40" placeholder="enter a new ${title} here"/> 
-      </span>
+      
+    <<list-links filter:"${filterTags} +[!has[draft.of]]" type:"div" subtype:"div" >>
+
+    <$keyboard key="enter" actions='${saveWT}'>
+      <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40" placeholder="enter a new ${title} here" /> 
     </$keyboard>
     `;
   };

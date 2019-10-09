@@ -49,7 +49,7 @@ Write a simple list filter by a list of tags and with a + button in the header t
             $savetitle="!!justCreated"
             tags="${tagsTW}"
         />
-        <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value="New ${title}"/>
+        <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value=""/>
     </$button>
     <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40"/> 
     `;

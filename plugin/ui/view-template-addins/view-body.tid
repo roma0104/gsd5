@@ -49,7 +49,7 @@ tags: $:/tags/ViewTemplate
 
 <$list filter="[tag{!!title}tag[Journal]first[]]" variable="nothing">
   <hr/>  
-  <$macrocall $name=gsebd-accordion caption="journal entries" body="""  
-  <<list-links filter:"[tag{!!title}tag[Journal]]">>
+  <$macrocall $name=gsebd-accordion caption="journal entries" body="""    
+    <<gsebd-simple-list tags:"Journal">>  
   """/>
 </$list>

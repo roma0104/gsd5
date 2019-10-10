@@ -15,10 +15,11 @@ Write a simple list filter by a list of tags and with a + button in the header t
   exports.params = [
       {name: "title"},
       {name: "tags"},
-      {name: "excludeCurrent"}
+      {name: "excludeCurrent"},
+      {name: "hideAddButton"}
   ];
 
-  exports.run = function(title, tags, excludeCurrent) {
+  exports.run = function(title, tags, excludeCurrent, hideAddButton) {
     const currentTiddler = this.getVariable("currentTiddler")
     if (!excludeCurrent) {
       tags += "," + currentTiddler
@@ -30,22 +31,27 @@ Write a simple list filter by a list of tags and with a + button in the header t
     const filterTags = tags.reduce((r, v) => r + (r === "" ? "" : " +" ) + "[tag[" + v + "]]", "")
     const tmpNewTiddlerField = `new_${currentTiddler}_${title}`
   
-    const saveWT = `<$action-createtiddler
-                        $basetitle={{$/tmp!!${tmpNewTiddlerField}}}
-                        $savetitle="!!justCreated"
-                        tags="${tagsTW}"
-                    />
-                    <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value=""/>`;
+    const titleTW = title !== "" ? `<strong>${title}</strong><hr/>` : ""
+  
+    const saveWT = `
+    <$action-createtiddler
+        $basetitle={{$/tmp!!${tmpNewTiddlerField}}}
+        $savetitle="!!justCreated"
+        tags="${tagsTW}"
+    />
+    <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value=""/>`;
+
+    const addButtonWT = hideAddButton === "" ? `
+      <$keyboard key="enter" actions='${saveWT}'>
+        <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40" placeholder="enter a new ${title} here" /> 
+      </$keyboard>` : "";
   
     return `
-    <strong>${title}</strong>
-    <hr/>
+    ${titleTW}
       
     <<list-links filter:"${filterTags} +[!has[draft.of]]" type:"div" subtype:"div" >>
 
-    <$keyboard key="enter" actions='${saveWT}'>
-      <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40" placeholder="enter a new ${title} here" /> 
-    </$keyboard>
+    ${addButtonWT}
     `;
   };
 })();

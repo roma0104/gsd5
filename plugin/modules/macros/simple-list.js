@@ -16,10 +16,11 @@ Write a simple list filter by a list of tags and with a + button in the header t
       {name: "title"},
       {name: "tags"},
       {name: "excludeCurrent"},
-      {name: "hideAddButton"}
+      {name: "hideAddButton"},
+      {name: "defaultValue", default: "ciccio"}
   ];
 
-  exports.run = function(title, tags, excludeCurrent, hideAddButton) {
+  exports.run = function(title, tags, excludeCurrent, hideAddButton, defaultValue) {
     const currentTiddler = this.getVariable("currentTiddler")
     if (!excludeCurrent) {
       tags += "," + currentTiddler
@@ -29,29 +30,30 @@ Write a simple list filter by a list of tags and with a + button in the header t
     const tag = tags[0]
     const tagsTW = tags.reduce((r, v) => r + (r === "" ? "" : " " ) + "[[" + v + "]]", "")
     const filterTags = tags.reduce((r, v) => r + (r === "" ? "" : " +" ) + "[tag[" + v + "]]", "")
-    const tmpNewTiddlerField = `new_${currentTiddler}_${title}`
+    const tmpNewTiddlerField = `new_${currentTiddler}_${title}`.replace(/ /g,"_");
+    const titleWT = title !== "" ? `<strong>${title}</strong><hr/>` : ""
   
-    const titleTW = title !== "" ? `<strong>${title}</strong><hr/>` : ""
-  
-    const saveWT = `
+    const saveActionsWT = `
     <$action-createtiddler
         $basetitle={{$/tmp!!${tmpNewTiddlerField}}}
-        $savetitle="!!justCreated"
         tags="${tagsTW}"
     />
-    <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value=""/>`;
+    // <$action-deletefield $tiddler="$/tmp" $field="${tmpNewTiddlerField}"/>`;
+    // <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value="${defaultValue}"/>`;
 
     const addButtonWT = hideAddButton === "" ? `
-      <$keyboard key="enter" actions='${saveWT}'>
-        <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40" placeholder="enter a new ${title} here" /> 
+      <$keyboard key="enter" actions="""${saveActionsWT}""">
+        <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40" placeholder="enter a new ${title} here" default="${defaultValue}"/> 
       </$keyboard>` : "";
   
-    return `
-    ${titleTW}
-      
-    <<list-links filter:"${filterTags} +[!has[draft.of]]" type:"div" subtype:"div" >>
-
-    ${addButtonWT}
+    const finalWT = `
+      ${titleWT}
+      <<list-links filter:"${filterTags} +[!has[draft.of]]" type:"div" subtype:"div" >>
+      ${addButtonWT}
     `;
+        
+    debugger
+        
+    return finalWT;
   };
 })();

@@ -16,11 +16,11 @@ Write a simple list filter by a list of tags and with a + button in the header t
       {name: "title"},
       {name: "tags"},
       {name: "excludeCurrent"},
-      {name: "hideAddButton"},
-      {name: "defaultValue", default: "ciccio"}
+      {name: "addButton"},
+      {name: "defaultValue"}
   ];
 
-  exports.run = function(title, tags, excludeCurrent, hideAddButton, defaultValue) {
+  exports.run = function(title, tags, excludeCurrent, addButton, defaultValue) {
     const currentTiddler = this.getVariable("currentTiddler")
     if (!excludeCurrent) {
       tags += "," + currentTiddler
@@ -41,19 +41,20 @@ Write a simple list filter by a list of tags and with a + button in the header t
     // <$action-deletefield $tiddler="$/tmp" $field="${tmpNewTiddlerField}"/>`;
     // <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value="${defaultValue}"/>`;
 
-    const addButtonWT = hideAddButton === "" ? `
+debugger
+
+    // TODO: I don't know how to make the default work
+    const addButtonWT = addButton || `
       <$keyboard key="enter" actions="""${saveActionsWT}""">
         <$edit-text tiddler="$/tmp" field="${tmpNewTiddlerField}" type="text" size="40" placeholder="enter a new ${title} here" default="${defaultValue}"/> 
-      </$keyboard>` : "";
+      </$keyboard>`;
   
     const finalWT = `
       ${titleWT}
       <<list-links filter:"${filterTags} +[!has[draft.of]]" type:"div" subtype:"div" >>
       ${addButtonWT}
     `;
-        
-    debugger
-        
+                
     return finalWT;
   };
 })();

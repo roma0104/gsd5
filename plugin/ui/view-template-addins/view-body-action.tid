@@ -2,16 +2,14 @@ title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Action
 tags: $:/tags/ViewTemplate
 
 <!-- Action -->
-<$list filter="[is[current]field:gsd_type[action]]">
-
-  <$list filter="[is[current]field:text[]]">
-    
+<$list filter="[is[current]field:gsd_type[action]]">  
+  <<gsebd-accordion """
     ''Write a description about this:''
 
     * Why I need to do this ?
     * What I will gain if I do this ?
     * What I will lose of I don't do this ?
-  </$list>
+    """ "help">>
 
   <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDActionCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDActionPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
     <div class="tc-message-box gsd-plugin-box">

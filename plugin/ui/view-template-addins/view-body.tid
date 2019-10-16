@@ -48,8 +48,7 @@ tags: $:/tags/ViewTemplate
 </$list>
 
 <$list filter="[tag{!!title}tag[Journal]first[]]" variable="nothing">
-  <hr/>  
   <$macrocall $name=gsebd-accordion caption="journal entries <$transclude tiddler='$:/core/ui/Buttons/new-journal-here'/>" body="""    
-    <<gsebd-simple-list tags:"Journal">>  
-"""/>
+      <<gsebd-simple-list tags:"Journal">>  
+  """/>
 </$list>

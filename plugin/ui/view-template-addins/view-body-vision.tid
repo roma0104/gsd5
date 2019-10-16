@@ -2,7 +2,9 @@ title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Vision
 tags: $:/tags/ViewTemplate
 
 <$list filter="[is[current]field:title[Vision Statement]]">
+  <<gsebd-accordion """
+    ''Write a description about this:''
 
----
-HOW do you imagine your perfect life in harmony with your mmission ?
+    HOW do you imagine your perfect life in harmony with your mmission ?
+    """ "help">>
 </$list>

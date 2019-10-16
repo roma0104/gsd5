@@ -2,11 +2,12 @@ title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Area
 tags: $:/tags/ViewTemplate
 
 <!-- Area -->
-<$list filter="[is[current]field:gsd_type[area]]">
+<$list filter="[is[current]field:gsd_type[area]]">  
+  <<gsebd-accordion """
+    ''Write a description about this:''
 
-  <$list filter="[is[current]field:text[]]">
-  Write a motivating story about this area. What is it about ? What are your goals ?
-  </$list>
+    Write a motivating story about this area. What is it about ? What are your goals ?
+    """ "help">>
 
   <div class="tc-menu-list-item">
   Projects

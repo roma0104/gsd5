@@ -2,31 +2,22 @@ title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-Project
 tags: $:/tags/ViewTemplate
 
 <$list filter=[is[current]field:gsd_type[project]]>
+  <<gsebd-accordion """
+  ''Write a description about this:''
 
-  <$list filter="[is[current]field:text[]]">
-    
-    ''Write a description about this:''
+  * Why I need to do this ?
+  * What I will gain if I do this ?
+  * What I will lose of I don't do this ?
+  * What rituals will support this ?
+  """ "help">>
 
-    * Why I need to do this ?
-    * What I will gain if I do this ?
-    * What I will lose of I don't do this ?
-    * What rituals will support this ?
-  </$list>
-
-  <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDProjectPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
-    <div class="tc-message-box gsd-plugin-box">
+  <div class="tc-message-box gsd-plugin-box">
     <div class="gsd-plugin-core">
-    <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]]" variable="listItem">
-    <$transclude tiddler=<<listItem>>/>
-    </$list>
-    </div>
-    <div class="gsd-plugin-other">
-    <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectPlugin]!has[draft.of]]" variable="listItem">
-    <$transclude tiddler=<<listItem>>/>
-    </$list>
-    </div>
-    </div>
-  </$list>
+      <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]]" variable="listItem">
+        <$transclude tiddler=<<listItem>>/>
+      </$list>
+    </div>    
+  </div>
 
   <div class="tc-menu-list-item">
     Next Actions

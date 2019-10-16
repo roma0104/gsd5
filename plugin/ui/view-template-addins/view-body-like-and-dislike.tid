@@ -2,11 +2,10 @@ title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-LikeAndDislike
 tags: $:/tags/ViewTemplate
 
 <$list filter="[tag[Like]] [tag[Dislike]] +[is[current]first[]]">
+  <<gsebd-accordion """
+    ''WHY'' do you like/dislike it ? Why again... and why again... //until when you get to your ''inner'' reason//.
+    """ "help">>
 
----
-''WHY'' do you like/dislike it ? Why again... and why again... //until when you get to your ''inner'' reason//.
-
----
-<<gsebd-simple-list title:"Why?" tags:"Why" >>
+  <<gsebd-simple-list title:"Why?" tags:"Why" >>
   
 </$list>

@@ -1,5 +1,4 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewStatus
-tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore
 
 <$list filter=[is[current]field:gsd_type[action]!field:gsd_complete[true]]>
   <p class="gsd-gsdpanel-droplist">

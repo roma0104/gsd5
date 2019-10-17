@@ -1,43 +1,6 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody
 tags: $:/tags/ViewTemplate
 
-<!-- Reference -->
-<$list filter=[is[current]field:gsd_type[reference]]>
-  <div class="tc-message-box gsd-plugin-box">
-    <div class="gsd-plugin-core">
-      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq"/>
-    </div>
-  </div>
-</$list>
-
-<!-- Contact -->
-<$list filter=[is[current]field:gsd_type[contact]]>
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContactCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDContactPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
-<div class="tc-message-box gsd-plugin-box">
-<div class="gsd-plugin-core">
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContactCore]!has[draft.of]]" variable="listItem">
-<$transclude tiddler=<<listItem>>/>
-</$list>
-</div>
-<div class="gsd-plugin-other">
-<$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDContactPlugin]!has[draft.of]]" variable="listItem">
-<$transclude tiddler=<<listItem>>/>
-</$list>
-</div>
-</div>
-</$list>
-{{||$:/plugins/sebastianovide/gsebd/ui/lists/contacts-action-list}}
-</$list>
-
-<!-- Reference Dashboard -->
-<$list filter="[all[shadows+tiddlers]is[current]field:title[References]]">
-<div class="tc-message-box">
-
-<$checkbox tiddler="$:/config/GSEBDReferencesGroup" field="text" checked="gsd_project" unchecked="none">&nbsp;Group By Project</$checkbox>
-
-</div>
-</$list>
-
 <$list filter="[tag{!!title}tag[Journal]first[]]" variable="nothing">
   <$macrocall $name=gsebd-accordion caption="journal entries <$transclude tiddler='$:/core/ui/Buttons/new-journal-here'/>" body="""    
       <<gsebd-simple-list tags:"Journal">>  

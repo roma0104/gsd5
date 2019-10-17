@@ -1,0 +1,7 @@
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewBody-contact
+tags: $:/tags/ViewTemplate
+
+<!-- Contact -->
+<$list filter=[is[current]field:gsd_type[contact]]>
+  <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/contacts-action-list"/>
+</$list>

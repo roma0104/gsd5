@@ -1,5 +1,4 @@
 title: $:/plugins/sebastianovide/gsebd/ui/lists/contacts-list
-tags: $:/tags/GSEBDLists
 caption: Contacts
 
 <<gsebd-list title:"Contacts" gsd_type:"contact" sort:"title" order:"ascending" customFilter:"none">>

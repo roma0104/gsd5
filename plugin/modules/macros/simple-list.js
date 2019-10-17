@@ -41,8 +41,6 @@ Write a simple list filter by a list of tags and with a + button in the header t
     // <$action-deletefield $tiddler="$/tmp" $field="${tmpNewTiddlerField}"/>`;
     // <$action-setfield $tiddler="$/tmp" $field="${tmpNewTiddlerField}" $value="${defaultValue}"/>`;
 
-debugger
-
     // TODO: I don't know how to make the default work
     const addButtonWT = addButton || `
       <$keyboard key="enter" actions="""${saveActionsWT}""">

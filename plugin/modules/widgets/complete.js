@@ -4,6 +4,9 @@ type: application/javascript
 module-type: widget
 
 Marks an action or project complete and queues the next dependent action.
+
+TODO: remove this
+
 \*/
 (function() {
 

@@ -11,11 +11,11 @@ tags: $:/tags/ViewTemplate
   * What rituals will support this ?
   """ "help">>
 
-  <div class="tc-message-box gsd-plugin-box">
-    <div class="gsd-plugin-core">
-      <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDProjectCore]!has[draft.of]]" variable="listItem">
-        <$transclude tiddler=<<listItem>>/>
-      </$list>
+  <div class="tc-message-box gsd-plugin-box">    
+    <div class="gsd-plugin-core">      
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewStatus" />
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq"/>
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewContact"/>      
     </div>    
   </div>
 

@@ -36,21 +36,27 @@ tags: $:/tags/Stylesheet
 }
 
 .next input[type="radio"]:checked + span {
-  background-color: #BCE8C3;
-  color: darkgreen;
-  border: darkgreen 1px solid;
+  background-color: red;
+  color: white;
+  border: white 1px solid;
 }
 
 .waiting input[type="radio"]:checked + span {
-  background-color: #FFDEAD;
-  color: darkgoldenrod;
-  border: darkgoldenrod 1px solid;
+  background-color: black;
+  color: orange;
+  border: red 1px solid;
 }
 
 .future input[type="radio"]:checked + span {
   background-color: #A8DCF6;
   color: #1C88BD;
   border: #1C88BD 1px solid;
+}
+
+.done input[type="radio"]:checked + span {
+  background-color: #BCE8C3;
+  color: darkgreen;
+  border: darkgreen 1px solid;
 }
 
 .content-box:after {

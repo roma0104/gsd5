@@ -11,16 +11,15 @@ Projects without Next Actions
 -----
 
 <$list filter="[field:gsd_type[project]!field:gsd_status[future]!field:gsd_complete[true]] -[field:gsd_type[action]field:gsd_status[next]!field:gsd_complete[true]_fieldvalue[gsd_project]]">
-<div class="tw-menu-list-subitem">
-<$complete tiddler=<<currentTiddler>>/>
-<$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewStatus"/>
-<span class="list-link">
-<$link to={{!!title}}>
-<$view field="title"/>
-</$link>
-</span>
-<$list filter=[is[current]!field:text[]]>
-&nbsp;<$transclude tiddler="$:/plugins/sebastianovide/gsebd/images/excerpt"/>
-</$list>
-</div>
+  <div class="tw-menu-list-subitem">
+    <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewStatus"/>
+    <span class="list-link">
+      <$link to={{!!title}}>
+        <$view field="title"/>
+      </$link>
+    </span>
+    <$list filter=[is[current]!field:text[]]>
+      &nbsp;<$transclude tiddler="$:/plugins/sebastianovide/gsebd/images/excerpt"/>
+    </$list>
+  </div>
 </$list>

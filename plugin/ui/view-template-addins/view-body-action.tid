@@ -11,18 +11,13 @@ tags: $:/tags/ViewTemplate
     * What I will lose of I don't do this ?
     """ "help">>
 
-  <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDActionCore]!has[draft.of]] [all[shadows+tiddlers]tag[$:/tags/GSEBDActionPlugin]!has[draft.of]] +[limit[1]]" variable="pass">
-    <div class="tc-message-box gsd-plugin-box">
-      <div class="gsd-plugin-core">
-        <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDActionCore]!has[draft.of]]" variable="listItem">
-          <$transclude tiddler=<<listItem>>/>
-        </$list>
-      </div>
-      <div class="gsd-plugin-other">
-        <$list filter="[all[shadows+tiddlers]tag[$:/tags/GSEBDActionPlugin]!has[draft.of]]" variable="listItem">
-          <$transclude tiddler=<<listItem>>/>
-        </$list>
-      </div>
+  <div class="tc-message-box gsd-plugin-box">
+    <div class="gsd-plugin-core">      
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewStatus"/>
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/buttons/convert-action-button"/>
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq"/>
+      <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/addins/ViewContact"/>
     </div>
-  </$list>
+  </div>
+    
 </$list>

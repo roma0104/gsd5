@@ -1,4 +1,5 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq
+tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCore
 
 \define gsd-tiddler-fly(type,status)
   <$button class="tc-btn-invisible">

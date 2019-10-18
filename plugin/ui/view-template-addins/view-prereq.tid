@@ -1,5 +1,4 @@
-gsd_status[done]title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq
-tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCore
+title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq
 
 \define gsd-tiddler-fly(type,status)
   <$button class="tc-btn-invisible">
@@ -34,7 +33,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
 
 <$list filter=[is[current]field:gsd_type[action]]>
   <p class="gsd-gsdpanel-droplist">
-    Project of: <br/>
+    Project of: 
     <$select field="gsd_project" default="">
       <option value="">--</option>
       <$list filter="[field:gsd_type[project]!field:gsd_status[done]]">
@@ -51,7 +50,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     </span>
   </p>
   <p class="gsd-gsdpanel-droplist">
-    Depends on: <br/>
+    Depends on: 
     <$prereq default="">
       <option value="">--</option>
       <$set name="currentTitle" value=<<currentTiddler>> >
@@ -86,7 +85,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
 
 <$list filter=[is[current]field:gsd_type[reference]]>
   <p class="gsd-gsdpanel-droplist">
-    Project of: <br/>
+    Project of: 
     <$select field="gsd_project" default="">
       <option value="">--</option>
       <$list filter="[field:gsd_type[project]!field:gsd_status[done]]">

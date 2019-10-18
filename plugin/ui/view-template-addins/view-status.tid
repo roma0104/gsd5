@@ -1,6 +1,6 @@
 title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewStatus
 
-<$list filter=[is[current]field:gsd_type[action]!field:gsd_status[done]]>
+<$list filter=[is[current]field:gsd_type[action]]>
   <p class="gsd-gsdpanel-droplist">
     <$radio class="body-status next" field="gsd_status" value="next">next</$radio>
     <$radio class="body-status waiting" field="gsd_status" value="waiting">waiting</$radio>
@@ -9,7 +9,7 @@ title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewStatus
   </p>
 </$list>
 
-<$list filter=[is[current]field:gsd_type[project]!field:gsd_status[done]]>
+<$list filter=[is[current]field:gsd_type[project]]>
   <p class="gsd-gsdpanel-droplist">
     <$radio class="body-status next" field="gsd_status" value="active">active</$radio>
     <$radio class="body-status future" field="gsd_status" value="future">future</$radio>

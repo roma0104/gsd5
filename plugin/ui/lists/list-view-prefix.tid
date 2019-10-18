@@ -1,18 +1,14 @@
 title: $:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix
 
 <$list filter="[is[current]field:gsd_type[action]]">
-  <$list filter="[is[current]!field:gsd_status[done]]">
-    <$radio tiddler=<<currentTiddler>> class="list-status next" field="gsd_status" value="next">n</$radio>
-    <$radio tiddler=<<currentTiddler>> class="list-status waiting" field="gsd_status" value="waiting">w</$radio>
-    <$radio tiddler=<<currentTiddler>> class="list-status future" field="gsd_status" value="future">f</$radio>
-    <$radio tiddler=<<currentTiddler>> class="list-status done" field="gsd_status" value="done">d</$radio>
-  </$list>
+  <$radio tiddler=<<currentTiddler>> class="list-status next" field="gsd_status" value="next">n</$radio>
+  <$radio tiddler=<<currentTiddler>> class="list-status waiting" field="gsd_status" value="waiting">w</$radio>
+  <$radio tiddler=<<currentTiddler>> class="list-status future" field="gsd_status" value="future">f</$radio>
+  <$radio tiddler=<<currentTiddler>> class="list-status done" field="gsd_status" value="done">d</$radio>
 </$list>
 
 <$list filter="[is[current]field:gsd_type[project]]">
-  <$list filter="[is[current]!field:gsd_status[done]]">
-    <$radio tiddler=<<currentTiddler>> class="list-status next" field="gsd_status" value="active">a</$radio>
-    <$radio tiddler=<<currentTiddler>> class="list-status future" field="gsd_status" value="future">f</$radio>
-    <$radio tiddler=<<currentTiddler>> class="list-status done" field="gsd_status" value="done">d</$radio>
-  </$list>
+  <$radio tiddler=<<currentTiddler>> class="list-status next" field="gsd_status" value="active">a</$radio>
+  <$radio tiddler=<<currentTiddler>> class="list-status future" field="gsd_status" value="future">f</$radio>
+  <$radio tiddler=<<currentTiddler>> class="list-status done" field="gsd_status" value="done">d</$radio>
 </$list>

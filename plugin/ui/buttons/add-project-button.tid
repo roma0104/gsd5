@@ -5,7 +5,6 @@ description: Add new project
 
 <$set name="gsd_type" value="project">
 <$set name="gsd_status" value="active">
-<$set name="gsd_complete" value="false">
   <$button class=<<tv-config-toolbar-class>> >
     {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
 
@@ -16,6 +15,5 @@ description: Add new project
         <$text text="new project"/>
     </$list>
   </$button>
-</$set>
 </$set>
 </$set>

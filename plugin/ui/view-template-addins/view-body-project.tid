@@ -23,7 +23,6 @@ tags: $:/tags/ViewTemplate
     Next Actions
     <$set name="gsd_type" value="action">
     <$set name="gsd_status" value="next">
-    <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
@@ -32,9 +31,8 @@ tags: $:/tags/ViewTemplate
     </$set>
     </$set>
     </$set>
-    </$set>
     <hr/>
-    <$list filter=[field:gsd_type[action]field:gsd_status[next]field:gsd_complete[false]field:gsd_project{!!title}]>
+    <$list filter=[field:gsd_type[action]field:gsd_status[next]field:gsd_project{!!title}]>
       <div class="tc-menu-list-subitem">
         <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
         <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
@@ -47,7 +45,6 @@ tags: $:/tags/ViewTemplate
     Waiting Actions
     <$set name="gsd_type" value="action">
     <$set name="gsd_status" value="waiting">
-    <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
@@ -56,9 +53,8 @@ tags: $:/tags/ViewTemplate
     </$set>
     </$set>
     </$set>
-    </$set>
     <hr/>
-    <$list filter=[field:gsd_type[action]field:gsd_status[waiting]field:gsd_complete[false]field:gsd_project{!!title}]>
+    <$list filter=[field:gsd_type[action]field:gsd_status[waiting]field:gsd_project{!!title}]>
       <div class="tc-menu-list-subitem">
         <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
         <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
@@ -71,7 +67,6 @@ tags: $:/tags/ViewTemplate
     Future Actions
     <$set name="gsd_type" value="action">
     <$set name="gsd_status" value="future">
-    <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
@@ -80,9 +75,8 @@ tags: $:/tags/ViewTemplate
     </$set>
     </$set>
     </$set>
-    </$set>
     <hr/>
-    <$list filter=[field:gsd_type[action]field:gsd_status[future]field:gsd_complete[false]field:gsd_project{!!title}]>
+    <$list filter=[field:gsd_type[action]field:gsd_status[future]field:gsd_project{!!title}]>
     <div class="tc-menu-list-subitem">
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
     <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>
@@ -95,13 +89,11 @@ tags: $:/tags/ViewTemplate
     Subprojects
     <$set name="gsd_type" value="project">
     <$set name="gsd_status" value="active">
-    <$set name="gsd_complete" value="false">
     <$set name="gsd_project" value={{!!title}}>
         <$button class="gsd-list-new-button tc-btn-invisible">
             {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
             +
         </$button>
-    </$set>
     </$set>
     </$set>
     </$set>
@@ -136,7 +128,7 @@ tags: $:/tags/ViewTemplate
     <div class="tc-menu-list-item">
     Completed Actions
     <hr/>
-    <$list filter=[field:gsd_type[action]field:gsd_complete[true]field:gsd_project{!!title}!sort[gsd_comp_date]]>
+    <$list filter=[field:gsd_type[action]field:gsd_status[done]field:gsd_project{!!title}!sort[modified]]>
     <div class="tc-menu-list-subitem">
     <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
     <span class="list-link"><$link to={{!!title}}><$view field="title"/></$link></span>

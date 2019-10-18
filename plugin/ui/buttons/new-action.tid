@@ -10,7 +10,6 @@ title: $:/plugins/sebastianovide/gsebd/ui/buttons/new-action
     $savetitle="!!justCreated"
     gsd_type=<<gsd_type>>
     gsd_status=<<gsd_status>>
-    gsd_complete=<<gsd_complete>>
     gsd_project=<<gsd_project>>
     tags=<<newHereButtonTags>>
 />

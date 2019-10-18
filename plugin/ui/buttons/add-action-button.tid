@@ -6,9 +6,7 @@ description: Add new action
 <$button class=<<tv-config-toolbar-class>> >
     <$set name="gsd_type" value="action">
     <$set name="gsd_status" value="next">
-    <$set name="gsd_complete" value="false">
         {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
-    </$set>
     </$set>
     </$set>
 

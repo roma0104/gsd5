@@ -17,7 +17,6 @@ exports.name = "list-composer";
 
 exports.params = [
     {name: "gsd_type"},
-    {name: "gsd_complete"},
     {name: "gsd_status"},
     {name: "sort"},
     {name: "order"},
@@ -37,19 +36,10 @@ function processType(filter) {
     return filter;
 }
 
-// What is the desired completed status of the tiddler list?
-function processComplete(filter) {
-    // Only process if tidders support gsd_complete; actions & projects
-    if(filter.values.gsd_type==="action"||filter.values.gsd_type==="project") {
-        filter.strings.complete = "field:gsd_complete[" + filter.values.gsd_complete + "]";
-    }
-    return filter;
-}
-
 // What is the desired status of the tiddler list?
 function processStatus(filter) {
     // Ignore if a list of completed tiddlers or not requested.
-    if(filter.values.gsd_complete==="true"||filter.values.gsd_status==="none") {
+    if(filter.values.gsd_status==="none") {
         return filter;
     }
     // Only process if tidders support gsd_status; actions & projects
@@ -81,7 +71,7 @@ function processGroup(filter) {
             return filter;
         } else {
             // If the groupBy is a temporal field
-            if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="gsd_comp_date") {
+            if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="modified") {
                 filter.strings.group = "has[" + filter.values.groupBy + "]eachday[" + filter.values.groupBy + "]";
             // else group by other field
             } else {
@@ -144,7 +134,7 @@ function processOwner(filter) {
         }
     // Special case, where tiddlers are 'owned' by dates
     } else {
-        if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="gsd_comp_date") {
+        if(filter.values.groupBy==="created"||filter.values.groupBy==="modified"||filter.values.groupBy==="modified") {
             filter.strings.owner = "sameday:" + filter.values.groupBy + "{!!title}";
         } else {
             filter.strings.owner = "field:" + filter.values.groupBy + "{!!title}";
@@ -192,7 +182,7 @@ function processHideFutureProj(filter) {
 }
 
 // Run the macro
-exports.run = function(gsd_type,gsd_complete,gsd_status,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,owner,hideFutureProj) {
+exports.run = function(gsd_type,gsd_status,sort,order,groupBy,groupTail,groupTailHeader,groupHeader,customFilter,ownerField,owner,hideFutureProj) {
     // Prepare the filterString object.
     var filter = {};
     var composedFilter= "";
@@ -200,7 +190,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,sort,order,groupBy,group
     // Process values to resolve any wikitext.
     filter.values = {
         gsd_type: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_type),
-        gsd_complete: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_complete),
         gsd_status: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",gsd_status),
         sort: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",sort),
         order: $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",order),
@@ -236,7 +225,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,sort,order,groupBy,group
 
     filter = processType(filter);
     filter = processStatus(filter);
-    filter = processComplete(filter);
     filter = processSort(filter);
     filter = processGroup(filter);
     filter = processCustomFilter(filter);
@@ -246,7 +234,6 @@ exports.run = function(gsd_type,gsd_complete,gsd_status,sort,order,groupBy,group
 
     // Compose the final filter statement.
     composedFilter += filter.strings.type;
-    composedFilter += filter.strings.complete;
     composedFilter += filter.strings.status;
     composedFilter += filter.strings.sort;
     composedFilter += filter.strings.group;

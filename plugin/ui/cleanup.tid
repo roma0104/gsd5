@@ -6,6 +6,6 @@ The following actions and projects are older than 14 days and can be possibly de
 
 </div>
 
-<<gsebd-list title:"Completed Actions" gsd_type:"action" gsd_status:"none" gsd_complete:"true" sort:"gsd_comp_date" order:"descending" groupBy:"none" customFilter:"!date:gsd_comp_date[14]">>
+<<gsebd-list title:"Completed Actions" gsd_type:"action" gsd_status:"done" sort:"modified" order:"descending" groupBy:"none" customFilter:"!date:modified[14]">>
 
-<<gsebd-list title:"Completed Projects" gsd_type:"project" gsd_status:"none" gsd_complete:"true" sort:"gsd_comp_date" order:"descending" groupBy:"none" customFilter:"!date:gsd_comp_date[14]">>
+<<gsebd-list title:"Completed Projects" gsd_type:"project" gsd_status:"done" sort:"modified" order:"descending" groupBy:"none" customFilter:"!date:modified[14]">>

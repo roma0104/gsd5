@@ -76,8 +76,8 @@ PrereqWidget.prototype.handleChangeEvent = function() {
 PrereqWidget.prototype.setStatus = function() {
     if(this.selectDomNode.value !== "none") {
         var currentTiddler = this.wiki.getTiddler(this.prereqTitle);
-        if(currentTiddler.fields.gsd_completed !== "completed" || currentTiddler.fields.gsd_status !== "waiting") {
-            this.wiki.setText(this.prereqTitle, "gsd_status", null, "future");
+        if (["active", "next"].includes(currentTiddler.fields.gsd_status)) {
+          this.wiki.setText(this.prereqTitle, "gsd_status", null, "future");
         }
     }
 };

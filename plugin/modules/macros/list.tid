@@ -1,7 +1,7 @@
 title: $:/plugins/sebastianovide/gsebd/modules/macros/gsebd-list
 tags: $:/tags/Macro
 
-\define gsebd-list(title:"Next Action",gsd_type:"action",gsd_status:"next",gsd_complete:"false",sort:"title",order:"ascending",groupBy:"none",customFilter:"none",dateTemplate:"DDth MMM YYYY",ownerField:"none",owner:"{{!!title}}",hideFutureProj:"false")
+\define gsebd-list(title:"Next Action",gsd_type:"action",gsd_status:"next",sort:"title",order:"ascending",groupBy:"none",customFilter:"none",dateTemplate:"DDth MMM YYYY",ownerField:"none",owner:"{{!!title}}",hideFutureProj:"false")
 <$set name="listState" value=<<qualify "$:/state/gsd-list">>>
 <$set name="caller" value=$owner$>
 <div class="tw-menu-list-item">
@@ -10,10 +10,10 @@ tags: $:/tags/Macro
 
 <!-- Group Header -->
 <$reveal state=<<listState>> type="match" text="show" default="show" retain="yes">
-    <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
+    <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"true" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
         <div class="tc-menu-list-item  gsebd-project-list">
         <<view-composer groupTitle:"$groupBy$" dateTemplate:"$dateTemplate$">>
-        <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"false" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
+        <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"false" groupHeader:"false" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
             <div class="tc-menu-list-subitem">
                 <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
                 <$link to={{!!title}}><$view field="title"/></$link>
@@ -22,12 +22,12 @@ tags: $:/tags/Macro
         </$list>
         </div>
     </$list>
-    <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"true" groupHeader:"false" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
+    <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"false" groupTailHeader:"true" groupHeader:"false" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
     <div class="tc-menu-list-item  gsebd-project-list">
         No Group
     </div>
     </$list>
-    <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ gsd_complete:$gsd_complete$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"false" groupHeader:"false" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
+    <$list filter=<<list-composer gsd_type:$gsd_type$ gsd_status:$gsd_status$ sort:$sort$ order:$order$ groupBy:$groupBy$ groupTail:"true" groupTailHeader:"false" groupHeader:"false" customFilter:$customFilter$ ownerField:$ownerField$ hideFutureProj:$hideFutureProj$>>>
         <div class="tc-menu-list-subitem">
             <$transclude tiddler="$:/plugins/sebastianovide/gsebd/ui/lists/ListViewPrefix"/>
             <$link to={{!!title}}><$view field="title"/></$link>

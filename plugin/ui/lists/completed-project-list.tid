@@ -1,4 +1,4 @@
 title: $:/plugins/sebastianovide/gsebd/ui/lists/completed-project-list
 caption: Completed Projects
 
-<<gsebd-list title:"Completed Projects" gsd_type:"project" gsd_status:"active" gsd_complete:"true" sort:"gsd_comp_date" order:"descending" groupBy:"none" customFilter:"none">>
+<<gsebd-list title:"Completed Projects" gsd_type:"project" gsd_status:"done" sort:"modified" order:"descending" >>

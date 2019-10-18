@@ -30,7 +30,7 @@ exports.run = function(groupTitle, dateTemplate) {
     groupTitle = $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",groupTitle);
     dateTemplate = $tw.wiki.renderText("text/plain","text/vnd.tiddlywiki",dateTemplate);
 
-    if(groupTitle==="modified"||groupTitle==="created"||groupTitle==="gsd_comp_date") {
+    if(groupTitle==="modified"||groupTitle==="created"||groupTitle==="modified") {
         templateString = ' format="date" template="' + dateTemplate + '" ';
         linkString = "";
     }

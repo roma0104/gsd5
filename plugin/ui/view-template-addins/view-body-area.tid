@@ -13,13 +13,11 @@ tags: $:/tags/ViewTemplate
   Projects
   <$set name="gsd_type" value="project">
   <$set name="gsd_status" value="future">
-  <$set name="gsd_complete" value="false">
   <$set name="gsd_area" value=<<currentTiddler>> >
       <$button class="gsd-list-new-button tc-btn-invisible">
           {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
           +
       </$button>
-  </$set>
   </$set>
   </$set>
   </$set>

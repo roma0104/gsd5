@@ -1,13 +1,11 @@
-title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq
+gsd_status[done]title: $:/plugins/sebastianovide/gsebd/ui/addins/ViewPrereq
 tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCore
 
 \define gsd-tiddler-fly(type,status)
   <$button class="tc-btn-invisible">
       <$set name="gsd_type" value=$type$>
       <$set name="gsd_status" value=$status$>
-      <$set name="gsd_complete" value="false">
         {{$:/plugins/sebastianovide/gsebd/ui/buttons/new-action}}
-      </$set>
       </$set>      
       </$set>
       new
@@ -19,7 +17,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     Subproject of: <br/>
     <$select field="gsd_project" default="">
       <option value="">--</option>
-      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]!is[current]]">
+      <$list filter="[field:gsd_type[project]!field:gsd_status[done]!is[current]]">
        <option value=<<currentTiddler>>><<currentTiddler>></option>
       </$list>
     </$select>
@@ -39,7 +37,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     Project of: <br/>
     <$select field="gsd_project" default="">
       <option value="">--</option>
-      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]]">
+      <$list filter="[field:gsd_type[project]!field:gsd_status[done]]">
         <option value=<<currentTiddler>>><<currentTiddler>></option>
       </$list>
     </$select>
@@ -57,18 +55,18 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     <$prereq default="">
       <option value="">--</option>
       <$set name="currentTitle" value=<<currentTiddler>> >
-        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]!has[gsd_project]limit[1]]">
+        <$list filter="[field:gsd_type[action]!field:gsd_status[done]!has[gsd_project]limit[1]]">
           <optgroup label="No Project">
-            <$list filter="[field:gsd_type[action]!field:gsd_complete[true]!has[gsd_project]!title<currentTitle>]">
+            <$list filter="[field:gsd_type[action]!field:gsd_status[done]!has[gsd_project]!title<currentTitle>]">
               <option value=<<currentTiddler>>><<currentTiddler>></option>
             </$list>
           </optgroup>
         </$list>
       </$set>
       <$set name="currentTitle" value=<<currentTiddler>> >
-        <$list filter="[field:gsd_type[action]!field:gsd_complete[true]has[gsd_project]each[gsd_project]]">
+        <$list filter="[field:gsd_type[action]!field:gsd_status[done]has[gsd_project]each[gsd_project]]">
           <optgroup label={{!!gsd_project}}>
-          <$list filter="[field:gsd_type[action]!field:gsd_complete[true]!title<currentTitle>field:gsd_project{!!gsd_project}]">
+          <$list filter="[field:gsd_type[action]!field:gsd_status[done]!title<currentTitle>field:gsd_project{!!gsd_project}]">
             <option value=<<currentTiddler>>><<currentTiddler>></option>
           </$list>
           </optgroup>
@@ -91,7 +89,7 @@ tags: $:/tags/GSEBDActionCore $:/tags/GSEBDProjectCore $:/tags/GSEBDReferenceCor
     Project of: <br/>
     <$select field="gsd_project" default="">
       <option value="">--</option>
-      <$list filter="[field:gsd_type[project]!field:gsd_complete[true]]">
+      <$list filter="[field:gsd_type[project]!field:gsd_status[done]]">
        <option value=<<currentTiddler>>><<currentTiddler>></option>
       </$list>
     </$select>
